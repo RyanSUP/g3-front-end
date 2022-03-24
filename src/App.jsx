@@ -58,7 +58,7 @@ const App = () => {
         />
         <Route
           path="/games"
-          element={user ? <GameSearch /> : <Navigate to="/login" />}
+          element={user ? <GameSearch allGames={allGames} /> : <Navigate to="/login" />}
         />
       </Routes>
     </>
