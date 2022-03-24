@@ -6,6 +6,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import { GameSearch } from './pages/GameSearch/GameSearch'
 import * as authService from './services/authService'
 import * as gameService from './services/gameService'
 
@@ -15,11 +16,11 @@ const App = () => {
 
   const navigate = useNavigate()
 
-  useEffect(()=> {
-    if(user) {
+  useEffect(() => {
+    if (user) {
       // make gameService request to get all games
       gameService.getAllGames()
-      .then(allGamesFromFetch => setAllGames(allGamesFromFetch))
+        .then(allGamesFromFetch => setAllGames(allGamesFromFetch))
 
     }
   }, [user])
@@ -53,7 +54,11 @@ const App = () => {
         />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/games"
+          element={user ? <GameSearch /> : <Navigate to="/login" />}
         />
       </Routes>
     </>
