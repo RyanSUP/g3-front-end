@@ -22,10 +22,8 @@ const App = () => {
 
   useEffect(() => {
     if (user) {
-      // make gameService request to get all games
       gameService.getAllGames()
       .then(allGamesFromFetch => setAllGames(allGamesFromFetch))
-
     }
   }, [user])
 
@@ -61,7 +59,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route
-          path="/gameSearch" element={ <GameSearch /> }
+          path="/gameSearch" element={ <GameSearch allGames={allGames} /> }
         />
       </Routes>
     </>
