@@ -1,33 +1,20 @@
+/*-- Helpers --*/
 import { useState } from "react/cjs/react.production.min";
-import SearchForm from "../../components/SearchForm/SearchForm";
-import { searchGames } from "../../services/gameService";
+
+/*-- Components --*/
+import SearchForm from '../../components/SearchForm/SearchForm'
 
 
 
 const GameSearch = (props) => {
-  const [games, setGames] = useState([])
-
-  const handleGameSearch = formData => {
-    searchGames(formData)
-    .then(gameResults => {
-      console.log(gameResults.games)
-    })
-  }
-
+  
   return (
     <>
-    <SearchForm handleGameSearch={handleGameSearch}/>
-      {games.length ? 
-      <>
-        {games.map((game, idx) => 
-          <h2 key={idx}>{game.name}</h2>
-          )}
-      </>
-      :
-      <h2>No Games Match</h2>}
+      <h1>GAME SEARCH PAGE</h1>
+      <SearchForm />
     </>
   )
 
 }
 
-export {GameSearch}
+export default GameSearch
