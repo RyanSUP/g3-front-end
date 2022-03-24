@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react/cjs/react.production.min";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import { searchGames } from "../../services/gameService";
+// import { searchGames } from "../../services/gameService";
+import { getAllGames } from "../../services/gameService";
 
 
 
 const GameSearch = ({allGames}) => {
 
-
-  const handleGameSearch = formData => {
-    searchGames(formData)
-    .then(gameResults => {
-      console.log(gameResults.games)
-    })
-  }
+  // const handleGameSearch = formData => {
+  //   searchGames(formData)
+  //   .then(gameResults => {
+  //     console.log(gameResults.games)
+  //   })
+  // }
 
   return (
     <>
-    {allGames.games.map(game =>
+    {allGames.map(game =>
       <div key={game._id}>{game.name}</div>)}
-    <SearchForm handleSearch={handleGameSearch}/>
+    <SearchForm />
       {/* {games.length ? 
       <>
         {games.map((game, idx) => 
