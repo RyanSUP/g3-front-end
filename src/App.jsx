@@ -24,7 +24,7 @@ const App = () => {
     if (user) {
       // make gameService request to get all games
       gameService.getAllGames()
-        .then(allGamesFromFetch => setAllGames(allGamesFromFetch))
+      .then(allGamesFromFetch => setAllGames(allGamesFromFetch))
 
     }
   }, [user])

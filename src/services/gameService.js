@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.boardgameatlas.com/api/search?client_id=ORrNK32UuC'
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/games`
 
 
 const getAllGames = () => {
