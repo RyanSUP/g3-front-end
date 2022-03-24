@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-const SearchForm = ({handleGameSearch}) => {
+const GameSearchForm = ({handleGameSearch}) => {
 
   return (
     <>
@@ -11,4 +11,4 @@ const SearchForm = ({handleGameSearch}) => {
   );
 }
 
-export default SearchForm;
+export default GameSearchForm;
