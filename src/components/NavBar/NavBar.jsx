@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>  
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg" style={{background: '#81b5a8'}}>
         <div className="container-fluid">
           <div className="navbar-brand">G3</div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

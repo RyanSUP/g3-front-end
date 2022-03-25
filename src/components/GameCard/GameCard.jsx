@@ -9,7 +9,7 @@ const GameCard = ({game}) => {
     <h5 className="card-title">{game.name}</h5>
     <p className="card-text">description goes here</p>
     <button className="btn btn-primary mx-2">Details</button>
-    <button  className="btn btn-primary mx-2">Add Game</button>
+    <button className="btn btn-primary mx-2">Add Game</button>
   </div>
 </div>
   );
