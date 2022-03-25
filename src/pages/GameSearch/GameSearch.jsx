@@ -1,33 +1,56 @@
-import { useState } from "react/cjs/react.production.min";
-import SearchForm from "../../components/SearchForm/SearchForm";
-import { searchGames } from "../../services/gameService";
+/*-- Helpers --*/
+import { useState } from "react";
+import * as apiServices from '../../services/atlasAPIService'
+import * as gameServices from '../../services/gameService'
 
+/*-- Components --*/
+import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 
-
-const GameSearch = (props) => {
-  const [games, setGames] = useState([])
-
-  const handleGameSearch = formData => {
-    searchGames(formData)
-    .then(gameResults => {
-      console.log(gameResults.games)
-    })
+const GameSearch = ({allGames}) => {
+  const [searchResults, setSearchResults] = useState([])
+  
+  const searchDatabaseForGame = gameName => {
+    const regexGameName =  new RegExp(gameName,'i')
+    return allGames.filter(game => (game.name.search(regexGameName) > -1) ? true : false)
   }
 
+  const searchAPIForGame = gameName => {
+    // Will return empty array if no results are found
+    return apiServices.searchGameByName(gameName)
+    .then(res => res?.games)
+  }
+
+  const cacheNewGames = games => games.forEach(game => gameServices.createGame(game))
+
+  const handleGameSearch = async formData => {
+    // Don't accept an empty form because it will result in querying the api for the top 30 games.. might be a good way to initially populate this page though.
+    if(formData.name === '') { return }
+
+    let results = searchDatabaseForGame(formData.name)
+    // Search api if no results -- or should we search it anyway to build or db?
+    if (results.length === 0) { 
+      results = await searchAPIForGame(formData.name)
+      // If new games were found, cache them in our db 😎
+      if(results.length) { cacheNewGames(results) }
+    }
+
+    setSearchResults(results)
+  }
+  
   return (
     <>
-    <SearchForm handleGameSearch={handleGameSearch}/>
-      {games.length ? 
-      <>
-        {games.map((game, idx) => 
-          <h2 key={idx}>{game.name}</h2>
-          )}
-      </>
-      :
-      <h2>No Games Match</h2>}
+      <h1>GAME SEARCH PAGE</h1>
+      <GameSearchForm handleGameSearch={handleGameSearch} />
+
+      {searchResults.length
+        ?
+          searchResults.map((result, idx) => <div key={idx}>{result.name}</div>)
+        :
+          <div>No results</div>
+      }
     </>
   )
 
 }
 
-export {GameSearch}
+export default GameSearch
