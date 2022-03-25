@@ -9,7 +9,7 @@ import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 import GameCard from "../../components/GameCard/GameCard";
 import GameList from "../../components/GameList/GameList";
 
-const GameSearch = ({allGames}) => {
+const GameSearch = ({allGames, user}) => {
   const [searchResults, setSearchResults] = useState([])
   
   const searchDatabaseForGame = gameName => {
@@ -46,7 +46,7 @@ const GameSearch = ({allGames}) => {
       <GameSearchForm handleGameSearch={handleGameSearch} />
       {searchResults.length
       ?
-      <GameList games={searchResults}/>
+      <GameList user={user} games={searchResults}/>
       :
       <div>No results</div>
     }
