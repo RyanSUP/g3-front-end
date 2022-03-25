@@ -27,7 +27,7 @@ const GameSearch = ({allGames}) => {
     if(formData.name === '') { return }
 
     let results = searchDatabaseForGame(formData.name)
-    // Search api if no results
+    // Search api if no results -- or should we search it anyway to build or db?
     if (results.length === 0) { 
       results = await searchAPIForGame(formData.name)
       // If new games were found, cache them in our db 😎
