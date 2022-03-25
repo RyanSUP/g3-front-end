@@ -19,7 +19,7 @@ const NavBar = ({ user, handleLogout }) => {
                   Account
                 </div>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li className="dropdown-item"><Link to="/myProfiles">My Profile</Link></li>
+                  <li className="dropdown-item"><Link to="/myProfile">My Profile</Link></li>
                   <li className="dropdown-item"><Link to="/changePassword">Change Password</Link></li>
                   <li><hr className="dropdown-divider"/></li>
                   <li className="dropdown-item"><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
