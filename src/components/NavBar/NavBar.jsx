@@ -5,7 +5,7 @@ const NavBar = ({ user, handleLogout }) => {
     <>  
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand">G3</a>
+          <div className="navbar-brand">G3</div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -15,9 +15,9 @@ const NavBar = ({ user, handleLogout }) => {
                 <Link className="nav-link active" aria-current="page" to="/profiles">Profiles</Link>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Account
-                </a>
+                </div>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li className="dropdown-item"><Link to="/myProfiles">My Profile</Link></li>
                   <li className="dropdown-item"><Link to="/changePassword">Change Password</Link></li>
@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
               <input className="form-control me-2" type="search" placeholder="Find Games" aria-label="Search"/>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
-            </div>
+          </div>
         </div>
       </nav>
     </>
