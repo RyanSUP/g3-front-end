@@ -63,7 +63,7 @@ const App = () => {
         {/* // ! THIS IS A SINGLE PROFILE */}
         <Route
           path="/myProfile"
-          element={<Profile profile={profile}/>}
+          element={<Profile profile={profile} user={user}/>}
         />
         {/* //! THIS IS ALL PROFILES */}
         <Route

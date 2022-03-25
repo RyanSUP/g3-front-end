@@ -6,6 +6,11 @@ const GameCard = ({game, user}) => {
     profileService.addGame(user.profile, game)
   }
 
+  const handleDeleteGame = () => {
+    //delete game from profile
+    profileService.deleteGame(user.profile, game)
+  }
+
   return (  
     <div className="card" style={{width: '18rem'}}>
       <img src={game.thumb_url} className="img-thumbnail" alt="..."/>
@@ -14,6 +19,7 @@ const GameCard = ({game, user}) => {
         <p className="card-text">description goes here</p>
         <button className="btn btn-primary mx-2">Details</button>
         <button onClick={handleAddGame} className="btn btn-primary mx-2">Add Game</button>
+        <button onClick={handleDeleteGame} className="btn btn-primary mx-2">Delete</button>
       </div>
     </div>
   );
