@@ -7,6 +7,7 @@ import * as gameServices from '../../services/gameService'
 /*-- Components --*/
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 import GameCard from "../../components/GameCard/GameCard";
+import GameList from "../../components/GameList/GameList";
 
 const GameSearch = ({allGames}) => {
   const [searchResults, setSearchResults] = useState([])
@@ -43,16 +44,12 @@ const GameSearch = ({allGames}) => {
     <>
       <h1>GAME SEARCH PAGE</h1>
       <GameSearchForm handleGameSearch={handleGameSearch} />
-
       {searchResults.length
-        ?
-          searchResults.map((result, idx) => 
-          <GameCard key={idx} game={result}/>)
-          // <div key={idx}>{result.name}
-          // </div>)
-        :
-          <div>No results</div>
-      }
+      ?
+      <GameList games={searchResults}/>
+      :
+      <div>No results</div>
+    }
     </>
   )
 
