@@ -1,5 +1,5 @@
 /*-- Helpers --*/
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as apiServices from '../../services/atlasAPIService'
 
 /*-- Components --*/
@@ -7,6 +7,7 @@ import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 const GameSearch = ({allGames}) => {
   const [searchResults, setSearchResults] = useState([])
   
+
   const searchDatabaseForGame = gameName => {
     const regexGameName =  new RegExp(gameName,'gi')
     return allGames.filter(game => (game.name.search(regexGameName) > -1) ? true : false)
@@ -16,12 +17,14 @@ const GameSearch = ({allGames}) => {
     // Will return empty array if no results are found
     return apiServices.searchGameByName(gameName)
     .then(apiMatches => apiMatches?.games)
-  }  
+  }
+
   const handleGameSearch = async formData => {
     // Don't accept an empty form because it will result in querying the api for the top 30 games.. might be a good way to initially populate this page though.
     if(formData.name === '') { return }
 
     let matches = searchDatabaseForGame(formData.name)
+    // Search api if no matches
     if (matches.length === 0) { matches = await searchAPIForGame(formData.name) }
     setSearchResults(matches)
   }
@@ -30,6 +33,19 @@ const GameSearch = ({allGames}) => {
     <>
       <h1>GAME SEARCH PAGE</h1>
       <GameSearchForm handleGameSearch={handleGameSearch} />
+
+      {searchResults.length
+        ?
+          searchResults.map(result => 
+            <div>
+              {result.name}
+            </div>  
+          )
+        :
+          <div>
+            No results
+          </div>
+      }
     </>
   )
 
