@@ -7,24 +7,23 @@ import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 const GameSearch = ({allGames}) => {
   const [searchResults, setSearchResults] = useState([])
   
-  const handleGameSearch = formData => {
-    const regex =  new RegExp(formData.name,'gi')
-    let databaseMatches = allGames.filter(game => 
-    (
-      game.name.search(regex) > -1) ? true : false
-    )
-    console.log(databaseMatches.length, `${formData.name} matches returned from our database`)
-    console.log('matches:', databaseMatches)
-    
-    if(databaseMatches.length === 0) {
-      // hit the api
-      apiServices.searchGameByName(formData.name)
-      .then(apiMatches => {
-        console.log(apiMatches?.games.length, `${formData.name} matches returned from api query`)
-        console.log('matches:', apiMatches?.games)
-      })
-    }
+  const searchDatabaseForGame = gameName => {
+    const regexGameName =  new RegExp(gameName,'gi')
+    return allGames.filter(game => (game.name.search(regexGameName) > -1) ? true : false)
+  }
 
+  const searchAPIForGame = gameName => {
+    // Will return empty array if no results are found
+    return apiServices.searchGameByName(gameName)
+    .then(apiMatches => apiMatches?.games)
+  }  
+  const handleGameSearch = async formData => {
+    // Don't accept an empty form because it will result in querying the api for the top 30 games.. might be a good way to initially populate this page though.
+    if(formData.name === '') { return }
+
+    let matches = searchDatabaseForGame(formData.name)
+    if (matches.length === 0) { matches = await searchAPIForGame(formData.name) }
+    setSearchResults(matches)
   }
   
   return (
