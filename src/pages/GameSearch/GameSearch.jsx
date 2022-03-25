@@ -1,32 +1,40 @@
 /*-- Helpers --*/
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as apiServices from '../../services/atlasAPIService'
+import * as gameServices from '../../services/gameService'
 
 /*-- Components --*/
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
+
 const GameSearch = ({allGames}) => {
   const [searchResults, setSearchResults] = useState([])
   
-
   const searchDatabaseForGame = gameName => {
-    const regexGameName =  new RegExp(gameName,'gi')
+    const regexGameName =  new RegExp(gameName,'i')
     return allGames.filter(game => (game.name.search(regexGameName) > -1) ? true : false)
   }
 
   const searchAPIForGame = gameName => {
     // Will return empty array if no results are found
     return apiServices.searchGameByName(gameName)
-    .then(apiMatches => apiMatches?.games)
+    .then(res => res?.games)
   }
+
+  const cacheNewGames = games => games.forEach(game => gameServices.createGame(game))
 
   const handleGameSearch = async formData => {
     // Don't accept an empty form because it will result in querying the api for the top 30 games.. might be a good way to initially populate this page though.
     if(formData.name === '') { return }
 
-    let matches = searchDatabaseForGame(formData.name)
-    // Search api if no matches
-    if (matches.length === 0) { matches = await searchAPIForGame(formData.name) }
-    setSearchResults(matches)
+    let results = searchDatabaseForGame(formData.name)
+    // Search api if no results
+    if (results.length === 0) { 
+      results = await searchAPIForGame(formData.name)
+      // If new games were found, cache them in our db 😎
+      if(results.length) { cacheNewGames(results) }
+    }
+
+    setSearchResults(results)
   }
   
   return (
@@ -36,15 +44,9 @@ const GameSearch = ({allGames}) => {
 
       {searchResults.length
         ?
-          searchResults.map(result => 
-            <div>
-              {result.name}
-            </div>  
-          )
+          searchResults.map((result, idx) => <div key={idx}>{result.name}</div>)
         :
-          <div>
-            No results
-          </div>
+          <div>No results</div>
       }
     </>
   )
