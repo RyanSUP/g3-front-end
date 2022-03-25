@@ -3,8 +3,10 @@ import { useState } from "react";
 import * as apiServices from '../../services/atlasAPIService'
 import * as gameServices from '../../services/gameService'
 
+
 /*-- Components --*/
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
+import GameCard from "../../components/GameCard/GameCard";
 
 const GameSearch = ({allGames}) => {
   const [searchResults, setSearchResults] = useState([])
@@ -44,7 +46,10 @@ const GameSearch = ({allGames}) => {
 
       {searchResults.length
         ?
-          searchResults.map((result, idx) => <div key={idx}>{result.name}</div>)
+          searchResults.map((result, idx) => 
+          <GameCard key={idx} game={result}/>)
+          // <div key={idx}>{result.name}
+          // </div>)
         :
           <div>No results</div>
       }
