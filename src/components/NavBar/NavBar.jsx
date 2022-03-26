@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom'
-
-
-
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
-import GameList from "../../components/GameList/GameList";
 
 const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults }) => {
   return (
@@ -23,11 +19,12 @@ const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults 
                 <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Account
                 </div>
+                {/* //! ONLY TEXT IS CLICKABLE, USER SHOULD BE ABLE TO CLICK ENTIRE BOX */}
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li className="dropdown-item"><Link to="/myProfile">My Profile</Link></li>
                   <li className="dropdown-item"><Link to="/changePassword">Change Password</Link></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li className="dropdown-item"><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
+                  <li className="dropdown-item"><Link to="/login" onClick={handleLogout}>LOG OUT</Link></li>
                 </ul>
               </li>
             </ul>
