@@ -1,14 +1,15 @@
 import * as profileService from '../../services/profileService'
-const GameCard = ({game, user}) => {
+const GameCard = ({game, profile, addGameToState}) => {
 
   const handleAddGame = () => {
     // add game to profile
-    profileService.addGame(user.profile, game)
+    profileService.addGame(profile._id, game)
+    addGameToState(game)
   }
 
   const handleDeleteGame = () => {
     //delete game from profile
-    profileService.deleteGame(user.profile, game)
+    profileService.deleteGame(profile._id, game)
   }
 
   return (  

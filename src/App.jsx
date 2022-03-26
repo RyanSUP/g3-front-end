@@ -33,10 +33,7 @@ const App = () => {
       profileService.getProfile(user.profile)
       .then(returnedProfile => setProfile(returnedProfile))
     }
-
-
   }, [user])
-
 
   const handleLogout = () => {
     authService.logout()
@@ -78,7 +75,6 @@ const App = () => {
     navigate('gameSearch')
   }
 
-  
 
   return (
     <>
