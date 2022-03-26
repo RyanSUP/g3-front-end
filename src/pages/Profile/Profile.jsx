@@ -1,10 +1,10 @@
 import GameList from "../../components/GameList/GameList";
 
-const Profile = ({profile, user}) => {
-  
+const Profile = ({ profile, user }) => {
+
   return (
     <>
-      {profile.name}
+      <h1>{profile.name}</h1>
       {/* Get all of the profiles games */}
       <GameList user={user} games={profile.games} />
     </>

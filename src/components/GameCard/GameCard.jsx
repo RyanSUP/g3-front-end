@@ -12,13 +12,13 @@ const GameCard = ({game, user}) => {
   }
 
   return (  
-    <div className="card" style={{width: '18rem'}}>
-      <img src={game.thumb_url} className="img-thumbnail" alt="..."/>
+    <div className="card" style={{width: '15rem'}}>
+      <img style={{height: '200px'}} src={game.thumb_url} className="img-thumbnail" alt="..."/>
       <div className="card-body">
         <h5 className="card-title">{game.name}</h5>
-        <p className="card-text">description goes here</p>
-        <button className="btn btn-primary mx-2">Details</button>
-        <button onClick={handleAddGame} className="btn btn-primary mx-2">Add Game</button>
+        {/* <p className="card-text">{game.description_preview}</p> */}
+        <button className="btn btn-primary mx-2" data-toggle="collapse" data-target="#collapseExample">Details</button>
+        <button onClick={handleAddGame} className="btn btn-primary">Add Game</button>
         <button onClick={handleDeleteGame} className="btn btn-primary mx-2">Delete</button>
       </div>
     </div>
