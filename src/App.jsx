@@ -86,12 +86,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
-          path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
-        />
-        <Route
           path="/login"
-          element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+          element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
         />
         {/* // ! THIS IS A SINGLE PROFILE */}
         <Route
