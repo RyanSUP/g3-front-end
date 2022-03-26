@@ -1,20 +1,18 @@
-// const BASE_URL = 'https://api.boardgameatlas.com/api/search?client_id=ORrNK32UuC'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/games`
 
+const getAllGames = () => fetch(BASE_URL).then(res => res.json())
 
-const getAllGames = () => {
-  return fetch(BASE_URL)
-  .then(res => res.json())
+const createGame = (gameObj) => {
+  return fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(gameObj)
+  })
 }
-
-// const searchGames = (formData) => {
-//   console.log(formData)
-//   return fetch(`${BASE_URL}&name=${formData.query}`)
-//   .then(res => res.json())
-// }
-
 
 export {
   getAllGames,
-  // searchGames
-}
+  createGame,
+} 
