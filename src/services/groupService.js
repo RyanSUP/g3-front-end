@@ -17,6 +17,23 @@ function create(group) {
   .then(res => res.json())
 }
 
+
+async function getAllGroups() {
+  return fetch(BASE_URL, {
+    headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+  })
+  .then(res => res.json())
+}
+
+async function getGroup(id) {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+  })
+  return await res.json()
+}
+
 export {
-  create
+  create,
+  getAllGroups,
+  getGroup
 }
