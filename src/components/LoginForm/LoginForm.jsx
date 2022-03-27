@@ -36,27 +36,31 @@ const LoginForm = props => {
         onSubmit={handleSubmit}
         className={styles.container}
       >
-        <div className={styles.inputContainer}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+        <div className= 'form-floating mb-3'>
           <input
-            type="text"
+            type="email"
+            className='form-control'
             autoComplete="off"
-            id="email"
+            placeholder='name@example.com'
+            id="floatingInput"
             value={formData.email}
             name="email"
             onChange={handleChange}
           />
+          <label for='floatingInput' htmlFor="email" className={styles.label}>Email Address</label>
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="password" className={styles.label}>Password</label>
+        <div className='form-floating'>
           <input
             type="password"
+            className='form-control'
             autoComplete="off"
-            id="password"
+            id="floatingPassword"
+            placeholder='Password'
             value={formData.pw}
             name="pw"
             onChange={handleChange}
           />
+          <label for='floatingPassword' htmlFor="password" className={styles.label}>Password</label>
         </div>
         <div>
           <button className={styles.button}>Log In</button>

@@ -4,7 +4,7 @@ import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults }) => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg" style={{background: '#164a4a'}}>
+      <nav className="navbar navbar-expand-lg navbar-dark" style={{background: '#164a4a'}}>
         <div className="container-fluid">
           <Link className="nav-link active" aria-current="page" to="/">G3</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
