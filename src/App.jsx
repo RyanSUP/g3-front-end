@@ -5,6 +5,7 @@ import * as authService from './services/authService'
 import * as gameService from './services/gameService'
 import * as profileService from './services/profileService'
 import * as apiServices from './services/atlasAPIService'
+import * as groupService from './services/groupService'
 
 /*-- Pages/Components --*/
 import NavBar from './components/NavBar/NavBar'
@@ -22,7 +23,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [allGames, setAllGames] = useState([])
   const [profile, setProfile] = useState({})
-
+  const [groups, setGroups] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -78,8 +79,12 @@ const App = () => {
     navigate('gameSearch')
   }
 
+  const handleAddGroup = newGroupData => {
+    groupService.create(newGroupData)
+    .then(newGroup => setGroups([...groups, newGroup]))
+    navigate('/myProfile')
+  }
   
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/>
@@ -92,7 +97,7 @@ const App = () => {
         {/* // ! THIS IS A SINGLE PROFILE */}
         <Route
           path="/myProfile"
-          element={<Profile profile={profile} user={user}/>}
+          element={<Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
         />
         {/* //! THIS IS ALL PROFILES */}
         <Route
