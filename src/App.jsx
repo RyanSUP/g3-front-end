@@ -18,7 +18,7 @@ import GameSearch from './pages/GameSearch/GameSearch'
 import Profile from './pages/Profile/Profile'
 import GroupList from './components/GroupList/GroupList'
 import GroupDetails from './pages/GroupDetails/GroupDetails'
-import MyProfile from './pages/Profile/MyProfile'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -88,7 +88,7 @@ const App = () => {
   
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/>
+      <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults} profile={profile}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -96,10 +96,10 @@ const App = () => {
           element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
         />
         {/* // ! THIS IS A SINGLE PROFILE */}
-        <Route
+        {/* <Route
           path="/myProfile"
           element={<MyProfile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
-        />
+        /> */}
         {/* //! THIS IS ALL PROFILES */}
         <Route
           path="/profiles"

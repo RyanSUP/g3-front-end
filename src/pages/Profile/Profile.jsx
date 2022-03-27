@@ -5,7 +5,7 @@ import { getProfile } from '../../services/profileService';
 import { useLocation } from "react-router-dom";
 
 
-const Profile = ({user, handleAddGroup }) => {
+const Profile = ({user, handleAddGroup}) => {
   const [profileDetails, setProfileDetails] = useState({})
   const location = useLocation()
   const thisProfile = location.state.profile
@@ -16,7 +16,8 @@ const Profile = ({user, handleAddGroup }) => {
   return (
     <>
       <h1>{thisProfile.name}</h1>
-      {/* <AddGroup handleAddGroup={handleAddGroup} /> */}
+      <AddGroup handleAddGroup={handleAddGroup} />
+    
       {/* Get all of the profiles games */}
       <GameList user={user} games={thisProfile.games} />
     </>
