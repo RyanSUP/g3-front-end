@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
+import GroupList from '../../components/GroupList/GroupList'
+
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
@@ -21,6 +23,7 @@ const Profiles = () => {
       :
         <p>No profiles yet</p>
       }
+      <GroupList />
     </>
   )
 }

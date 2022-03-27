@@ -16,7 +16,8 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import GameSearch from './pages/GameSearch/GameSearch'
 import Profile from './pages/Profile/Profile'
-
+import GroupList from './components/GroupList/GroupList'
+import GroupDetails from './pages/GroupDetails/GroupDetails'
 
 
 const App = () => {
@@ -103,6 +104,10 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+                <Route
+          path="/groups/:id"
+          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
         />
         <Route
           path="/changePassword"
