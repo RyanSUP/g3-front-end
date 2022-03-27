@@ -16,11 +16,11 @@ const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults 
                 <Link className="nav-link active" aria-current="page" to="/profiles">Profiles</Link>
               </li>
               <li className="nav-item dropdown">
-                <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Account
                 </div>
                 {/* //! ONLY TEXT IS CLICKABLE, USER SHOULD BE ABLE TO CLICK ENTIRE BOX */}
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul id="nav-link" className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li className="dropdown-item"><Link to="/myProfile">My Profile</Link></li>
                   <li className="dropdown-item"><Link to="/changePassword">Change Password</Link></li>
                   <li><hr className="dropdown-divider" /></li>
