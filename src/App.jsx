@@ -18,7 +18,7 @@ import GameSearch from './pages/GameSearch/GameSearch'
 import Profile from './pages/Profile/Profile'
 import GroupList from './components/GroupList/GroupList'
 import GroupDetails from './pages/GroupDetails/GroupDetails'
-
+import MyProfile from './pages/Profile/MyProfile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -98,12 +98,16 @@ const App = () => {
         {/* // ! THIS IS A SINGLE PROFILE */}
         <Route
           path="/myProfile"
-          element={<Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+          element={<MyProfile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
         />
         {/* //! THIS IS ALL PROFILES */}
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+         <Route
+          path="/profiles/:id"
+          element={<Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
         />
                 <Route
           path="/groups/:id"
