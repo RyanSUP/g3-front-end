@@ -11,7 +11,7 @@ const Profiles = () => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
+      <h1 id='profile-text'>All Users</h1>
       {profiles.length ? 
         <>
         <div className="container py-5 px-3">
