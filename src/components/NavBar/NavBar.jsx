@@ -3,13 +3,8 @@ import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 
 const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults }) => {
   return (
-<<<<<<< HEAD
-    <>  
-      <nav className="navbar navbar-expand-lg" style={{background: '#81b5a8'}}>
-=======
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
->>>>>>> main
+      <nav className="navbar navbar-expand-lg" style={{background: '#164a4a'}}>
         <div className="container-fluid">
           <Link className="nav-link active" aria-current="page" to="/">G3</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
