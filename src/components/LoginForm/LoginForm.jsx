@@ -29,16 +29,23 @@ const LoginForm = props => {
 
   return (
     <>
-      <h1>Log In</h1>
+      {/* <h1>Log In</h1> */}
       <p>{message}</p>
-      <form
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        className={styles.container}
-      >
-        <div className= 'form-floating mb-3'>
-          <input
-            type="email"
+      <div className='d-lg-flex half'>
+        <div className='contents order-2 order-md-1'>
+          <div className='container'>
+            <div className='row align-items-center justify-content-center'>
+              <div class='col-md-7'>
+              <h3>'Login to G3'</h3>
+              <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              className={styles.container}
+              >
+        <div className='form-group first'>
+        <label for='email' htmlFor="email" className='form-control' placeholder='email@gmail.com'></label>
+        <input
+            type="text"
             className='form-control'
             autoComplete="off"
             placeholder='name@example.com'
@@ -47,25 +54,30 @@ const LoginForm = props => {
             name="email"
             onChange={handleChange}
           />
-          <label for='floatingInput' htmlFor="email" className={styles.label}>Email Address</label>
+          </div>
+        
+          <div className='form-group last mb-3'>
+          <label for='password' htmlFor="password" className={styles.label}>Password</label>
+            <input
+              type="password"
+              className='form-control'
+              autoComplete="off"
+              id="floatingPassword"
+              placeholder='Password'
+              value={formData.pw}
+              name="pw"
+              onChange={handleChange}
+              />
+              </div>
+                <div>
+                  <button className='btn btn-block btn-primary'>Log In</button>
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
         </div>
-        <div className='form-floating'>
-          <input
-            type="password"
-            className='form-control'
-            autoComplete="off"
-            id="floatingPassword"
-            placeholder='Password'
-            value={formData.pw}
-            name="pw"
-            onChange={handleChange}
-          />
-          <label for='floatingPassword' htmlFor="password" className={styles.label}>Password</label>
-        </div>
-        <div>
-          <button className={styles.button}>Log In</button>
-        </div>
-      </form>        
+      </div>
     </>
   )
 }

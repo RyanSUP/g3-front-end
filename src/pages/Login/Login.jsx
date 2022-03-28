@@ -27,7 +27,7 @@ const LoginPage = props => {
           }
           {/* // ! STYLE SIGNUP BUTTON TO BE JUST BLUE TEXT */}
         </div>
-        <div className='col-8'>
+        {/* <div className='col-8'>
           right content area
           <div className="row">
             <div className="col">
@@ -38,8 +38,8 @@ const LoginPage = props => {
             <div className="col">
               right content area b
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
 
