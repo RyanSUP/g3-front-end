@@ -23,16 +23,16 @@ const GroupDetails = ({ user, }) => {
   return (
     <>
       <h1>{group.name}</h1>
+      <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
       <img style={{ width: "500px" }} src={group.image} alt="group pic" />
       <AddGathering group={group} user={user}/>
       {groupDetails.profiles?.map((profile, idx) =>
       <div key={idx}>
         <h2> {profile.name}</h2>
-        {/* <GameList games={profile.games}/> */}
+        <GameList games={profile.games}/>
         </div>
       )}
 
-      <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
     </>
   );
 }
