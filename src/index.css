@@ -28,3 +28,15 @@ code {
 #profile-text{
   text-align: center;
 }
+
+.center-gs{
+  text-align: center;
+  justify-content: center;
+}
+
+.add-btn{
+  text-align: center;
+  
+}
+
+
