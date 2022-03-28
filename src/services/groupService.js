@@ -32,8 +32,22 @@ async function getGroup(id) {
   return await res.json()
 }
 
+const addMember = (id, profile)  => {
+  return fetch(`${BASE_URL}/${id}`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}` 
+    },
+    body: JSON.stringify(profile._id),
+  })
+  .then(res => res.json())
+}
+
+
 export {
   create,
   getAllGroups,
-  getGroup
+  getGroup,
+  addMember
 }

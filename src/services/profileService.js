@@ -19,7 +19,7 @@ async function getProfile(id) {
 
 const addGame = (profile_id, game) => {
   // localhost:3000/profile/:id/addGame
-  return fetch(`${BASE_URL}/${profile_id}`, {
+  return fetch(`${BASE_URL}/${profile_id}/games`, {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const addGame = (profile_id, game) => {
 
 const deleteGame = (profile_id, game) => {
   console.log(game)
-  return fetch(`${BASE_URL}/${profile_id}`,{
+  return fetch(`${BASE_URL}/${profile_id}/games`,{
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -43,9 +43,24 @@ const deleteGame = (profile_id, game) => {
   .then(res => res.json())
 }
 
+const joinGroup = (id, group) => {
+  return fetch(`${BASE_URL}/${id}`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}` 
+    },
+    body: JSON.stringify(group),
+  })
+  .then(res => res.json())
+}
+
+
+
 export { 
   getAllProfiles,  
   getProfile,
   addGame,
-  deleteGame
+  deleteGame,
+  joinGroup
 }
