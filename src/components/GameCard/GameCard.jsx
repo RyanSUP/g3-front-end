@@ -3,7 +3,6 @@ const GameCard = ({game, user, updateProfile}) => {
 
   const handleAddGame = () => {
     // add game to profile
-    console.log('testing')
     updateProfile()
     profileService.addGame(user.profile, game)
   }
