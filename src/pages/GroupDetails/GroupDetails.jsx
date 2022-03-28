@@ -11,8 +11,8 @@ const GroupDetails = ({ user }) => {
   const location = useLocation()
   const group = location.state.group
   useEffect(() => {
-    getGroup()
-      .then(groupDetails => setGroupDetails(groupDetails))
+    getGroup(group._id)
+    .then(groupDetails => setGroupDetails(groupDetails))
   }, [])
   const handleJoin = () => {
     // add group to profile
@@ -24,9 +24,9 @@ const GroupDetails = ({ user }) => {
     <>
       <h1>{group.name}</h1>
       <img style={{ width: "500px" }} src={group.image} alt="group pic" />
-      {/* {group.profiles.map((profile, idx) =>
+      {groupDetails.profiles?.map((profile, idx) =>
         <h2 key={idx}> {profile.name}</h2>
-      )} */}
+      )}
 
       <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
     </>

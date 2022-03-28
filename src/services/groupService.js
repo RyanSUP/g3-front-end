@@ -26,6 +26,7 @@ async function getAllGroups() {
 }
 
 async function getGroup(id) {
+  console.log(id)
   const res = await fetch(`${BASE_URL}/${id}`, {
     headers: { Authorization: `Bearer ${tokenService.getToken()}` },
   })
