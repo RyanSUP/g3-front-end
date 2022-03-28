@@ -29,4 +29,7 @@ code {
   text-align: center;
 }
 
-
+.center-gs{
+  text-align: center;
+  justify-content: center;
+}
