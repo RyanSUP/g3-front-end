@@ -31,13 +31,13 @@ const LoginForm = props => {
     <>
     <>
       <div className='container px-4 py-5 mx-auto'>
-      <div class="card card0">
-      <div class="d-flex flex-lg-row flex-column-reverse">
-      <div class="card card1 ">
-      <div class="row justify-content-center my-auto">
-      <div class="col-md-8 col-10 my-5">
+      <div className="card card0">
+      <div className="d-flex flex-lg-row flex-column-reverse">
+      <div className="card card1 ">
+      <div className="row justify-content-center my-auto">
+      <div className="col-md-8 col-10 my-5">
       
-      <div class="row justify-content-center px-3 mb-3"> 
+      <div className="row justify-content-center px-3 mb-3"> 
       <img src={'logo.png'} alt="logo"/>
       </div>
       <h1 className='mb-5 text-center heading'>Welcome to G3</h1>
@@ -58,7 +58,7 @@ const LoginForm = props => {
             name="email"
             onChange={handleChange}
           />
-          <label htmlFor="email">Email address</label>
+          <label for='floatingEmail' htmlFor="email">Email address</label>
         </div>
         <div className='form-floating'>
           

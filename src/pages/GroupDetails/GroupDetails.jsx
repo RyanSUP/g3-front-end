@@ -27,6 +27,7 @@ const GroupDetails = ({ user }) => {
       {/* {group.profiles.map((profile, idx) =>
         <h2 key={idx}> {profile.name}</h2>
       )} */}
+
       <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
     </>
   );
