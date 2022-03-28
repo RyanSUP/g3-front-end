@@ -21,7 +21,7 @@ const LoginForm = props => {
     try {
       await authService.login(formData)
       props.handleSignupOrLogin()
-      navigate('/myProfile')
+      navigate('/')
     } catch (err) {
       setMessage(err.message)
     }
@@ -29,55 +29,55 @@ const LoginForm = props => {
 
   return (
     <>
-      {/* <h1>Log In</h1> */}
-      <p>{message}</p>
-      <div className='d-lg-flex half'>
-        <div className='contents order-2 order-md-1'>
-          <div className='container'>
-            <div className='row align-items-center justify-content-center'>
-              <div class='col-md-7'>
-              <h3>'Login to G3'</h3>
-              <form
-              autoComplete="off"
-              onSubmit={handleSubmit}
-              className={styles.container}
-              >
-        <div className='form-group first'>
-        <label for='email' htmlFor="email" className='form-control' placeholder='email@gmail.com'></label>
-        <input
-            type="text"
-            className='form-control'
-            autoComplete="off"
-            placeholder='name@example.com'
-            id="floatingInput"
-            value={formData.email}
-            name="email"
-            onChange={handleChange}
-          />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-sm-6 login-section-wrapper">
+          <div className="brand-wrapper">
+            {/* Log img goes here */}
           </div>
-        
-          <div className='form-group last mb-3'>
-          <label for='password' htmlFor="password" className={styles.label}>Password</label>
-            <input
-              type="password"
-              className='form-control'
-              autoComplete="off"
-              id="floatingPassword"
-              placeholder='Password'
-              value={formData.pw}
-              name="pw"
-              onChange={handleChange}
+          <div class="login-wrapper my-auto">
+          <h1 className='login-text'>Log in</h1>
+          <p>{message}</p>
+            <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className={styles.container}
+            >
+            <div className='form-group'>
+              <label for='email' htmlFor="email">Email</label>
+              <input
+                className='form-control'
+                placeholder='email@example.com'
+                type="email"
+                autoComplete="off"
+                id="email"
+                value={formData.email}
+                name="email"
+                onChange={handleChange}
               />
-              </div>
-                <div>
-                  <button className='btn btn-block btn-primary'>Log In</button>
-                </div>
-              </form>
             </div>
+            <div className='form-group mb-4'>
+              <label for='password' htmlFor="password">Password</label>
+              <input
+                className='form-control'
+                placeholder='enter your password'
+                type="password"
+                autoComplete="off"
+                id="password"
+                value={formData.pw}
+                name="pw"
+                onChange={handleChange}
+              />
             </div>
+            <button id='login' className='btn btn-block login-btn' value='Login'>Log In</button>
+            </form>
           </div>
+        </div> 
+        <div class="col-sm-6 px-0 d-none d-sm-block" style={{background: 'orange'}}>
+          <img src={'/public/login.jpg'} alt="login image" className="login-img"/>
         </div>
-      </div>
+      </div>      
+    </div>
     </>
   )
 }

@@ -17,7 +17,7 @@ const LoginPage = props => {
             ? 
               <>
                 <LoginForm handleSignupOrLogin={props.handleSignupOrLogin} />
-                <p>Don't have an account? <button onClick={changeFormType} >Sign up</button></p>
+                <p className='login-wrapper-footer-text'>Don't have an account? <a href='#' className='text-reset' onClick={changeFormType} >Register here</a></p>
               </>
             : 
               <>

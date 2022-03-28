@@ -5,6 +5,7 @@ import * as authService from './services/authService'
 import * as gameService from './services/gameService'
 import * as profileService from './services/profileService'
 import * as apiServices from './services/atlasAPIService'
+import * as groupService from './services/groupService'
 
 /*-- Pages/Components --*/
 import NavBar from './components/NavBar/NavBar'
@@ -15,14 +16,15 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import GameSearch from './pages/GameSearch/GameSearch'
 import Profile from './pages/Profile/Profile'
-
+import GroupList from './components/GroupList/GroupList'
+import GroupDetails from './pages/GroupDetails/GroupDetails'
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [allGames, setAllGames] = useState([])
   const [profile, setProfile] = useState({})
-
+  const [groups, setGroups] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -78,11 +80,15 @@ const App = () => {
     navigate('gameSearch')
   }
 
+  const handleAddGroup = newGroupData => {
+    groupService.create(newGroupData)
+    .then(newGroup => setGroups([...groups, newGroup]))
+    navigate('/myProfile')
+  }
   
-
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/>
+      <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults} profile={profile}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -90,14 +96,22 @@ const App = () => {
           element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
         />
         {/* // ! THIS IS A SINGLE PROFILE */}
-        <Route
+        {/* <Route
           path="/myProfile"
-          element={<Profile profile={profile} user={user}/>}
-        />
+          element={<MyProfile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+        /> */}
         {/* //! THIS IS ALL PROFILES */}
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+         <Route
+          path="/profiles/:id"
+          element={<Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+        />
+                <Route
+          path="/groups/:id"
+          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
         />
         <Route
           path="/changePassword"
