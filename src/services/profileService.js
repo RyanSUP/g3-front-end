@@ -32,7 +32,7 @@ const addGame = (profile_id, game) => {
 
 const deleteGame = (profile_id, game) => {
   console.log(game)
-  return fetch(`${BASE_URL}/${profile_id}/games`,{
+  return fetch(`${BASE_URL}/${profile_id}`,{
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
