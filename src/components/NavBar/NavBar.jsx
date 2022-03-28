@@ -24,11 +24,11 @@ const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults,
 
 
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li className="dropdown-item"><Link to={`/profiles/${profile._id}`} state={{profile}}>My Profile</Link></li>
+                  <li className="dropdown-item"><Link to={`/profiles/${profile._id}`} state={{profile}}><div>My Profile</div></Link></li>
 
-                  <li className="dropdown-item"><Link to="/changePassword">Change Password</Link></li>
+                  <li className="dropdown-item"><Link to="/changePassword"><div>Change Password</div></Link></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li className="dropdown-item"><Link to="/login" onClick={handleLogout}>LOG OUT</Link></li>
+                  <li className="dropdown-item"><Link to="/login" onClick={handleLogout}><div>LOG OUT</div></Link></li>
                 </ul>
               </li>
             </ul>
