@@ -5,14 +5,14 @@
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 import GameList from "../../components/GameList/GameList";
 
-const GameSearch = ({ allGames, user, handleGameSearch, searchResults }) => {
+const GameSearch = ({ updateProfile, user, handleGameSearch, searchResults }) => {
   return (
     <>
       <h1>GAME SEARCH PAGE</h1>
       <GameSearchForm handleGameSearch={handleGameSearch} />
       {searchResults.length
         ?
-        <GameList user={user} games={searchResults} />
+        <GameList updateProfile={updateProfile} user={user} games={searchResults} />
         :
         <div>No results</div>
       }

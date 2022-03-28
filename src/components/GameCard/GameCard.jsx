@@ -1,9 +1,10 @@
 import * as profileService from '../../services/profileService'
-const GameCard = ({game, user}) => {
+const GameCard = ({game, user, updateProfile}) => {
 
   const handleAddGame = () => {
     // add game to profile
     console.log('testing')
+    updateProfile()
     profileService.addGame(user.profile, game)
   }
 

@@ -35,10 +35,17 @@ const App = () => {
       profileService.getProfile(user.profile)
       .then(returnedProfile => setProfile(returnedProfile))
     }
-
-
   }, [user])
 
+  const updateProfile = () => {
+    console.log(1, profile)
+    profileService.getProfile(user.profile)
+    .then(returnedProfile => {
+      console.log(2, returnedProfile)
+      setProfile(returnedProfile)
+      console.log(3, returnedProfile)
+    })
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -118,7 +125,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route
-          path="/gameSearch" element={ <GameSearch user={user} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/> }
+          path="/gameSearch" element={ <GameSearch updateProfile={updateProfile} user={user} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/> }
         />
       </Routes>
     </>

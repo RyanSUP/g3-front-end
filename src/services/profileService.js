@@ -19,7 +19,7 @@ async function getProfile(id) {
 
 const addGame = (profile_id, game) => {
   // localhost:3000/profile/:id/addGame
-  return fetch(`${BASE_URL}/${profile_id}/games`, {
+  return fetch(`${BASE_URL}/games/${profile_id}`, {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
