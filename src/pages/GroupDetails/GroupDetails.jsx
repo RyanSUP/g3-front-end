@@ -13,12 +13,13 @@ const GroupDetails = ({ user, }) => {
   useEffect(() => {
     getGroup(group._id)
     .then(groupDetails => setGroupDetails(groupDetails))
-  }, [])
+  }, [group._id])
   const handleJoin = () => {
     // add group to profile
     profileService.joinGroup(user.profile, group)
     groupService.addMember(group._id, user.profile)
   }
+
 
   return (
     <>

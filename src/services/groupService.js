@@ -58,10 +58,23 @@ const addGathering = (id, gathering) => {
   .then(res => res.json())
 }
 
+const deleteGroup = (id) => {
+  console.log('here')
+  return fetch(`${BASE_URL}/${id}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    // body: JSON.stringify(id),
+  })
+  .then(res => res.json())
+}
+
 export {
   create,
   getAllGroups,
   getGroup,
   addMember,
-  addGathering
+  addGathering,
+  deleteGroup
 }
