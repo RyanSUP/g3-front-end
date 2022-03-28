@@ -81,7 +81,7 @@ const LoginForm = props => {
                   </label>
                 </div>
         <div className='row justify-content-center my-3 px-3'>
-          <button className='btn-block btn-color'>Log In to G3</button>
+          <button className='btn-block btn-color' onClick={handleSubmit}>Log In to G3</button>
         </div>
         
         </form> 
