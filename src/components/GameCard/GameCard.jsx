@@ -3,6 +3,7 @@ const GameCard = ({game, user}) => {
 
   const handleAddGame = () => {
     // add game to profile
+    console.log('testing')
     profileService.addGame(user.profile, game)
   }
 
@@ -18,13 +19,13 @@ const GameCard = ({game, user}) => {
         <h5 className="card-title text-center">{game.name}</h5>
         {/* <p className="card-text">{game.description_preview}</p> */}
         
-        <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div className="offcanvas-header">
         <h5 id="offcanvasRightLabel" className='text-center fs-2' style={{size:'50px'}}><strong>Details</strong></h5>
         
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
+        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
         </div>
-        <div class="offcanvas-body">
+        <div className="offcanvas-body">
           <img style={{width: '350px'}} src={game.thumb_url}/>
           <strong>Name:</strong> {game.name} <br></br>
           <strong>Description:</strong> {game.description_preview}<br></br>

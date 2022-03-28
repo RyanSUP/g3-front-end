@@ -107,7 +107,7 @@ const SignupForm = props => {
           </label>
         </div>
         <div className='d-flex justify-content-center'>
-          <button type='button' className='btn btn-sucess btn-block btn-lg text-body' disabled={isFormInvalid()} >
+          <button className='btn btn-sucess btn-block btn-lg text-body' onClick={handleSubmit} disabled={isFormInvalid()} >
             Sign Up
           </button>
         </div>
