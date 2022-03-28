@@ -41,13 +41,13 @@ const SignupForm = props => {
   return (
     <>
     
-    <div class="mask d-flex align-items-center h-100">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+    <div className="mask d-flex align-items-center h-100">
+    <div className="container h-100">
+      <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div className="card">
+            <div className="card-body p-5">
+              <h2 className="text-uppercase text-center mb-5">Create an account</h2>
       {/* //! FIX THIS MESSAGE SO IT ALWAYS TAKES UP SPACE, EVEN IF NO MESSAGE IS DISPLAYED */}
       <p>{message}</p>
       <form
@@ -107,7 +107,7 @@ const SignupForm = props => {
           </label>
         </div>
         <div className='d-flex justify-content-center'>
-          <button type='button' className='btn btn-sucess btn-block btn-lg text-body' disabled={isFormInvalid()} >
+          <button className='btn btn-sucess btn-block btn-lg text-body' onClick={handleSubmit} disabled={isFormInvalid()} >
             Sign Up
           </button>
         </div>
