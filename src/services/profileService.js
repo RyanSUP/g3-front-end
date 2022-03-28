@@ -32,7 +32,7 @@ const addGame = (profile_id, game) => {
 
 const deleteGame = (profile_id, game) => {
   console.log(game)
-  return fetch(`${BASE_URL}/${profile_id}`,{
+  return fetch(`${BASE_URL}/${profile_id}/games`,{
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const deleteGame = (profile_id, game) => {
 }
 
 const joinGroup = (id, group) => {
-  return fetch(`${BASE_URL}/${id}/groups`, {
+  return fetch(`${BASE_URL}/${id}`, {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',

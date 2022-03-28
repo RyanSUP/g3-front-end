@@ -18,7 +18,6 @@ const Profile = ({user, handleAddGroup}) => {
       <h1>{thisProfile.name}</h1>
       <AddGroup handleAddGroup={handleAddGroup} />
     
-    
       {/* Get all of the profiles games */}
       <GameList user={user} games={thisProfile.games} />
     </>
