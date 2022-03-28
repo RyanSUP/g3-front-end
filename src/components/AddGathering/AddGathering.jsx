@@ -25,12 +25,12 @@ const AddGathering= ({group, user}) => {
     handleAddGathering(formData)
   }
   const handleAddGathering = newGatheringData => {
-    // groupService.addGathering(group._id, newGatheringData)
-    // .then(newGathering => setGatherings([...gatherings, newGathering]))
+    groupService.addGathering(group._id, newGatheringData)
+    .then(newGathering => setGatherings([...gatherings, newGathering]))
     //    profileService.joinGroup(user.profile, group)
     // groupService.addMember(group._id, user.profile)
-    gatheringService.create(newGatheringData)
-        .then(newGathering => setGatherings([...gatherings, newGathering]))
+    // gatheringService.create(newGatheringData)
+    //     .then(newGathering => setGatherings([...gatherings, newGathering]))
     // navigate('/Profiles')
   }
 	return (
