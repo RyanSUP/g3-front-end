@@ -9,40 +9,21 @@ const LoginPage = props => {
   const changeFormType = () => setFormType((formType === 'login') ? 'signup' : 'login')
 
   return (
-    <div className='container-fluid'>
-      <div className='row'>
-        <div className='col-4'>
-          {
-            (formType === 'login') 
-            ? 
-              <>
-                <LoginForm handleSignupOrLogin={props.handleSignupOrLogin} />
-                <p className='login-wrapper-footer-text'>Don't have an account? <a href='#' className='text-reset' onClick={changeFormType} >Register here</a></p>
-              </>
-            : 
-              <>
-                <SignupForm handleSignupOrLogin={props.handleSignupOrLogin} />
-                <p>Already have an account? <button onClick={changeFormType} >Login</button></p>
-              </>
-          }
-          {/* // ! STYLE SIGNUP BUTTON TO BE JUST BLUE TEXT */}
-        </div>
-        {/* <div className='col-8'>
-          right content area
-          <div className="row">
-            <div className="col">
-              right content area a
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              right content area b
-            </div>
-          </div> */}
-        {/* </div> */}
-      </div>
-    </div>
-
+  <>
+  {
+    (formType === 'login') 
+    ? 
+      <>
+        <LoginForm handleSignupOrLogin={props.handleSignupOrLogin} />
+        <p className=''>Don't have an account? <button className="btn btn-white ml-2"href='#' onClick={changeFormType} >Register here</button></p>
+      </>
+    : 
+      <>
+        <SignupForm handleSignupOrLogin={props.handleSignupOrLogin} />
+        <p>Already have an account? <button onClick={changeFormType} >Login</button></p>
+    </>
+  }
+  </>
   )
 }
 

@@ -29,57 +29,80 @@ const LoginForm = props => {
 
   return (
     <>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-sm-6 login-section-wrapper">
-          <div className="brand-wrapper">
-            {/* Log img goes here */}
-          </div>
-          <div class="login-wrapper my-auto">
-          <h1 className='login-text'>Log in</h1>
-          <p>{message}</p>
-            <form
+    <>
+      <div className='container px-4 py-5 mx-auto'>
+      <div class="card card0">
+      <div class="d-flex flex-lg-row flex-column-reverse">
+      <div class="card card1 ">
+      <div class="row justify-content-center my-auto">
+      <div class="col-md-8 col-10 my-5">
+      
+      <div class="row justify-content-center px-3 mb-3"> 
+      <img src={'logo.png'} alt="logo"/>
+      </div>
+      <h1 className='mb-5 text-center heading'>Welcome to G3</h1>
+      <p>{message}</p>
+      <form
         autoComplete="off"
         onSubmit={handleSubmit}
         className={styles.container}
-            >
-            <div className='form-group'>
-              <label for='email' htmlFor="email">Email</label>
-              <input
-                className='form-control'
-                placeholder='email@example.com'
-                type="email"
-                autoComplete="off"
-                id="email"
-                value={formData.email}
-                name="email"
-                onChange={handleChange}
-              />
-            </div>
-            <div className='form-group mb-4'>
-              <label for='password' htmlFor="password">Password</label>
-              <input
-                className='form-control'
-                placeholder='enter your password'
-                type="password"
-                autoComplete="off"
-                id="password"
-                value={formData.pw}
-                name="pw"
-                onChange={handleChange}
-              />
-            </div>
-            <button id='login' className='btn btn-block login-btn' value='Login'>Log In</button>
-            </form>
-          </div>
-        </div> 
-        <div class="col-sm-6 px-0 d-none d-sm-block" style={{background: 'orange'}}>
-          <img src={'/public/login.jpg'} alt="login image" className="login-img"/>
+      >
+        <div className='form-floating mb-3'>
+          <input
+            className='form-control inpt'
+            placeholder='email@example.com'
+            type="email"
+            autoComplete="off"
+            id="email"
+            value={formData.email}
+            name="email"
+            onChange={handleChange}
+          />
+          <label htmlFor="email">Email address</label>
         </div>
-      </div>      
-    </div>
+        <div className='form-floating'>
+          
+          <input
+            className='form-control inpt'
+            placeholder='Password'
+            type="password"
+            autoComplete="off"
+            id="password"
+            value={formData.pw}
+            name="pw"
+            onChange={handleChange}
+          />
+          <label for='floatingPassword' htmlFor="password">Password</label>
+        </div>
+        <div className="form-check mb-3">
+                  <input className="form-check-input" type="checkbox" value=""id="rememberPasswordCheck"/>
+                  <label className="form-check-label" for="rememberPasswordCheck">
+                    Remember password
+                  </label>
+                </div>
+        <div className='row justify-content-center my-3 px-3'>
+          <button className='btn-block btn-color'>Log In to G3</button>
+        </div>
+        
+        </form> 
+        </div>
+      
+      </div>
+      </div>
+      <div className="card card2">
+                <div className="my-auto mx-md-5 px-md-5 right">
+                  <img src={'login.jpg'}alt="" className='img-fluid' />
+                    </div>
+      </div>
+      
+      </div>
+    </div> 
+    </div>   
+    </>
+    
     </>
   )
 }
 
 export default LoginForm
+
