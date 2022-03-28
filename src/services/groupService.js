@@ -64,11 +64,19 @@ const deleteGroup = (id) => {
   .then(res => res.json())
 }
 
+const deleteGathering = (groupId, gatheringId) => {
+  return fetch(`${BASE_URL}/${groupId}/${gatheringId}`,{
+    method: 'DELETE',
+  })
+  .then(res => res.json())
+}
+
 export {
   create,
   getAllGroups,
   getGroup,
   addMember,
   addGathering,
-  deleteGroup
+  deleteGroup,
+  deleteGathering
 }
