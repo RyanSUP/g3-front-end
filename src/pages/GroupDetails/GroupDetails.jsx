@@ -16,7 +16,7 @@ const GroupDetails = ({ user }) => {
   }, [])
   const handleJoin = () => {
     // add group to profile
-    // profileService.joinGroup(user.profile, group)
+    profileService.joinGroup(user.profile, group)
     groupService.addMember(group._id, user.profile)
   }
 
