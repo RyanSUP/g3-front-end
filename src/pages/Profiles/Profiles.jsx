@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import GroupList from '../../components/GroupList/GroupList'
 import { Link } from 'react-router-dom'
+import ScrollToTop from 'react-scroll-to-top'
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
@@ -36,6 +37,7 @@ const Profiles = () => {
         <p>No profiles yet</p>
       }
       <GroupList />
+      <ScrollToTop smooth/>
     </>
   )
 }
