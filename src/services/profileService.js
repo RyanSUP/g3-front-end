@@ -30,8 +30,22 @@ const addGame = (profile_id, game) => {
   .then(res => res.json())
 }
 
+const deleteGame = (profile_id, game) => {
+  console.log(game)
+  return fetch(`${BASE_URL}/${profile_id}`,{
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(game),
+  })
+  .then(res => res.json())
+}
+
 export { 
   getAllProfiles,  
   getProfile,
   addGame,
+  deleteGame
 }
