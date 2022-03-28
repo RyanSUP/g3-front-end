@@ -59,13 +59,12 @@ const addGathering = (id, gathering) => {
 }
 
 const deleteGroup = (id) => {
-  console.log('here')
+  console.log(id)
   return fetch(`${BASE_URL}/${id}`,{
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
-    // body: JSON.stringify(id),
   })
   .then(res => res.json())
 }
