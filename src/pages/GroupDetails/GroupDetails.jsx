@@ -4,9 +4,9 @@ import { useLocation } from "react-router-dom";
 import * as profileService from '../../services/profileService'
 import * as groupService from '../../services/groupService'
 import GameList from '../../components/GameList/GameList';
+import AddGathering from '../../components/AddGathering/AddGathering';
 
-
-const GroupDetails = ({ user }) => {
+const GroupDetails = ({ user, }) => {
   const [groupDetails, setGroupDetails] = useState({})
   const location = useLocation()
   const group = location.state.group
@@ -24,8 +24,12 @@ const GroupDetails = ({ user }) => {
     <>
       <h1>{group.name}</h1>
       <img style={{ width: "500px" }} src={group.image} alt="group pic" />
+      <AddGathering group={group} user={user}/>
       {groupDetails.profiles?.map((profile, idx) =>
-        <h2 key={idx}> {profile.name}</h2>
+      <div key={idx}>
+        <h2> {profile.name}</h2>
+        {/* <GameList games={profile.games}/> */}
+        </div>
       )}
 
       <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>

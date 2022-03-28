@@ -6,6 +6,7 @@ import * as gameService from './services/gameService'
 import * as profileService from './services/profileService'
 import * as apiServices from './services/atlasAPIService'
 import * as groupService from './services/groupService'
+import * as gatheringService from './services/gatheringService'
 
 /*-- Pages/Components --*/
 import NavBar from './components/NavBar/NavBar'
@@ -25,6 +26,7 @@ const App = () => {
   const [allGames, setAllGames] = useState([])
   const [profile, setProfile] = useState({})
   const [groups, setGroups] = useState([])
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -92,6 +94,7 @@ const App = () => {
     .then(newGroup => setGroups([...groups, newGroup]))
     navigate('/Profiles')
   }
+
   
   return (
     <>
@@ -118,7 +121,7 @@ const App = () => {
         />
                 <Route
           path="/groups/:id"
-          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup} />}
         />
         <Route
           path="/changePassword"

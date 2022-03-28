@@ -45,10 +45,23 @@ const addMember = (id, profile)  => {
   .then(res => res.json())
 }
 
+const addGathering = (id, gathering) => {
+  // localhost:3000/profile/:id/addGame
+  return fetch(`${BASE_URL}/${id}/gatherings`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}` 
+    },
+    body: JSON.stringify(gathering),
+  })
+  .then(res => res.json())
+}
 
 export {
   create,
   getAllGroups,
   getGroup,
-  addMember
+  addMember,
+  addGathering
 }
