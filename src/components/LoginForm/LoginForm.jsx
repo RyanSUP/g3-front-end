@@ -58,7 +58,7 @@ const LoginForm = props => {
             name="email"
             onChange={handleChange}
           />
-          <label for='floatingEmail' htmlFor="email">Email address</label>
+          <label htmlFor="email">Email address</label>
         </div>
         <div className='form-floating'>
           
@@ -72,11 +72,11 @@ const LoginForm = props => {
             name="pw"
             onChange={handleChange}
           />
-          <label for='floatingPassword' htmlFor="password">Password</label>
+          <label htmlFor="password">Password</label>
         </div>
         <div className="form-check mb-3">
                   <input className="form-check-input" type="checkbox" value=""id="rememberPasswordCheck"/>
-                  <label className="form-check-label" for="rememberPasswordCheck">
+                  <label className="form-check-label">
                     Remember password
                   </label>
                 </div>
