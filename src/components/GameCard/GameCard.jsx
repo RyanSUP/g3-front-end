@@ -17,20 +17,22 @@ const GameCard = ({game, user}) => {
       <div className="card-body">
         <h5 className="card-title">{game.name}</h5>
         {/* <p className="card-text">{game.description_preview}</p> */}
-        <button className="btn btn-primary" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Details</button>
+        
         <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel">Details</h5>
+        
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
         </div>
         <div class="offcanvas-body">
           <img style={{width: '350px'}} src={game.thumb_url}/>
           <strong>Name:</strong> {game.name} <br></br>
-          <strong>Description:</strong> {game.description_preview}
-
+          <strong>Description:</strong> {game.description_preview}<br></br>
+          
         </div>
+        <button onClick={handleAddGame} className="btn btn-primary add-btn  ">Add Game</button>
         </div>
-        <button onClick={handleAddGame} className="btn btn-primary">Add Game</button>
+        <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Details</button>
         <button onClick={handleDeleteGame} className="btn btn-primary mx-2">Delete</button>
       </div>
     </div>
