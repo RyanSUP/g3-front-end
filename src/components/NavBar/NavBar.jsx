@@ -20,12 +20,8 @@ const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults,
                 <div className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Account
                 </div>
-                {/* //! ONLY TEXT IS CLICKABLE, USER SHOULD BE ABLE TO CLICK ENTIRE BOX */}
-
-
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li className="dropdown-item"><Link to={`/profiles/${profile._id}`} state={{profile}}><div>My Profile</div></Link></li>
-
                   <li className="dropdown-item"><Link to="/changePassword"><div>Change Password</div></Link></li>
                   <li><hr className="dropdown-divider" /></li>
                   <li className="dropdown-item"><Link to="/login" onClick={handleLogout}><div>LOG OUT</div></Link></li>
