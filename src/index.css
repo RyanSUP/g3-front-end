@@ -23,6 +23,8 @@ code {
 
 .card-pname{
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 #profile-text{

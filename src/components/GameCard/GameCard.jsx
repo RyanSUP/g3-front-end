@@ -26,7 +26,7 @@ const GameCard = ({game, user}) => {
         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
         </div>
         <div className="offcanvas-body">
-          <img style={{width: '350px'}} src={game.thumb_url}/>
+          <img style={{width: '350px'}} src={game.image_url}/>
           <strong>Name:</strong> {game.name} <br></br>
           <strong>Description:</strong> {game.description_preview}<br></br>
           
