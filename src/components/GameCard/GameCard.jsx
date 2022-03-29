@@ -19,13 +19,16 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvasGame}) => {
     profileService.addGame(profile._id, game)
     addGameToState(game)
     setCurrentButton(dltButton)
+    updateOffCanvasGame(game, dltButton)
   }
 
   function handleDeleteGame() {
     //delete game from profile
     profileService.deleteGame(profile._id, game)
     setCurrentButton(addButton)
+    updateOffCanvasGame(game, addButton)
   }
+
   return (  
     <div className="card mx-auto mt-5" style={{width: '18rem'}}>
       <img style={{height: '200px'}} src={game.thumb_url} className="img-thumbnail" alt="..."/>
