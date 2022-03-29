@@ -78,6 +78,16 @@ const deleteGathering = (groupId, gatheringId) => {
   .then(res => res.json())
 }
 
+const updateGathering = (groupId, gathId) => {
+  return fetch(`${BASE_URL}/${groupId}/gatherings/${gathId}`,{
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
 export {
   create,
   getAllGroups,
@@ -85,5 +95,7 @@ export {
   addMember,
   addGathering,
   deleteGroup,
+  updateGathering,
   deleteGathering,
 }
+
