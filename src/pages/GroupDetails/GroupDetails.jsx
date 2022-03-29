@@ -27,11 +27,11 @@ const GroupDetails = ({ user, }) => {
       <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
       <img style={{ width: "500px" }} src={group.image} alt="group pic" />
       <AddGathering group={group} user={user} />
-      <GatheringList gatherings={groupDetails.gatherings} />
+      <GatheringList gatherings={groupDetails.gatherings} group={groupDetails._id} />
       {groupDetails.profiles?.map((profile, idx) =>
         <div key={idx}>
           <h2> {profile.name}</h2>
-          <GameList games={profile.games} />
+          <GameList user={user} games={profile.games} />
         </div>
       )}
     </>
