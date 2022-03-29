@@ -78,12 +78,14 @@ const deleteGathering = (groupId, gatheringId) => {
   .then(res => res.json())
 }
 
-const updateGathering = (groupId, gathId) => {
+const updateGathering = (formData, groupId, gathId) => {
   return fetch(`${BASE_URL}/${groupId}/gatherings/${gathId}`,{
     method: 'PUT',
     headers: {
+      'Content-Type': 'application/json',
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
+    body: JSON.stringify(formData)
   })
   .then(res => res.json())
 }
