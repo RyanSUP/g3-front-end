@@ -46,7 +46,6 @@ const addMember = (id, profile)  => {
 }
 
 const addGathering = (id, gathering) => {
-  // localhost:3000/profile/:id/addGame
   return fetch(`${BASE_URL}/${id}/gatherings`, {
     method: 'POST',
     headers: { 
@@ -59,7 +58,16 @@ const addGathering = (id, gathering) => {
 }
 
 const deleteGroup = (id) => {
-  console.log(id)
+  return fetch(`${BASE_URL}/${id}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
+const deleteGathering = (groupId, gatheringId) => {
   return fetch(`${BASE_URL}/${id}`,{
     method: 'DELETE',
     headers: {
@@ -75,5 +83,6 @@ export {
   getGroup,
   addMember,
   addGathering,
-  deleteGroup
+  deleteGroup,
+  deleteGathering
 }
