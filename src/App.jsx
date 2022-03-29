@@ -6,6 +6,7 @@ import * as gameService from './services/gameService'
 import * as profileService from './services/profileService'
 import * as apiServices from './services/atlasAPIService'
 import * as groupService from './services/groupService'
+import * as gatheringService from './services/gatheringService'
 
 /*-- Pages/Components --*/
 import NavBar from './components/NavBar/NavBar'
@@ -25,6 +26,7 @@ const App = () => {
   const [allGames, setAllGames] = useState([])
   const [profile, setProfile] = useState({})
   const [groups, setGroups] = useState([])
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -35,10 +37,17 @@ const App = () => {
       profileService.getProfile(user.profile)
       .then(returnedProfile => setProfile(returnedProfile))
     }
-
-
   }, [user])
 
+  const updateProfile = () => {
+    console.log(1, profile)
+    profileService.getProfile(user.profile)
+    .then(returnedProfile => {
+      console.log(2, returnedProfile)
+      setProfile(returnedProfile)
+      console.log(3, returnedProfile)
+    })
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -85,6 +94,7 @@ const App = () => {
     .then(newGroup => setGroups([...groups, newGroup]))
     navigate('/Profiles')
   }
+
   
   return (
     <>
@@ -111,14 +121,14 @@ const App = () => {
         />
                 <Route
           path="/groups/:id"
-          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup} />}
         />
         <Route
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route
-          path="/gameSearch" element={ <GameSearch user={user} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/> }
+          path="/gameSearch" element={ <GameSearch updateProfile={updateProfile} user={user} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults}/> }
         />
       </Routes>
     </>

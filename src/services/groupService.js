@@ -26,6 +26,7 @@ async function getAllGroups() {
 }
 
 async function getGroup(id) {
+  console.log(id)
   const res = await fetch(`${BASE_URL}/${id}`, {
     headers: { Authorization: `Bearer ${tokenService.getToken()}` },
   })
@@ -44,10 +45,44 @@ const addMember = (id, profile)  => {
   .then(res => res.json())
 }
 
+const addGathering = (id, gathering) => {
+  return fetch(`${BASE_URL}/${id}/gatherings`, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}` 
+    },
+    body: JSON.stringify(gathering),
+  })
+  .then(res => res.json())
+}
+
+const deleteGroup = (id) => {
+  return fetch(`${BASE_URL}/${id}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
+// const deleteGathering = (groupId, gatheringId) => {
+//   return fetch(`${BASE_URL}/${id}`,{
+//     method: 'DELETE',
+//     headers: {
+//       'Authorization': `Bearer ${tokenService.getToken()}`
+//     },
+//   })
+//   .then(res => res.json())
+// }
 
 export {
   create,
   getAllGroups,
   getGroup,
-  addMember
+  addMember,
+  addGathering,
+  deleteGroup,
+  // deleteGathering
 }
