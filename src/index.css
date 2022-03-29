@@ -41,4 +41,15 @@ code {
   
 }
 
+.scroll{
+  max-height: 600px;
+  overflow-y: auto;
+  max-width: 800px;
+}
 
+@media screen and (max-width:600px){
+  .scroll{
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
