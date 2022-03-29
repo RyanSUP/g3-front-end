@@ -1,15 +1,32 @@
+import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
-const GameCard = ({game, user, updateProfile}) => {
 
-  const handleAddGame = () => {
+const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
+  const [currentButton, setCurrentButton] = useState()
+  const addButton = <button onClick={handleAddGame} className="btn btn-primary">Add</button>
+  const dltButton = <button onClick={handleDeleteGame} className="btn btn-primary mx-2">Delete</button>
+
+  useEffect(()=> {
+    if(profile.games?.find(profileGame => profileGame._id === game._id)) {
+      setCurrentButton(dltButton)
+    } else {
+      setCurrentButton(addButton)
+    }
+  }, [profile])
+
+  function handleAddGame() {
     // add game to profile
-    updateProfile()
-    profileService.addGame(user.profile, game)
+    profileService.addGame(profile._id, game)
+    addGameToState(game)
+    setCurrentButton(dltButton)
+    updateOffCanvas(game, dltButton)
   }
 
-  const handleDeleteGame = () => {
+  function handleDeleteGame() {
     //delete game from profile
-    profileService.deleteGame(user.profile, game)
+    profileService.deleteGame(profile._id, game)
+    setCurrentButton(addButton)
+    updateOffCanvas(game, addButton)
   }
 
   return (  
@@ -18,26 +35,13 @@ const GameCard = ({game, user, updateProfile}) => {
       <div className="card-body">
         <h5 className="card-title text-center">{game.name}</h5>
         {/* <p className="card-text">{game.description_preview}</p> */}
-        
-        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div className="offcanvas-header">
-        <h5 id="offcanvasRightLabel" className='text-center fs-2' style={{size:'50px'}}><strong>Details</strong></h5>
-        
-        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
-        </div>
-        <div className="offcanvas-body">
-          <img style={{width: '350px'}} src={game.thumb_url}/>
-          <strong>Name:</strong> {game.name} <br></br>
-          <strong>Description:</strong> {game.description_preview}<br></br>
-          
-        </div>
-        <button onClick={handleAddGame} className="btn btn-primary add-btn  ">Add Game</button>
-        </div>
-        <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Details</button>
-        <button onClick={handleDeleteGame} className="btn btn-primary mx-auto">Delete</button>
+          {currentButton}
+          <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)}>Details</button>
       </div>
     </div>
   );
 }
+
+
 
 export default GameCard;
