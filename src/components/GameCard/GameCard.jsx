@@ -36,7 +36,7 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvasGame}) => {
         <h5 className="card-title text-center">{game.name}</h5>
         {/* <p className="card-text">{game.description_preview}</p> */}
           {currentButton}
-          <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvasGame(game, currentButton)}>Details</button>
+          <button className="btn btn-primary mx-4 text-center" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvasGame(game, currentButton)}>Details</button>
       </div>
     </div>
   );
