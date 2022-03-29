@@ -34,7 +34,7 @@ async function getGroup(id) {
 }
 
 const addMember = (id, profile)  => {
-  return fetch(`${BASE_URL}/${id}`, {
+  return fetch(`${BASE_URL}/${id}/profiles`, {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
