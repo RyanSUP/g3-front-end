@@ -44,7 +44,7 @@ const deleteGame = (profile_id, game) => {
 }
 
 const joinGroup = (id, group) => {
-  return fetch(`${BASE_URL}/${id}`, {
+  return fetch(`${BASE_URL}/${id}/groups`, {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
