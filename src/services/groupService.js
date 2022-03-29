@@ -67,15 +67,16 @@ const deleteGroup = (id) => {
   .then(res => res.json())
 }
 
-// const deleteGathering = (groupId, gatheringId) => {
-//   return fetch(`${BASE_URL}/${id}`,{
-//     method: 'DELETE',
-//     headers: {
-//       'Authorization': `Bearer ${tokenService.getToken()}`
-//     },
-//   })
-//   .then(res => res.json())
-// }
+const deleteGathering = (groupId, gatheringId) => {
+  console.log(groupId, gatheringId)
+  return fetch(`${BASE_URL}/${groupId}/${gatheringId}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
 
 export {
   create,
@@ -84,5 +85,5 @@ export {
   addMember,
   addGathering,
   deleteGroup,
-  // deleteGathering
+  deleteGathering,
 }
