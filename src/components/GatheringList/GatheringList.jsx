@@ -1,19 +1,13 @@
-import * as groupService from '../../services/groupService'
+import GatheringDetails from '../GatheringDetails/GatheringDetails'
+const GatheringList = ({group, gatherings }) => {
 
-const GatheringList = ({ gatherings }) => {
-  // const handleDelete = () => {
-  //   groupService.deleteGathering()
-  // }
+
   return (
     <>
-    {gatherings?.map(gathering => 
-      <div key={gathering._id}>
-        <h4>{gathering.name}</h4>
-        <p>{gathering.location}</p>
-        <p>{gathering.date}</p>
-        </div>
+      {gatherings?.map((gathering, idx) => 
+        <GatheringDetails key={idx} group={group} gathering={gathering} />
       )}
-      </>
+    </>
   );
 }
 
