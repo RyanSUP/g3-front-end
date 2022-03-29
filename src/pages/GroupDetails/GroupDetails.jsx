@@ -31,7 +31,7 @@ const GroupDetails = ({ user, }) => {
       {groupDetails.profiles?.map((profile, idx) =>
         <div key={idx}>
           <h2> {profile.name}</h2>
-          <GameList games={profile.games} />
+          <GameList user={user} games={profile.games} />
         </div>
       )}
     </>
