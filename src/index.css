@@ -53,3 +53,36 @@ code {
     overflow-y: auto;
   }
 }
+
+/* .container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.1fr 2fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "col-1 gatherings gatherings"
+    "col-1 gatherings gatherings"
+    "col-1 games games"
+    "col-1 games games";
+}
+
+.gatherings { grid-area: gatherings; }
+
+.games { grid-area: games; }
+
+.col-1 {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "profile profile profile"
+    "profile profile profile"
+    "groups groups groups"
+    "groups groups groups";
+  grid-area: col-1;
+}
+
+.profile { grid-area: profile; }
+
+.groups { grid-area: groups; } */

@@ -16,9 +16,7 @@ const Profile = ({user, handleAddGroup}) => {
   return (
     <>
       <h1>{profileDetails.name}</h1>
-      <div className='container'>
       <AddGroup handleAddGroup={handleAddGroup} />
-      <div className="gatherings">
       {profileDetails.groups?.map((group) => 
         <div key={group._id}>
           <div>{group.name}</div>
@@ -28,11 +26,9 @@ const Profile = ({user, handleAddGroup}) => {
             )}
           </ul>
         </div>
-        </div>
       )}
       {/* Get all of the profiles games */}
       <GameList user={user} games={profileDetails.games} />
-    </div>
     </>
   );
 }
