@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 
-const GameCard = ({game, profile, addGameToState, updateOffCanvasGame}) => {
+const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
   const [currentButton, setCurrentButton] = useState()
   const addButton = <button onClick={handleAddGame} className="btn btn-primary">Add</button>
   const dltButton = <button onClick={handleDeleteGame} className="btn btn-primary mx-2">Delete</button>
@@ -19,14 +19,14 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvasGame}) => {
     profileService.addGame(profile._id, game)
     addGameToState(game)
     setCurrentButton(dltButton)
-    updateOffCanvasGame(game, dltButton)
+    updateOffCanvas(game, dltButton)
   }
 
   function handleDeleteGame() {
     //delete game from profile
     profileService.deleteGame(profile._id, game)
     setCurrentButton(addButton)
-    updateOffCanvasGame(game, addButton)
+    updateOffCanvas(game, addButton)
   }
 
   return (  
@@ -36,7 +36,7 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvasGame}) => {
         <h5 className="card-title text-center">{game.name}</h5>
         {/* <p className="card-text">{game.description_preview}</p> */}
           {currentButton}
-          <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvasGame(game, currentButton)}>Details</button>
+          <button className="btn btn-primary mx-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)}>Details</button>
       </div>
     </div>
   );

@@ -17,13 +17,11 @@ const GameList = ({games, user}) => {
     })
   }, [])
 
-  const updateOffCanvasGame = (game, button) => {
+  const updateOffCanvas= (game, button) => {
     setOffCanvasGame(game)
     setOffCanvasButton(button)
   }
-  const updateOffCanvasButton= button => {
-    setOffCanvasButton(button)
-  }
+
   const addGameToState = (game) => {
     setProfileGames([...profileGames, game])
   }
@@ -39,10 +37,10 @@ const GameList = ({games, user}) => {
           <strong>Name:</strong> {offCanvasGame.name} <br></br>
           <strong>Description:</strong> {offCanvasGame.description_preview}<br></br>
         </div>
-          {offCanvasButton}
+        {offCanvasButton}
       </div>
       <div className="row row-cols-1 row-cols-md-2 g-4">
-        {games?.map((result, idx) => <GameCard updateOffCanvasButton={updateOffCanvasButton} updateOffCanvasGame={updateOffCanvasGame} addGameToState={addGameToState} key={idx} profile={profile} game={result}/>)}
+        {games?.map((result, idx) => <GameCard updateOffCanvas={updateOffCanvas} addGameToState={addGameToState} key={idx} profile={profile} game={result}/>)}
       </div>
     </>
   );
