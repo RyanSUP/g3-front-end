@@ -22,7 +22,7 @@ const Profile = ({user, handleAddGroup}) => {
           <div>{group.name}</div>
           <ul>
             {group.gatherings?.map((gathering) => 
-              <li>{gathering.name}</li>
+              <li key={gathering._id}>{gathering.name}</li>
             )}
           </ul>
         </div>
