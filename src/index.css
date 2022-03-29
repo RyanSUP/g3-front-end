@@ -42,9 +42,9 @@ code {
 }
 
 .scroll{
-  max-height: 600px;
+  max-height: 700px;
   overflow-y: auto;
-  max-width: 800px;
+  max-width: 9900;
 }
 
 @media screen and (max-width:600px){
