@@ -41,6 +41,11 @@ code {
   
 }
 
+.scroll-gathering{
+  overflow-y: auto;
+  max-height: 150px;
+}
+
 .scroll{
   max-height: 700px;
   overflow-y: auto;
