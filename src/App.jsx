@@ -99,7 +99,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults} profile={profile}/>
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />} />
         <Route
           path="/login"
           element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
@@ -114,9 +114,9 @@ const App = () => {
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
-         <Route
+        <Route
           path="/profiles/:id"
-          element={<Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/>}
+          element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />}
         />
                 <Route
           path="/groups/:id"

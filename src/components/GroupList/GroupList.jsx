@@ -24,12 +24,13 @@ const GroupList = (props) => {
           {groups?.map((group, idx) => 
             <div key={idx}>
               <Link  to={`/groups/${group._id}`} state={{group}}>
-                <img style={{width: "250px"}}src={group.image} alt="group pic" />
+                <img style={{width: "250px"}}
+                src={group.image ? group.image : "https://i.imgur.com/AeL8PpK.png"} alt="group pic" />
                 <div >
                   <h3>{group.name}</h3>
                 </div>
               </Link>
-              <button className="btn btn-outline-danger" type="submit" onClick={() => handleDeleteGroup(group._id)}>Delete</button>
+              {/* <button className="btn btn-outline-danger" type="submit" onClick={() => handleDeleteGroup(group._id)}>Delete</button> */}
             </div>
           )}
         </div>
