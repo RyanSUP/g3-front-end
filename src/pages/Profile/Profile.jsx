@@ -25,7 +25,7 @@ const Profile = ({ user, handleAddGroup }) => {
         {/* <div className="container"> */}
         <div className="row">
           {/* temporary color */}
-          <div className="col-md-4" style={{ background: 'pink' }} >
+          <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             This is the left side
 
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
@@ -35,7 +35,7 @@ const Profile = ({ user, handleAddGroup }) => {
               <img id="profilePic" src={profileDetails.avatar} alt="avatar" />
 
             
-            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Add Picture'}/>
+            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Change Picture'}/>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
 
             <ProfileGroupList profile={profileDetails} />
