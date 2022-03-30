@@ -8,7 +8,7 @@ import GameList from "../../components/GameList/GameList";
 const GameSearch = ({ updateProfile, user, handleGameSearch, searchResults }) => {
   return (
     <>
-      <h1>GAME SEARCH PAGE</h1>
+      <h1 className='text-center'>Search Games</h1>
       <GameSearchForm handleGameSearch={handleGameSearch} />
       {searchResults.length
         ?

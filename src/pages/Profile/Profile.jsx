@@ -20,21 +20,30 @@ const Profile = ({ user, handleAddGroup }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
+        {/* <div className="container"> */}
         <div className="row">
-          <div className="col-md-4">
+          {/* temporary color */}
+          <div className="col-md-4" style={{background:'pink'}} >
             This is the left side
-            <h1>{profileDetails.name}</h1>
+
+            <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
+
             <ProfileGroupList profile={profileDetails} />
           </div>
-          <div className="col-md-8">
+          <div className="col-md-8" >
             This is the right side
-            <ProfileGatherings groups={profileDetails.groups}/>
-            <GameList user={user} games={profileDetails.games} />
+            {/* //! Make this map a component! */}
+            <div className="card col-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
+              <ProfileGatherings groups={profileDetails.groups}/>
+            </div>
+            <div className="col-md-12 scroll">
+              <GameList user={user} games={profileDetails.games} />
+            </div>
           </div>
         </div>
-      </div> 
+      </div>
     </>
   );
 }
