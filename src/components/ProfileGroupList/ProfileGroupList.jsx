@@ -1,7 +1,7 @@
 import * as groupService from '../../services/groupService'
 import GroupCard from '../GroupCard/GroupCard'
 
-const ProfileGroupList = ({groups}) => {
+const ProfileGroupList = ({profile}) => {
 
   const handleDeleteGroup = (group) => {
     groupService.deleteGroup(group)
@@ -9,8 +9,8 @@ const ProfileGroupList = ({groups}) => {
   
   return (  
     <>
-      {groups?.map((group, idx) => 
-        <GroupCard key={idx} handleDeleteGroup={handleDeleteGroup} group={group} />
+      {profile.groups?.map((group, idx) => 
+        <GroupCard key={idx} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
       )}
     </>
   );
