@@ -93,3 +93,18 @@ code {
   flex-direction: column;
 }
 
+#profilePic{
+  border-radius: 30px;
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#profileSideBar{
+  text-align: center;
+}
+
+#profileListImg{
+  height: 200px;
+  border-radius: 50%;
+}
