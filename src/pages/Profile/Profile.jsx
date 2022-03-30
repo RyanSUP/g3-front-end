@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
 
 
+
 const Profile = ({ user, handleAddGroup }) => {
   const [profileDetails, setProfileDetails] = useState({})
 
@@ -33,12 +34,11 @@ const Profile = ({ user, handleAddGroup }) => {
             
             <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Change Picture'}/>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
-
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
-            <div className="card col-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
-              <ProfileGatherings groups={profileDetails.groups} />
+            <div className="card scroll-gathering col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
+              <ProfileGatherings groups={profileDetails.groups}/>
             </div>
             <div className="col-md-12 scroll">
               <GameList user={user} games={profileDetails.games} />

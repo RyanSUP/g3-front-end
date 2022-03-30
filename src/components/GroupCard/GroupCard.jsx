@@ -5,21 +5,19 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
 
   return ( 
 
-      <div className='row row-cols-1 row-cols-md-2 g-4'> 
-          <div id="groupCard">
-            <Link  to={`/groups/${group._id}`} state={{group}}>
-              <img style={{width: "250px"}}src={group.image} alt="group pic" />
-              <h3>{group.name}</h3>
-            </Link>
-            {group.manager === profile._id
-              ?
-                dltBtn
-              :
-                leaveBtn
-            }
-          </div>
+    <div className="card">
+      <div> 
+        <Link  to={`/groups/${group._id}`} state={{group}}>
+          <img style={{width: "250px"}}src={group.image} alt="group pic" />
+          <h3>{group.name}</h3>
+        </Link>
+        {group.manager === profile._id
+          ?
+            dltBtn
+          :
+            leaveBtn
+        }
       </div>
-
   );
 }
  

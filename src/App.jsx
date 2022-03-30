@@ -97,7 +97,13 @@ const App = () => {
   
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults} profile={profile}/>
+    {user
+    ?
+    <NavBar user={user} handleLogout={handleLogout} allGames={allGames} handleGameSearch={handleGameSearch} searchResults={searchResults} profile={profile}/>
+    :
+    <></>
+    }
+
       <Routes>
         <Route path="/" element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />} />
         <Route

@@ -9,16 +9,16 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
       ?
         <>
           {altComponent ? altComponent : <></>}
-          <button onClick={()=> toggleDisplay()}>{buttonText}</button>
+          <button className='btn btn-primary' onClick={()=> toggleDisplay()}>{buttonText}</button>
         </>
       :
         <>
           {form}
-          <button onClick={()=> toggleDisplay()}>cancel</button>
+          <button className='btn btn-primary' onClick={()=> toggleDisplay()}>cancel</button>
         </>        
       }
     </>
   );
 }
- 
+
 export default ToggleForm;

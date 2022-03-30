@@ -26,11 +26,11 @@ const ProfileGroupList = ({profile}) => {
   }
   
   return (  
-    <>
-      {profileGroups?.map((group, idx) => 
-        <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
+    <div>
+      {profileGroups?.map((group, idx) =>
+          <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
       )}
-    </>
+    </div>
   );
 }
 
