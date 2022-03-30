@@ -35,7 +35,7 @@ const Profile = ({ user, handleAddGroup }) => {
           <div className="col-md-8" >
             This is the right side
             {/* //! Make this map a component! */}
-            <div className="card col-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
+            <div className="card scroll col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
               <ProfileGatherings groups={profileDetails.groups}/>
             </div>
             <div className="col-md-12 scroll">
