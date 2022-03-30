@@ -55,6 +55,18 @@ const joinGroup = (id, group) => {
   .then(res => res.json())
 }
 
+const updatePicture = (profile, formData) => {
+  console.log(formData)
+  return fetch(`${BASE_URL}/${profile}/`,{
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(formData),
+  })
+  .then(res => res.json())
+}
 
 
 export { 
@@ -62,5 +74,6 @@ export {
   getProfile,
   addGame,
   deleteGame,
-  joinGroup
+  joinGroup,
+  updatePicture
 }

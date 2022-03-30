@@ -17,7 +17,6 @@ const ProfileGatherings = ({ groups }) => {
           </tbody>
         )
       )}
-
     </table>
   );
 }
