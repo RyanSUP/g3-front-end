@@ -17,7 +17,8 @@ const Profile = ({ user, handleAddGroup }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
+        {/* <div className="container"> */}
         <div className="row">
           <div className="col-md-4">
             This is the left side
@@ -36,6 +37,7 @@ const Profile = ({ user, handleAddGroup }) => {
           </div>
         </div>
       </div> 
+    {/* </div> */}
     </>
   );
 }

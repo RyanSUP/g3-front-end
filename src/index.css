@@ -82,3 +82,10 @@ code {
 .g-4, .gx-4 {
   --bs-gutter-x: 0rem;
 }
+
+
+.card-body{
+  text-align: center;
+  flex-direction: column;
+}
+
