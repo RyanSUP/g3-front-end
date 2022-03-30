@@ -33,10 +33,10 @@ const Profile = ({ user, handleAddGroup }) => {
  
 
 
-              <img style={{width: 200}} src={profileDetails.avatar} alt="avatar" />
+              <img id="profilePic" src={profileDetails.avatar} alt="avatar" />
 
             
-            <ToggleForm form={<AddPicture user={user}/>} buttonText={'Add Picture'}/>
+            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Add Picture'}/>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
             <ProfileGroupList profile={profileDetails} />
           </div>
