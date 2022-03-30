@@ -8,7 +8,7 @@ import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
 import ToggleForm from '../../components/ToggleForm/ToggleForm';
 
-const GroupDetails = ({ user, }) => {
+const GroupDetails = ({ user }) => {
   const [groupDetails, setGroupDetails] = useState({})
   const location = useLocation()
   const group = location.state.group
