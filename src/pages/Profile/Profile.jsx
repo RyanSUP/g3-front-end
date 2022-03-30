@@ -23,7 +23,7 @@ const Profile = ({ user, handleAddGroup }) => {
             This is the left side
             <h1>{profileDetails.name}</h1>
             <AddGroup handleAddGroup={handleAddGroup} />
-            <ProfileGroupList groups={profileDetails.groups} />
+            <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8">
             This is the right side

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import * as groupService from '../../services/groupService'
 import { Link } from "react-router-dom"
 
+// !!!!! DEPRECIATED
 
 const GroupList = (props) => {
   const [groups, setGroups] = useState([])

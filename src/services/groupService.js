@@ -91,6 +91,16 @@ const updateGathering = (formData, groupId, gathId) => {
   .then(res => res.json())
 }
 
+const updateGroup = (groupId, profileId) => {
+  return fetch(`${BASE_URL}/${groupId}/profiles/${profileId}`,{
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
 export {
   create,
   getAllGroups,
@@ -100,5 +110,6 @@ export {
   deleteGroup,
   updateGathering,
   deleteGathering,
+  updateGroup,
 }
 
