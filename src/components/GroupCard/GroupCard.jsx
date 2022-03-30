@@ -4,6 +4,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
   const dltBtn = <button className="btn btn-outline-danger" type="submit" onClick={() => handleDeleteGroup(group._id)}>Disband</button>
 
   return ( 
+
     <div className="card">
       <div> 
         <Link  to={`/groups/${group._id}`} state={{group}}>
@@ -17,7 +18,6 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
             leaveBtn
         }
       </div>
-    </div>
   );
 }
  

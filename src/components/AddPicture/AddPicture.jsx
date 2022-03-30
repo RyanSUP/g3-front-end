@@ -6,7 +6,7 @@ const AddPicture = ({user, profile}) => {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({
-    avatar: '',
+    avatar: profile.avatar,
   })
 
   useEffect(() => {
@@ -26,15 +26,11 @@ const AddPicture = ({user, profile}) => {
     <>
       <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
         <div className="form-group mb-3">
-          <label htmlFor="name-input" className="form-label">
-          Add Image
-          </label>
           <input
             type="text"
             className="form-control"
             name="avatar"
             value={formData.avatar}
-            placeholder={profile.avatar}
             onChange={handleChange}
           />
         </div>

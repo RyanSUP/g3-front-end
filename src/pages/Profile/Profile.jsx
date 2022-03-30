@@ -26,26 +26,19 @@ const Profile = ({ user, handleAddGroup }) => {
         {/* <div className="container"> */}
         <div className="row">
           {/* temporary color */}
-
-          <div className="col-md-4" style={{background:'#faedcd'}} >
-
+          <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
- 
-
-
-              <img id="profilePic" src={profileDetails.avatar} alt="avatar" />
+              <img id="profilePic" src=
+              {profileDetails.avatar? profileDetails.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" />
 
             
-            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Add Picture'}/>
+            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Change Picture'}/>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
-            {/* //! Make this map a component! */}
-
             <div className="card scroll-gathering col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
               <ProfileGatherings groups={profileDetails.groups}/>
-
             </div>
             <div className="col-md-12 scroll">
               <GameList user={user} games={profileDetails.games} />
