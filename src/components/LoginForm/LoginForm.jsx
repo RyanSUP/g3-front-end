@@ -28,79 +28,66 @@ const LoginForm = props => {
   }
 
   return (
-    <>
-    <>
-      <div className='container px-4 py-5 mx-auto'>
-      <div className="card card0">
-      <div className="d-flex flex-lg-row flex-column-reverse">
-      <div className="card card1 ">
-      <div className="row justify-content-center my-auto">
-      <div className="col-md-8 col-10 my-5">
-      
-      <div className="row justify-content-center px-3 mb-3"> 
-      <img src={'logo.png'} alt="logo"/>
+    <div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="row">
+    <div class="col-md-12 col-12 mx-auto">
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              {/* sign in form */}
+    <form
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      className={styles.container}
+    >
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control'
+          placeholder="name@example.com"
+          type="email"
+          autoComplete="off"
+          id="email"
+          value={formData.email}
+          name="email"
+          onChange={handleChange}
+        />
+        <label for="floatingInput" htmlFor="email">Email address</label>
       </div>
-      <h1 className='mb-5 text-center heading'>Welcome to G3</h1>
-      <p>{message}</p>
-      <form
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        className={styles.container}
-      >
-        <div className='form-floating mb-3'>
-          <input
-            className='form-control inpt'
-            placeholder='email@example.com'
-            type="email"
-            autoComplete="off"
-            id="email"
-            value={formData.email}
-            name="email"
-            onChange={handleChange}
-          />
-          <label htmlFor="email">Email address</label>
-        </div>
-        <div className='form-floating'>
-          
-          <input
-            className='form-control inpt'
-            placeholder='Password'
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={formData.pw}
-            name="pw"
-            onChange={handleChange}
-          />
-          <label htmlFor="password">Password</label>
-        </div>
-        <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" value=""id="rememberPasswordCheck"/>
-                  <label className="form-check-label">
-                    Remember password
-                  </label>
-                </div>
-        <div className='row justify-content-center my-3 px-3'>
-          <button className='btn-block btn-color' onClick={handleSubmit}>Log In to G3</button>
-        </div>
-        
-        </form> 
-        </div>
-      
+      <div className='form-floating mb-3'>
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="password"
+          autoComplete="off"
+          id="password"
+          value={formData.pw}
+          name="pw"
+          onChange={handleChange}
+        />
+        <label htmlFor="password" for="floatingPassword">Password</label>
       </div>
+      <div className='form-check mb-3'> 
+      <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+        <label className="form-check-label">Remember password</label>
       </div>
-      <div className="card card2">
-                <div className="my-auto mx-md-5 px-md-5 right">
-                  <img src={'login.jpg'}alt="" className='img-fluid' />
-                    </div>
+
+      <div>
+        <button className={styles.button}>Log In</button>
+        <Link to="/">
+          <button>Cancel</button>
+        </Link>
       </div>
-      
-      </div>
-    </div> 
-    </div>   
-    </>
-    
-    </>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
   )
 }
 
