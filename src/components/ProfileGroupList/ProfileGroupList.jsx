@@ -18,6 +18,7 @@ const ProfileGroupList = ({profile }) => {
     setProfileGroups(newGroups)
   }
 
+  //! Pushing an empty object into setProfileGroups?
   const handleAddGroup = newGroupData => {
     groupService.create(newGroupData)
     .then(newGroup => setProfileGroups([...profileGroups, newGroup]))
