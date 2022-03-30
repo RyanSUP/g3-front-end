@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import * as groupService from '../../services/groupService'
 
-const AddGathering= ({group, user, gathering}) => {
+const AddGathering= ({group, updateGatheringList, gathering}) => {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ const AddGathering= ({group, user, gathering}) => {
   }, [formData])
 
   const handleDelete = (groupId, gatheringId) => {
+		updateGatheringList(formData, gathering._id, true)
     groupService.deleteGathering(groupId, gatheringId)
   }
   
@@ -24,6 +25,7 @@ const AddGathering= ({group, user, gathering}) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
+		updateGatheringList(formData, gathering._id, false)
 		groupService.updateGathering(formData, group._id, gathering._id)
   }
 
@@ -68,7 +70,7 @@ const AddGathering= ({group, user, gathering}) => {
 					/>
 				</div>
 				<div className="d-grid">
-					<button className="btn btn-primary btn-fluid" type="submit" onClick={() => handleSubmit(group._id, gathering._id)}>save  changes</button>
+					<button className="btn btn-primary btn-fluid" type="submit" onClick={handleSubmit}>save  changes</button>
       		<button onClick={()=> handleDelete(group._id, gathering._id)} >Delete</button>
 				</div>
 			</form>
