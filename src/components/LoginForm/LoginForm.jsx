@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
+import SignupForm from '../SignupForm/SignupForm'
 
 const LoginForm = props => {
   const [formData, setFormData] = useState({
@@ -28,17 +29,13 @@ const LoginForm = props => {
   }
 
   return (
-    <div class="container-fluid ps-md-0">
-  <div class="row g-0">
-    <div class="row">
-    <div class="col-md-12 col-12 mx-auto">
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-              <h3 class="login-heading mb-4">Welcome back!</h3>
-              {/* sign in form */}
-    <form
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-4">
+        <img className='' src={'logo.png'} style={{height:'300px'}}alt="logo"/>
+        <h3 class="login-heading mb-4">Welcome to G3!</h3>
+              <p>{message}</p>
+        <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
@@ -73,21 +70,17 @@ const LoginForm = props => {
       <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
         <label className="form-check-label">Remember password</label>
       </div>
-
-      <div>
-        <button className={styles.button}>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+      <div className="d-grid">
+        <button className="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2">Log In</button>
       </div>
     </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+    
+    
+        </div>
+        <div className="col-md-8 bg-image" style={{background:'orange'}}>
+        </div>
+      </div>
+    </div> 
   )
 }
 

@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
 
 
-
 const Profile = ({ user, handleAddGroup }) => {
   const [profileDetails, setProfileDetails] = useState({})
 
@@ -17,8 +16,6 @@ const Profile = ({ user, handleAddGroup }) => {
     getProfile(user.profile)
     .then(profileDetails => setProfileDetails(profileDetails))
   }, [])
-
-
 
   return (
     <>
@@ -30,11 +27,7 @@ const Profile = ({ user, handleAddGroup }) => {
           <div className="col-md-4" style={{background:'#faedcd'}} >
 
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
- 
-
-
               <img style={{width: 200}} src={profileDetails.avatar} alt="avatar" />
-
             
             <ToggleForm form={<AddPicture user={user}/>} buttonText={'Add Picture'}/>
             <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
