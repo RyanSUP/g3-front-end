@@ -24,11 +24,12 @@ const Profile = ({ user, handleAddGroup }) => {
           <div className="col-md-4">
             This is the left side
             <h1>{profileDetails.name}</h1>
-            <ToggleForm form={<AddGroup />} buttonText={'Create group'} />
+            <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8">
             This is the right side
+            {/* //! Make this map a component! */}
             {profileDetails.groups?.map((group) => 
               group.gatherings?.map((gathering) =>
                 <li key={gathering._id}>{gathering.name}</li>

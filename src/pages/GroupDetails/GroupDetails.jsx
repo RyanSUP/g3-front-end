@@ -34,7 +34,7 @@ const GroupDetails = ({ user, }) => {
               {/* Group Header */}
               <div>
                 <h1>{group.name}</h1>
-                {/* //! Change btn to leave / disband */}
+                {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
                 <button className="btn btn-outline-danger" type="submit" onClick={handleJoin}>Leave</button>
               </div>
