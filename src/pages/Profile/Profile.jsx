@@ -26,12 +26,7 @@ const Profile = ({ user, handleAddGroup }) => {
             This is the left side
             <h1>{profileDetails.name}</h1>
             <button onClick={()=>handleGroupFormToggle()}>Create group </button>
-            {groupFormToggle === -1
-              ?
-                <AddGroup handleAddGroup={handleAddGroup} />
-              :
-                <></>
-            }
+            {groupFormToggle === -1 ? <AddGroup handleAddGroup={handleAddGroup} /> : <></>}
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8">
