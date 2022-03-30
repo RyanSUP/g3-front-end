@@ -45,6 +45,7 @@ const addMember = (id, profile)  => {
   .then(res => res.json())
 }
 
+
 const addGathering = (id, gathering) => {
   return fetch(`${BASE_URL}/${id}/gatherings`, {
     method: 'POST',
