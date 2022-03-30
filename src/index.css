@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6efdc;
+  background-color: #ffffff;
 }
 
 code {
@@ -42,9 +42,11 @@ code {
 }
 
 .scroll{
-  max-height: 700px;
+  max-height: 800px;
   overflow-y: auto;
   max-width: 9900;
+  background-color: white;
+  
 }
 
 @media screen and (max-width:600px){
@@ -54,35 +56,38 @@ code {
   }
 }
 
-/* .container {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.1fr 2fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "col-1 gatherings gatherings"
-    "col-1 gatherings gatherings"
-    "col-1 games games"
-    "col-1 games games";
+.gm-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  background-clip: border-box;
+  border: 3px rgb(255, 255, 255) solid;
+  border-radius: 0.25rem;
 }
 
-.gatherings { grid-area: gatherings; }
-
-.games { grid-area: games; }
-
-.col-1 {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "profile profile profile"
-    "profile profile profile"
-    "groups groups groups"
-    "groups groups groups";
-  grid-area: col-1;
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
 }
 
-.profile { grid-area: profile; }
+.g-4, .gx-4 {
+  --bs-gutter-x: 0rem;
+}
 
-.groups { grid-area: groups; } */
+.g-4, .gx-4 {
+  --bs-gutter-x: 0rem;
+}
+
+
+.card-body{
+  text-align: center;
+  flex-direction: column;
+}
+
