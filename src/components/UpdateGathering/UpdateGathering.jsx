@@ -68,15 +68,8 @@ const AddGathering= ({group, user, gathering}) => {
 					/>
 				</div>
 				<div className="d-grid">
-					<button className="btn btn-outline-warning" type="submit" onClick={() => handleSubmit(group._id, gathering._id)}>Edit</button>
+					<button className="btn btn-primary btn-fluid" type="submit" onClick={() => handleSubmit(group._id, gathering._id)}>save  changes</button>
       		<button onClick={()=> handleDelete(group._id, gathering._id)} >Delete</button>
-					<button
-						type="submit"
-						className="btn btn-primary btn-fluid"
-            disabled={!validForm}
-					>
-						Save changes
-					</button>
 				</div>
 			</form>
 		</>
