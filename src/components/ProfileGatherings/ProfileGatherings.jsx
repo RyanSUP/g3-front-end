@@ -2,7 +2,7 @@ const ProfileGatherings = ({ groups }) => {
   return (
     <table >
       <thead className="sticky-md-top p-3 bg-white">
-        <tr className="">
+        <tr>
           <th>Gathering</th>
           <th>Location</th>
           <th>Date</th>
