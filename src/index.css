@@ -62,7 +62,7 @@ code {
   word-wrap: break-word;
   background-color: rgb(255, 255, 255);
   background-clip: border-box;
-  border: 3px rgb(14, 148, 79) solid;
+  border: 3px rgb(255, 255, 255) solid;
   border-radius: 0.25rem;
 }
 
