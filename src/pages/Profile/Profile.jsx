@@ -7,6 +7,7 @@ import { getProfile } from '../../services/profileService';
 
 const Profile = ({ user, handleAddGroup }) => {
   const [profileDetails, setProfileDetails] = useState({})
+  const [groupFormToggle, setGroupFormToggle] = useState(-1) // -1 hide, 1 show
 
   useEffect(() => {
     console.log('mounting profile')
@@ -15,6 +16,8 @@ const Profile = ({ user, handleAddGroup }) => {
 
   }, [])
 
+  const handleGroupFormToggle = () => setGroupFormToggle(groupFormToggle * -1)
+
   return (
     <>
       <div className="container">
@@ -22,7 +25,13 @@ const Profile = ({ user, handleAddGroup }) => {
           <div className="col-md-4">
             This is the left side
             <h1>{profileDetails.name}</h1>
-            <AddGroup handleAddGroup={handleAddGroup} />
+            <button onClick={()=>handleGroupFormToggle()}>Create group </button>
+            {groupFormToggle === -1
+              ?
+                <AddGroup handleAddGroup={handleAddGroup} />
+              :
+                <></>
+            }
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8">
