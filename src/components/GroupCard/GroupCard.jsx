@@ -18,6 +18,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
             leaveBtn
         }
       </div>
+    </div>
   );
 }
  
