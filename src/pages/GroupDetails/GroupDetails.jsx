@@ -6,6 +6,7 @@ import * as groupService from '../../services/groupService'
 import GameList from '../../components/GameList/GameList';
 import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
+import ToggleForm from '../../components/ToggleForm/ToggleForm';
 
 const GroupDetails = ({ user, }) => {
   const [groupDetails, setGroupDetails] = useState({})
@@ -45,7 +46,7 @@ const GroupDetails = ({ user, }) => {
             {/* Gathering Component */}
             <div>
               {/* //! Toggle button for add agathering form goes here */}
-              <AddGathering group={group} user={user} />
+              <ToggleForm form={<AddGathering group={group} user={user} />} buttonText={'New gathering'} />
               {/* //! Upcoming gatherings should be overflow:scroll  */}
               <div>
                 <GatheringList group={group} gatherings={groupDetails.gatherings} />
