@@ -24,7 +24,7 @@ const Profile = ({ user, handleAddGroup }) => {
         {/* <div className="container"> */}
         <div className="row">
           {/* temporary color */}
-          <div className="col-md-4" style={{background:'pink'}} >
+          <div className="col-md-4" style={{background:'#faedcd'}} >
             This is the left side
 
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>

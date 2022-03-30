@@ -1,8 +1,8 @@
 const ProfileGatherings = ({ groups }) => {
   return (
     <table >
-      <thead>
-        <tr>
+      <thead className="sticky-md-top p-3 bg-white">
+        <tr className="">
           <th>Gathering</th>
           <th>Location</th>
           <th>Date</th>
