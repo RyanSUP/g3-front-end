@@ -41,12 +41,14 @@ code {
   
 }
 
-.scroll{
-  max-height: 800px;
+.scroll-gathering{
   overflow-y: auto;
-  max-width: 9900;
-  background-color: white;
-  
+  max-height: 100px;
+}
+
+.scroll{
+  max-height: 700px;
+  overflow-y: auto;
 }
 
 @media screen and (max-width:600px){

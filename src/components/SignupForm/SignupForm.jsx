@@ -56,7 +56,7 @@ const SignupForm = props => {
         className={styles.container}
       >
         <div className='form-outline mb-4'>
-        
+        <label htmlFor="name" className='from-label'>Name</label>
           <input
             className='form-control form-control-lg'
             type="text"
@@ -66,7 +66,7 @@ const SignupForm = props => {
             name="name"
             onChange={handleChange}
           />
-          <label htmlFor="name" className='from-label'>Name</label>
+          
         </div>
         <div className='form-outline mb-4'>
           <input
