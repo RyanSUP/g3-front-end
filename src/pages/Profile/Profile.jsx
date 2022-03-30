@@ -25,7 +25,6 @@ const Profile = ({ user, handleAddGroup }) => {
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
             <AddGroup handleAddGroup={handleAddGroup} />
             <ProfileGroupList profile={profileDetails} />
-            
           </div>
           <div className="col-md-8">
             This is the right side
