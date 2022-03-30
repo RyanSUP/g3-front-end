@@ -1,11 +1,18 @@
+import ToggleForm from '../ToggleForm/ToggleForm';
 import GatheringDetails from '../GatheringDetails/GatheringDetails'
+import UpdateGathering from '../UpdateGathering/UpdateGathering'
 const GatheringList = ({group, gatherings }) => {
 
 
   return (
     <>
       {gatherings?.map((gathering, idx) => 
-        <GatheringDetails key={idx} group={group} gathering={gathering} />
+        <ToggleForm 
+          key={idx} 
+          buttonText={'edit'} 
+          altComponent={<GatheringDetails gathering={gathering} />}
+          form={<UpdateGathering group={group} gathering={gathering} />} 
+        />
       )}
     </>
   );

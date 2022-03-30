@@ -92,7 +92,6 @@ const App = () => {
   const handleAddGroup = newGroupData => {
     groupService.create(newGroupData)
     .then(newGroup => setGroups([...groups, newGroup]))
-    navigate('/Profiles')
   }
 
   
