@@ -1,11 +1,11 @@
 const ProfileGatherings = ({ groups }) => {
   return (
-    <table>
+    <table >
       <thead>
         <tr>
-        <th>Gathering</th>
-        <th>Location</th>
-        <th>Date</th>
+          <th>Gathering</th>
+          <th>Location</th>
+          <th>Date</th>
         </tr>
       </thead>
       {groups?.map((group) =>
@@ -17,7 +17,6 @@ const ProfileGatherings = ({ groups }) => {
           </tbody>
         )
       )}
-
     </table>
   );
 }
