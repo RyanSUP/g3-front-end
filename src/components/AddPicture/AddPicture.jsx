@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import * as profilesService from '../../services/profileService'
 
 
-const AddPicture = ({user}) => {
+const AddPicture = ({user, profile}) => {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -34,6 +34,7 @@ const AddPicture = ({user}) => {
             className="form-control"
             name="avatar"
             value={formData.avatar}
+            placeholder={profile.avatar}
             onChange={handleChange}
           />
         </div>

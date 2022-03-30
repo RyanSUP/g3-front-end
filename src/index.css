@@ -91,3 +91,8 @@ code {
   flex-direction: column;
 }
 
+#profilePic{
+  border-radius: 10px;
+  width: 250px;
+  height: auto;
+}

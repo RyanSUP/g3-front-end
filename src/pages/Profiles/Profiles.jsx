@@ -23,7 +23,7 @@ const Profiles = () => {
                 <div key={profile._id} className="col">
                   <Link className="card text-decoration-none mx-auto my-3" to={`/profiles/${profile._id}`}  state={{ profile }} >
                     <img className='card-img-top'
-                      src='https://picsum.photos/300/400?random=1'
+                      src={profile.avatar ? profile.avatar : 'https://picsum.photos/300/400?random=1'}
                       alt='placeholder'
                       width="100%"
                     />

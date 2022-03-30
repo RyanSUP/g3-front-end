@@ -5,7 +5,6 @@ const AddGroup = ({handleAddGroup}) => {
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
-    image: '',
   })
 
   useEffect(()=> {
