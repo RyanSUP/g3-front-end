@@ -30,7 +30,7 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
   }
 
   return (  
-    <div className="cardclass gm-card mx-auto mt-5 shadow-lg p-3 py-1 mb-1 bg-body rounded" style={{width: '18rem'}}>
+    <div className="card gm-card mx-auto mt-5 shadow-lg p-3 py-1 mb-1 bg-body rounded" style={{width: '18rem'}}>
       <img style={{height: '200px'}} src={game.thumb_url} className="img-thumbnail" alt="..."/>
       <div className="card-body">
         <h5 className="card-title text-center">{game.name}</h5>
