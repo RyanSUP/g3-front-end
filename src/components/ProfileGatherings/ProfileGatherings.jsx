@@ -1,10 +1,12 @@
 const ProfileGatherings = ({ groups }) => {
   return (
-    <table style={{ width: 600 }}>
+    <table >
       <thead>
-        <th>Gathering</th>
-        <th>Location</th>
-        <th>Date</th>
+        <tr>
+          <th>Gathering</th>
+          <th>Location</th>
+          <th>Date</th>
+        </tr>
       </thead>
       {groups?.map((group) =>
         group.gatherings?.map((gathering) =>
