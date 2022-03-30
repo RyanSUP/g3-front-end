@@ -6,10 +6,15 @@ import AddGroup from '../AddGroup/AddGroup'
 
 const ProfileGroupList = ({profile }) => {
   const [profileGroups, setProfileGroups] = useState([])
-
+  const [toggleKey, setToggleKey] = useState(0)
+  
   useEffect(()=> {
     if(profile) setProfileGroups(profile.groups)
   }, [profile])
+  
+  useEffect(()=> {
+    setToggleKey(toggleKey + 1)
+  }, [profileGroups])
 
   const removeGroupFromState = group => {
     const groupIndex = profileGroups?.findIndex(pGroup => pGroup._id === group)
@@ -17,7 +22,7 @@ const ProfileGroupList = ({profile }) => {
     newGroups.splice(groupIndex, 1)
     setProfileGroups(newGroups)
   }
-
+  
   //! Pushing an empty object into setProfileGroups?
   const handleAddGroup = newGroupData => {
     groupService.create(newGroupData)
@@ -37,7 +42,7 @@ const ProfileGroupList = ({profile }) => {
 
   return (  
     <div>
-      <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
+      <ToggleForm key={toggleKey} form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
       {profileGroups?.map((group, idx) =>
           <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
       )}
