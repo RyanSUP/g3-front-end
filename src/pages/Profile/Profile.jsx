@@ -7,7 +7,7 @@ import { getProfile } from '../../services/profileService';
 
 const Profile = ({ user, handleAddGroup }) => {
   const [profileDetails, setProfileDetails] = useState({})
-  const [groupFormToggle, setGroupFormToggle] = useState(-1) // -1 hide, 1 show
+  const [groupFormToggle, setGroupFormToggle] = useState(1) // -1 show, 1 hide
 
   useEffect(() => {
     console.log('mounting profile')
