@@ -6,11 +6,15 @@ const ProfileGroupList = ({profile}) => {
   const handleDeleteGroup = (group) => {
     groupService.deleteGroup(group)
   }
+
+  const handleLeaveGroup = (group) => {
+    groupService.updateGroup(group, profile._id)
+  }
   
   return (  
     <>
       {profile.groups?.map((group, idx) => 
-        <GroupCard key={idx} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
+        <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
       )}
     </>
   );
