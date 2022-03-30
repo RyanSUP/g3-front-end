@@ -22,9 +22,10 @@ const Profile = ({ user, handleAddGroup }) => {
         <div className="row">
           <div className="col-md-4">
             This is the left side
-            <h1>{profileDetails.name}</h1>
+            <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
             <AddGroup handleAddGroup={handleAddGroup} />
             <ProfileGroupList profile={profileDetails} />
+            
           </div>
           <div className="col-md-8">
             This is the right side
@@ -33,10 +34,12 @@ const Profile = ({ user, handleAddGroup }) => {
                 <li key={gathering._id}>{gathering.name}</li>
               )
             )}
+            <div className="col-md-12 scroll">
             <GameList user={user} games={profileDetails.games} />
+            </div>
+            </div>
           </div>
         </div>
-      </div> 
     {/* </div> */}
     </>
   );
