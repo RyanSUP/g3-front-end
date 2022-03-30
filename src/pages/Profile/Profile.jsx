@@ -13,9 +13,11 @@ const Profile = ({ user, handleAddGroup }) => {
   useEffect(() => {
     console.log('mounting profile')
     getProfile(user.profile)
-    .then(profileDetails => setProfileDetails(profileDetails))
-
+    .then(profileDetails => {
+      setProfileDetails(profileDetails)
+    })
   }, [])
+
 
 
   return (
