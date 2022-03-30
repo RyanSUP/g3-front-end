@@ -7,12 +7,7 @@ const GatheringList = ({group, gatherings }) => {
   return (
     <>
       {gatherings?.map((gathering, idx) => 
-        <ToggleForm 
-          key={idx} 
-          buttonText={'edit'} 
-          altComponent={<GatheringDetails gathering={gathering} />}
-          form={<UpdateGathering group={group} gathering={gathering} />} 
-        />
+          <GatheringDetails gathering={gathering} />
       )}
     </>
   );
