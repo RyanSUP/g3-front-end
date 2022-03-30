@@ -5,17 +5,13 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
   const toggleDisplay = () => setDisplayState(displayState * -1)
   return ( 
     <>
-      {/* Option to show alternative component if form is toggled off */}
-      {altComponent && displayState === -1
-        ?
-          altComponent
-        :
-          <></>
-      }
       {displayState === -1
-        ?
+      ?
+        <>
+          {altComponent ? altComponent : <></>}
           <button onClick={()=> toggleDisplay()}>{buttonText}</button>
-        :
+        </>
+      :
         <>
           {form}
           <button onClick={()=> toggleDisplay()}>cancel</button>
