@@ -34,7 +34,7 @@ const Profile = ({ user  }) => {
 
               <img id="profilePic" src=
               {profileDetails.avatar? profileDetails.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" />
-            <ToggleForm form={<AddPicture user={user} />} buttonText={'Change Picture'}/>
+            <ToggleForm form={<AddPicture user={user} profile={profileDetails} />} buttonText={'Change Picture'}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >

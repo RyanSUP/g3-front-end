@@ -101,7 +101,7 @@ const App = () => {
     }
 
       <Routes>
-        <Route path="/" element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />} />
+        <Route path="/" element={user ? <Profile profile={profile} user={user}/> : <Navigate to="/login" />} />
         <Route
           path="/login"
           element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
@@ -118,7 +118,7 @@ const App = () => {
         />
         <Route
           path="/profiles/:id"
-          element={user ? <Profile profile={profile} user={user} : <Navigate to="/login" />}
+          element={user ? <Profile profile={profile} user={user} /> : <Navigate to="/login" />}
         />
                 <Route
           path="/groups/:id"
