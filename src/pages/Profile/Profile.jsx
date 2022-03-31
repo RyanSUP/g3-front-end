@@ -7,7 +7,7 @@ import ToggleForm from "../../components/ToggleForm/ToggleForm";
 import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
 import * as groupService from '../../services/groupService'
-
+import ProfileAvatar from "../../components/ProfileAvatar/ProfileAvatar";
 
 
 const Profile = ({ user  }) => {
@@ -31,10 +31,7 @@ const Profile = ({ user  }) => {
           {/* temporary color */}
           <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
-
-              <img id="profilePic" src=
-              {profileDetails.avatar? profileDetails.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" />
-            <ToggleForm form={<AddPicture user={user} profile={profileDetails} />} buttonText={'Change Picture'}/>
+            <ProfileAvatar user={user} profile={profileDetails}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
