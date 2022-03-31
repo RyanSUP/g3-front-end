@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
+import SignupForm from '../SignupForm/SignupForm'
 
 const LoginForm = props => {
   const [formData, setFormData] = useState({
@@ -28,79 +29,58 @@ const LoginForm = props => {
   }
 
   return (
-    <>
-    <>
-      <div className='container px-4 py-5 mx-auto'>
-      <div className="card card0">
-      <div className="d-flex flex-lg-row flex-column-reverse">
-      <div className="card card1 ">
-      <div className="row justify-content-center my-auto">
-      <div className="col-md-8 col-10 my-5">
-      
-      <div className="row justify-content-center px-3 mb-3"> 
-      <img src={'logo.png'} alt="logo"/>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-4">
+        <img className='' src={'logo.png'} style={{height:'300px'}}alt="logo"/>
+        <h3 class="login-heading text-uppercase mb-4">Welcome to G3!</h3>
+        <p>{message}</p>
+    <form
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      className={styles.container}
+    >
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control'
+          placeholder="name@example.com"
+          type="email"
+          autoComplete="off"
+          id="email"
+          value={formData.email}
+          name="email"
+          onChange={handleChange}
+        />
+        <label for="floatingInput" htmlFor="email">Email address</label>
       </div>
-      <h1 className='mb-5 text-center heading'>Welcome to G3</h1>
-      <p>{message}</p>
-      <form
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        className={styles.container}
-      >
-        <div className='form-floating mb-3'>
-          <input
-            className='form-control inpt'
-            placeholder='email@example.com'
-            type="email"
-            autoComplete="off"
-            id="email"
-            value={formData.email}
-            name="email"
-            onChange={handleChange}
-          />
-          <label htmlFor="email">Email address</label>
-        </div>
-        <div className='form-floating'>
-          
-          <input
-            className='form-control inpt'
-            placeholder='Password'
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={formData.pw}
-            name="pw"
-            onChange={handleChange}
-          />
-          <label htmlFor="password">Password</label>
-        </div>
-        <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" value=""id="rememberPasswordCheck"/>
-                  <label className="form-check-label">
-                    Remember password
-                  </label>
-                </div>
-        <div className='row justify-content-center my-3 px-3'>
-          <button className='btn-block btn-color' onClick={handleSubmit}>Log In to G3</button>
-        </div>
-        
-        </form> 
-        </div>
-      
+      <div className='form-floating mb-3'>
+        <input
+          className="form-control"
+          placeholder="Password"
+          type="password"
+          autoComplete="off"
+          id="password"
+          value={formData.pw}
+          name="pw"
+          onChange={handleChange}
+        />
+        <label htmlFor="password" for="floatingPassword">Password</label>
       </div>
+      <div className='form-check mb-3'> 
+        <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+        <label className="form-check-label">Remember password</label>
       </div>
-      <div className="card card2">
-                <div className="my-auto mx-md-5 px-md-5 right">
-                  <img src={'login.jpg'}alt="" className='img-fluid' />
-                    </div>
+      <div className="d-grid">
+        <button className="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2">Log In</button>
+        {/* <LoginForm/> */}
       </div>
-      
+    </form>
+      </div>
+        <div className="col-md-8 bg-img">
+          <img src="https://i.imgur.com/UERKWtX.jpg" width='1060' height='920px' alt="" />
+        </div>
       </div>
     </div> 
-    </div>   
-    </>
-    
-    </>
   )
 }
 

@@ -10,6 +10,8 @@ import * as groupService from '../../services/groupService'
 import BigHeadAvatar from "../../components/ProfileAvatar/BigHeadAvatar";
 
 
+
+
 const Profile = ({ user  }) => {
   const [profileDetails, setProfileDetails] = useState({})
 
@@ -20,8 +22,6 @@ const Profile = ({ user  }) => {
       setProfileDetails(profileDetails)
     })
   }, [])
-
-
 
   return (
     <>

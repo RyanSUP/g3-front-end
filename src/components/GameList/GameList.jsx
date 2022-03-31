@@ -42,8 +42,9 @@ const GameList = ({games, user}) => {
       </div>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {games?.map((result, idx) => <GameCard updateOffCanvas={updateOffCanvas} addGameToState={addGameToState} key={idx} profile={profile} game={result}/>)}
+        <ScrollToTop smooth/>
       </div>
-      <ScrollToTop smooth/>
+      
     </>
   );
 }
