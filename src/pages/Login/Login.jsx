@@ -3,6 +3,7 @@ import LoginForm from '../../components/LoginForm/LoginForm'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import { Link } from 'react-router-dom'
 import { login, signup } from '../../services/authService'
+import GroupBtn from '../../components/GroupBtn/GroupBtn'
 
 const LoginPage = props => {
   const [formType, setFormType] = useState(props.formType)
@@ -11,7 +12,7 @@ const LoginPage = props => {
 
   return (
   <>
-  {
+  { 
     (formType === 'login') 
     ? 
       <>

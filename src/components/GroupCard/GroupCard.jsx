@@ -7,7 +7,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
     <div className="groupcard card mb-3 shadow" >
       <div className="row g-0">
         <div className=" d-flex col-md-4 align-items-center flex-wrap">
-         <img id='our-img-thumbnail' src={group.image} alt="group pic" />
+          <img id='our-img-thumbnail' src={group.image} alt="group pic" />
         </div>
         <div className="col-md-8">
           <div className="card-body">
@@ -29,5 +29,5 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
     </div>
   );
 }
- 
+
 export default GroupCard;
