@@ -46,17 +46,6 @@ code {
   max-height: 100px;
 }
 
-.scroll{
-  max-height: 700px;
-  overflow-y: auto;
-}
-
-@media screen and (max-width:600px){
-  .scroll{
-    max-height: 400px;
-    overflow-y: auto;
-  }
-}
 
 .gm-card{
   position: relative;
@@ -113,6 +102,12 @@ code {
   text-decoration: underline;
 }
 
+.info-btn{
+  border: none;
+}
 
+.g-line{
+  top: 0;
+}
 
 /* top:0 for group gahtering list position sticky */
