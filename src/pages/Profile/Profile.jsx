@@ -7,7 +7,7 @@ import ToggleForm from "../../components/ToggleForm/ToggleForm";
 import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
 import * as groupService from '../../services/groupService'
-import ProfileAvatar from "../../components/ProfileAvatar/ProfileAvatar";
+import BigHeadAvatar from "../../components/ProfileAvatar/BigHeadAvatar";
 
 
 const Profile = ({ user  }) => {
@@ -31,7 +31,7 @@ const Profile = ({ user  }) => {
           {/* temporary color */}
           <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
-            <ProfileAvatar user={user} profile={profileDetails}/>
+            <BigHeadAvatar user={user} profile={profileDetails}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
