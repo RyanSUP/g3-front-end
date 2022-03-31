@@ -1,24 +1,24 @@
 import { useState, useRef, useEffect } from "react"
 
-const AddGroup = ({handleAddGroup}) => {
-  const formElement = useRef()
-  const [validForm, setValidForm] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-  })
+const AddGroup = ({ handleAddGroup }) => {
+	const formElement = useRef()
+	const [validForm, setValidForm] = useState(false)
+	const [formData, setFormData] = useState({
+		name: '',
+	})
 
-  useEffect(()=> {
-    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
-  }, [formData])
+	useEffect(() => {
+		formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+	}, [formData])
 
-  const handleChange = evt => {
-    setFormData({...formData, [evt.target.name]: evt.target.value})
-  }
+	const handleChange = evt => {
+		setFormData({ ...formData, [evt.target.name]: evt.target.value })
+	}
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
-    handleAddGroup(formData)
-  }
+	const handleSubmit = evt => {
+		evt.preventDefault()
+		handleAddGroup(formData)
+	}
 
 	return (
 		<>
@@ -28,12 +28,12 @@ const AddGroup = ({handleAddGroup}) => {
 					<label htmlFor="name-input" className="form-label">
 						Group Name (required)
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="name"
-            value={formData.name}
-            onChange={handleChange}
+						value={formData.name}
+						onChange={handleChange}
 						required
 					/>
 				</div>
@@ -41,19 +41,19 @@ const AddGroup = ({handleAddGroup}) => {
 					<label className="form-label">
 						Group Image
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="image"
-            value={formData.image}
-            onChange={handleChange}
+						value={formData.image}
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="d-grid">
 					<button
 						type="submit"
-						className="btn btn-primary btn-fluid"
-            disabled={!validForm}
+						className="btn btn greenBtn"
+						disabled={!validForm}
 					>
 						Add Group
 					</button>

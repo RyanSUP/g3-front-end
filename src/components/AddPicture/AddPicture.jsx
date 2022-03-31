@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import * as profilesService from '../../services/profileService'
 
 
-const AddPicture = ({user, profile}) => {
+const AddPicture = ({ user, profile }) => {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({

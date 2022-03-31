@@ -4,9 +4,7 @@ import { useLocation } from "react-router-dom";
 import * as profileService from '../../services/profileService'
 import * as groupService from '../../services/groupService'
 import GameList from '../../components/GameList/GameList';
-import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
-import ToggleForm from '../../components/ToggleForm/ToggleForm';
 import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar';
 
 const GroupDetails = ({ user }) => {
@@ -39,61 +37,57 @@ const GroupDetails = ({ user }) => {
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4" style={{ background: "pink" }}>
+          <div className="col-md-4 sidebar">
             {/* Group Component */}
             <div>
               {/* Group Header */}
               <div className='d-flex justify-content-around m-3'>
                 <h1>{group.name}</h1>
-                {/* //! Change btn to leave / disband. */}
-                {/* //! This button should be inline with the name */}
-                {group.profiles.find(profile => user.profile === profile._id )
-                ?
+                {group.profiles.find(profile => user.profile === profile._id)
+                  ?
                   <></>
-              :
-              <button className="btn btn-outline-success h-25" type="submit" onClick={handleJoin}>Join</button>
+                  :
+                  <button className="btn btn-outline-success h-25" type="submit" onClick={handleJoin}>Join</button>
                 }
 
-            </div>
-            <div className="d-flex flex-wrap">
-              {groupDetails.profiles?.map((profile, idx) =>
-                <>
-                  <BigHeadAvatar profile={profile} />
-                </>
-              )}
-            </div>
-            {/* Group Profile grid */}
-            <div>
+              </div>
+              <div className="d-flex flex-wrap">
+                {groupDetails.profiles?.map((profile, idx) =>
+                  <>
+                    <BigHeadAvatar profile={profile} />
+                  </>
+                )}
+              </div>
+              {/* Group Profile grid */}
+              <div>
 
+              </div>
+            </div>
+            {/* Gathering Component */}
+            <div>
+              <div className='m-3'>
+                <h3>Upcoming Gatherings</h3>
+                <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
+              </div>
             </div>
           </div>
-          {/* Gathering Component */}
-          <div>
-            <div className='m-3'>
-              <h3>Upcoming Gatherings</h3>
-              <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
-            </div>
+          <div className="col-md-8">
+            {/* Group member game list */}
+            {groupDetails.profiles?.map((profile, idx) =>
+              <div >
+                <h2> {profile.name}</h2>
+                {profile.games.length ?
+                  <div key={idx}>
+                    <GameList user={user} games={profile.games} />
+                  </div>
+                  :
+                  <p>This user has no games</p>
+                }
+              </div>
+            )}
           </div>
-        </div>
-        <div className="col-md-8">
-          {/* Group member game list */}
-          {/* //! This should be a component */}
-          {groupDetails.profiles?.map((profile, idx) =>
-            <div >
-              <h2> {profile.name}</h2>
-              {profile.games.length ?
-                <div key={idx}>
-                  {/* //! These cards need to be smaller for this page. */}
-                  <GameList user={user} games={profile.games} />
-                </div>
-                :
-                <p>This user has no games</p>
-              }
-            </div>
-          )}
         </div>
       </div>
-    </div>
     </>
   );
 }

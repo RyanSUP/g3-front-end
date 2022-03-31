@@ -18,18 +18,36 @@ nav, h1, h2, h3{
 }
 
 
-p, .card, .btn{
+p, .card, .btn, label{
   font-family: 'Work Sans', sans-serif;
 }
 
-
 .nav-link{
   color: white;
+  font-size: 1.2rem;
+  margin-left: 150px;
+}
+
+
+.brandNav{
+  margin-left: 0;
+}
+
+
+
+.greenBtn{
+  background-color: #c9ffe2;
+  color: black;
+  border: 1px solid black;
 }
 
 /* .active{
   color:orange;
 } */
+
+.sidebar{
+  background-color: #ffd1d0;
+}
 
 .card-pname{
   text-align: center;
@@ -133,6 +151,10 @@ p, .card, .btn{
 
 .info-btn{
   border: none;
+}
+
+.btn-primary{
+  margin: 2px;
 }
 
 .g-line{
