@@ -10,10 +10,12 @@ const ProfileGatherings = ({ groups }) => {
       </thead>
       {groups?.map((group) =>
         group.gatherings?.map((gathering) =>
-          <tbody>
-            <td key={gathering._id}>{gathering.name}</td>
-            <td key={gathering._id}>{gathering.location}</td>
-            <td key={gathering._id}>{gathering.date}</td>
+          <tbody key={gathering._id}>
+            <tr>
+              <td>{gathering.name}</td>
+              <td>{gathering.location}</td>
+              <td>{gathering.date}</td>
+            </tr>
           </tbody>
         )
       )}
