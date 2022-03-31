@@ -8,14 +8,23 @@ import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
 import ToggleForm from '../../components/ToggleForm/ToggleForm';
 
-const GroupDetails = ({ user, }) => {
+const GroupDetails = ({ user }) => {
   const [groupDetails, setGroupDetails] = useState({})
+  const [profileDetails, setProfileDetails] = useState({})
   const location = useLocation()
   const group = location.state.group
 
   useEffect(() => {
+    profileService.getProfile(user.profile)
+    .then(profileDetails => {
+      setProfileDetails(profileDetails)
+    })
+  }, [])
+
+  useEffect(() => {
     getGroup(group._id)
-      .then(groupDetails => setGroupDetails(groupDetails))
+    .then(groupDetails => setGroupDetails(groupDetails))
+    
   }, [group._id])
 
   const handleJoin = () => {
@@ -50,11 +59,9 @@ const GroupDetails = ({ user, }) => {
             </div>
             {/* Gathering Component */}
             <div>
-              {/* //! Toggle button for add agathering form goes here */}
-              <ToggleForm form={<AddGathering group={group} user={user} />} buttonText={'New gathering'} />
               {/* //! Upcoming gatherings should be overflow:scroll  */}
               <div>
-                <GatheringList group={group} gatherings={groupDetails.gatherings} />
+                <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
               </div>
             </div>
           </div>

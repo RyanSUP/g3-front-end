@@ -8,5 +8,5 @@ const GatheringDetails = ({gathering}) => {
     </>
   );
 }
-
+ 
 export default GatheringDetails;

@@ -25,7 +25,6 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [allGames, setAllGames] = useState([])
   const [profile, setProfile] = useState({})
-  const [groups, setGroups] = useState([])
 
   const navigate = useNavigate()
 
@@ -89,10 +88,7 @@ const App = () => {
     navigate('gameSearch')
   }
 
-  const handleAddGroup = newGroupData => {
-    groupService.create(newGroupData)
-    .then(newGroup => setGroups([...groups, newGroup]))
-  }
+
 
   
   return (
@@ -105,7 +101,7 @@ const App = () => {
     }
 
       <Routes>
-        <Route path="/" element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />} />
+        <Route path="/" element={user ? <Profile profile={profile} user={user}/> : <Navigate to="/login" />} />
         <Route
           path="/login"
           element={<Login formType={'login'} handleSignupOrLogin={handleSignupOrLogin} />}
@@ -122,11 +118,11 @@ const App = () => {
         />
         <Route
           path="/profiles/:id"
-          element={user ? <Profile profile={profile} user={user} handleAddGroup={handleAddGroup}/> : <Navigate to="/login" />}
+          element={user ? <Profile profile={profile} user={user} /> : <Navigate to="/login" />}
         />
                 <Route
           path="/groups/:id"
-          element={<GroupDetails profile={profile} user={user} handleAddGroup={handleAddGroup} />}
+          element={<GroupDetails profile={profile} user={user}  />}
         />
         <Route
           path="/changePassword"

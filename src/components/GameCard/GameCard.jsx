@@ -4,12 +4,10 @@ import * as profileService from '../../services/profileService'
 
 const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
   const [currentButton, setCurrentButton] = useState()
-  const addButton = <svg onClick={handleAddGame} xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-plus-circle-fill position-absolute bottom-0 start-0" style={{color:'cornflowerblue'}} viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-  </svg>
-  const dltButton = <svg onClick={handleDeleteGame} xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-x-circle-fill position-absolute bottom-0 start-0" style={{color:'cornflowerblue'}} viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-  </svg>
+
+  const addButton = <button onClick={handleAddGame} className="btn flex-grow-1 btn-success">Add</button>
+  const dltButton = <button onClick={handleDeleteGame} className="btn flex-grow-1 btn-danger">Delete</button>
+
 
   useEffect(()=> {
     if(profile.games?.find(profileGame => profileGame._id === game._id)) {
@@ -35,16 +33,22 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
   }
 
   return (  
-    <div className="card gm-card mx-auto mt-5 shadow-lg p-3 py-1 mb-1 bg-body rounded" style={{width: '18rem'}}>
-      <svg className="position-absolute top-0 end-0" style={{color:'cornflowerblue'}} type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-      </svg>
+
+    <div className="card shadow m-4" style={{width: '18rem'}}>
+      <div className="card-header text-center">
+        <p className="fs-4 m-0">{game.name}</p>        
+      </div>
+      <div className='card-body d-flex flex-row justify-content-between align-items-center m-0'>
+          <span className='fs-5'>{game.players} <i className="fa-solid fa-people-group"></i></span>
+          <span className='fs-5'>{game.playtime} <i className="fa-solid fa-clock"></i></span>
+      </div>
+
       <img style={{height: '200px'}} src={game.thumb_url} className="img-thumbnail" alt="..."/>
-      <div className="card-body">
-        <h5 className="card-title text-center">{game.name}</h5>
-        {/* <p className="card-text">{game.description_preview}</p> */}
+      <div className="card-footer text-muted">
+        <div className="d-flex flex-column">
           {currentButton}
+          <button className="btn btn-primary p=0" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)}>Details <i className="fa-solid fa-circle-info"></i></button>
+        </div>
       </div>
     </div>
   );
