@@ -14,6 +14,7 @@ const Profiles = () => {
 
   return (
     <>
+      <GroupList profiles={profiles} />
       <h1 id='profile-text'>All Users</h1>
       {profiles.length ?
         <>
@@ -39,7 +40,7 @@ const Profiles = () => {
         :
         <p>No profiles yet</p>
       }
-      <GroupList />
+
       <div className="top-btn">
       <ScrollToTop smooth/>
       </div>
