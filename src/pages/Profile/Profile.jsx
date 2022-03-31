@@ -29,20 +29,17 @@ const Profile = ({ user  }) => {
         {/* <div className="container"> */}
         <div className="row">
           {/* temporary color */}
-
-          <div className="col-md-4" style={{background:'#faedcd'}} >
-
+          <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
-            <img style={{width: 200}} src={profileDetails.avatar} alt="avatar" />
-            <ToggleForm form={<AddPicture user={user}/>} buttonText={'Add Picture'}/>
+
+              <img id="profilePic" src=
+              {profileDetails.avatar? profileDetails.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" />
+            <ToggleForm form={<AddPicture user={user} />} buttonText={'Change Picture'}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
-            {/* //! Make this map a component! */}
-
             <div className="card scroll-gathering col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
               <ProfileGatherings groups={profileDetails.groups}/>
-
             </div>
             <div className="col-md-12 scroll">
               <GameList user={user} games={profileDetails.games} />

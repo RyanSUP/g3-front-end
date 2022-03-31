@@ -45,7 +45,12 @@ const GroupDetails = ({ user }) => {
                 <h1>{group.name}</h1>
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
-                <button className="btn btn-outline-danger" type="submit" onClick={handleJoin}>Leave</button>
+                {group.profiles.includes(user.profile) ?
+                <></>
+              :
+              <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
+              }
+  
               </div>
               {/* Group Profile grid */}
               <div>
