@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import BigHeadAvatar from '../ProfileAvatar/BigHeadAvatar'
 const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
   const leaveBtn = <button className="btn btn-outline-danger" type="submit" onClick={() => handleLeaveGroup(group._id)}>Leave</button>
   const dltBtn = <button className="btn btn-outline-danger" type="submit" onClick={() => handleDeleteGroup(group._id)}>Disband</button>
@@ -21,7 +21,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
               }
             </div>
             <div className="d-flex p-2 flex-wrap">
-              {group.profiles.map(profile => <img className='w-25' src={profile.avatar} />)}
+              {group.profiles.map(profile => <BigHeadAvatar profile={profile} />)}
             </div>
           </div>
         </div>
