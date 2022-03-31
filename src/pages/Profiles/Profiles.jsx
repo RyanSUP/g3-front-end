@@ -22,7 +22,7 @@ const Profiles = () => {
             <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4'>
               {profiles.map(profile =>
                 <div key={profile._id} className="col">
-                  <div className="card text-decoration-none mx-auto my-3" to={`/profiles/${profile._id}`}  state={{ profile }} >
+                  <div className="card text-decoration-none mx-auto my-3 profileCards" to={`/profiles/${profile._id}`}  state={{ profile }} >
                     <img id="profileListImg" className='card-img-top'
                       src={profile.avatar ? profile.avatar : 'https://picsum.photos/300/400?random=1'}
                       alt='placeholder'

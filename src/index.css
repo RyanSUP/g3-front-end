@@ -5,13 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background-color: #c9ffe2;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav, h1, h2, h3{
+  font-family: 'Abril Fatface', cursive;
+}
+
+
+p, .card, .btn{
+  font-family: 'Work Sans', sans-serif;
+}
+
 
 .nav-link{
   color: white;
@@ -48,6 +58,21 @@ code {
 
 .groupcard {
   border-radius: 50px 15px;
+  background-color: rgba(255, 255, 255, 0.671);
+  text-transform: capitalize;
+  border: 2px solid rgba(0, 0, 0, 0.26);
+}
+
+.groupcard :hover{
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px 15px;
+  text-transform: capitalize;
+}
+
+.profileCards{
+  background-color: rgba(255, 255, 255, 0.685);
+  border-radius: 10px;
+  text-transform: capitalize;
 }
 
 
@@ -114,4 +139,7 @@ code {
   top: 0;
 }
 
+.offcanvas-body{
+  font-family: 'Work Sans', sans-serif;
+}
 /* top:0 for group gahtering list position sticky */
