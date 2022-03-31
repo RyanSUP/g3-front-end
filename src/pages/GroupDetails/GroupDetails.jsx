@@ -7,6 +7,7 @@ import GameList from '../../components/GameList/GameList';
 import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
 import ToggleForm from '../../components/ToggleForm/ToggleForm';
+import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar';
 
 const GroupDetails = ({ user }) => {
   const [groupDetails, setGroupDetails] = useState({})
@@ -16,15 +17,16 @@ const GroupDetails = ({ user }) => {
 
   useEffect(() => {
     profileService.getProfile(user.profile)
-    .then(profileDetails => {
-      setProfileDetails(profileDetails)
-    })
+      .then(profileDetails => {
+        setProfileDetails(profileDetails)
+      })
   }, [])
 
   useEffect(() => {
+    console.log(group)
     getGroup(group._id)
-    .then(groupDetails => setGroupDetails(groupDetails))
-    
+      .then(groupDetails => setGroupDetails(groupDetails))
+
   }, [group._id])
 
   const handleJoin = () => {
@@ -35,49 +37,63 @@ const GroupDetails = ({ user }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4" style={{ background: "pink" }}>
             {/* Group Component */}
             <div>
               {/* Group Header */}
-              <div>
+              <div className='d-flex justify-content-around m-3'>
                 <h1>{group.name}</h1>
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
-                {group.profiles.includes(user.profile) ?
-                <></>
+                {group.profiles.find(profile => user.profile === profile._id )
+                ?
+                  <></>
               :
-              <button className="btn btn-outline-success" type="submit" onClick={handleJoin}>Join</button>
-              }
-  
-              </div>
-              {/* Group Profile grid */}
-              <div>
+              <button className="btn btn-outline-success h-25" type="submit" onClick={handleJoin}>Join</button>
+                }
 
-              </div>
             </div>
-            {/* Gathering Component */}
+            <div className="d-flex flex-wrap">
+              {groupDetails.profiles?.map((profile, idx) =>
+                <>
+                  <BigHeadAvatar profile={profile} />
+                </>
+              )}
+            </div>
+            {/* Group Profile grid */}
             <div>
-              {/* //! Upcoming gatherings should be overflow:scroll  */}
-              <div>
-                <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
-              </div>
+
             </div>
           </div>
-          <div className="col-md-8">
-            {/* Group member game list */}
-            {/* //! This should be a component */}
-            {groupDetails.profiles?.map((profile, idx) =>
-              <div key={idx}>
-                <h2> {profile.name}</h2>
-                {/* //! These cards need to be smaller for this page. */}
-                <GameList user={user} games={profile.games} />
-              </div>
-            )}
+          {/* Gathering Component */}
+          <div>
+            <div className='m-3'>
+              <h3>Upcoming Gatherings</h3>
+              <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
+            </div>
           </div>
         </div>
+        <div className="col-md-8">
+          {/* Group member game list */}
+          {/* //! This should be a component */}
+          {groupDetails.profiles?.map((profile, idx) =>
+            <div >
+              <h2> {profile.name}</h2>
+              {profile.games.length ?
+                <div key={idx}>
+                  {/* //! These cards need to be smaller for this page. */}
+                  <GameList user={user} games={profile.games} />
+                </div>
+                :
+                <p>This user has no games</p>
+              }
+            </div>
+          )}
+        </div>
       </div>
+    </div>
     </>
   );
 }

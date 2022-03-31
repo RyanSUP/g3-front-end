@@ -21,6 +21,7 @@ const GroupList = (props) => {
       <div className="container">
         <div className='row row-cols-1 row-cols-md-3 justify-content-center'> 
           {groups?.map((group, idx) => 
+                  <Link className='text-decoration-none text-reset' to={`/groups/${group._id}`} state={{group}}>
             <div className="groupcard card shadow m-3" >
               <div className="row g-0 h-100">
                 <div className=" d-flex col-md-4 align-items-center flex-wrap">
@@ -36,6 +37,7 @@ const GroupList = (props) => {
                 </div>
               </div>
             </div>
+            </Link>
           )}
         </div>
       </div>
