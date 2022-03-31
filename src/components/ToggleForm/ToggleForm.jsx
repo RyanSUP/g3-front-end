@@ -9,12 +9,12 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
       ?
         <>
           {altComponent ? altComponent : <></>}
-          <button className='btn btn-primary' onClick={()=> toggleDisplay()}>{buttonText}</button>
+          <button className='btn btn-primary m-2' onClick={()=> toggleDisplay()}>{buttonText}</button>
         </>
       :
         <>
           {form}
-          <button className='btn btn-primary' onClick={()=> toggleDisplay()}>cancel</button>
+          <button className='btn btn-primary m-2' onClick={()=> toggleDisplay()}>cancel</button>
         </>        
       }
     </div>

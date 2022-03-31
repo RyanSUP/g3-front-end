@@ -34,7 +34,7 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
       <div className="card-header d-flex flex-row justify-content-between align-items-center m-0">
           <span className='fs-5'>{game.players} <i className="fa-solid fa-people-group"></i></span>
           <span className='fs-5'>{game.playtime} <i className="fa-solid fa-clock"></i></span>
-          <button className="btn btn-outline-primary fs-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)}><i class="fa-solid fa-circle-info"></i></button>
+          <button className="btn btn-outline-primary fs-4" type='button'data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" onClick={()=>updateOffCanvas(game, currentButton)}><i className="fa-solid fa-circle-info"></i></button>
       </div>
       <div className='card-body'>
         <p className="fs-4 m-0">{game.name}</p>        
