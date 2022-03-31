@@ -4,13 +4,13 @@ const ProfileAvatar = ({profile, user}) => {
   const [displayState, setDisplayState] = useState(-1) // -1 hide form, 1 show form
   const toggleDisplay = () => setDisplayState(displayState * -1)
 
+
   return (
     <>
     <div>
       {displayState === -1
       ?
         <>
-          
           <button className='btn rounded-circle position-relative' onClick={()=> toggleDisplay()}>
             <img id="profilePic" src=
               {profile.avatar? profile.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" 

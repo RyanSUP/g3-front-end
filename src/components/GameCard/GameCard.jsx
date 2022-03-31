@@ -45,7 +45,6 @@ const GameCard = ({game, profile, addGameToState, updateOffCanvas}) => {
     <div className="card-footer text-muted">
       <div className="d-flex flex-column">
         {currentButton}
-
       </div>
     </div>
   </div>
