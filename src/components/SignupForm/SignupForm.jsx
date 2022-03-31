@@ -104,13 +104,17 @@ const SignupForm = props => {
         <label for='floatingPassword' htmlFor="confirm">Confirm Password</label>
       </div>
       <div className='d-grid'>
+        {/* <SignupForm/> */}
         <button className='btn btn-lg btn-primary btn-register text-uppercase fw-bold mb-2' onClick={handleSubmit} disabled={isFormInvalid()} >
           Sign Up
         </button>
+        
       </div>
     </form>
       </div>
-        <div className="col-md-8 bg-image" style={{background:'orange'}}></div>
+        <div className="col-md-8 bg-image">
+        <img className='fluid'src="https://i.imgur.com/UERKWtX.jpg"  width='1060' height='920px' alt="" />
+        </div>
       </div>
     </div>
   )

@@ -16,15 +16,15 @@ const LoginPage = props => {
     ? 
       <>
         <LoginForm handleSignupOrLogin={props.handleSignupOrLogin} />
-        <div className='col-md-4 text-center'>
-          <p>Don't have an account? <button className="btn btn-white ml-2 text-center"href='#' onClick={changeFormType} >Register here</button></p>
-      </div>
+        <div className='col-md-6 text-center position-absolute top-0'>
+          <div>Don't have an account? <button className="btn btn-white ml-2 text-center r-btn"href='#' onClick={changeFormType} ><strong>Register here</strong></button></div>
+        </div>
       </>
     : 
       <>
         <SignupForm handleSignupOrLogin={props.handleSignupOrLogin} />
-        <div className='col-md-4 text-center'>
-        <p className='align-self-center'>Already have an account? <button className='btn btn-white ml-2' href='#' onClick={changeFormType} >Login</button></p>
+        <div className='col-md-6 text-center position-absolute top-0'>
+          <div className='align-self-center'>Already have an account? <button className='btn btn-white ml-2 l-btn' href='#' onClick={changeFormType} ><strong>Login</strong></button></div>
         </div>
     </>
   }

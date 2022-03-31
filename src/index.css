@@ -108,3 +108,11 @@ code {
   height: 200px;
   border-radius: 50%;
 }
+
+.r-btn, .l-btn{
+  text-decoration: underline;
+}
+
+
+
+/* top:0 for group gahtering list position sticky */
