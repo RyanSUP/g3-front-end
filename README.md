@@ -1,5 +1,6 @@
 ![view 1](public/logo.png)
-# 🕹Games 🎲  Groups 👨‍👩‍👧‍👦  Gatherings 📅
+# 🕹Games 🎲  Groups 👨‍👩‍👧‍👦  Gatherings 📅 
+### A MERN Stack Application
 ___
 # [Join the Movement](google.com)
 
