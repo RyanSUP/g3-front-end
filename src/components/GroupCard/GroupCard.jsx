@@ -3,7 +3,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
   const leaveBtn = <button className="btn btn-outline-danger" type="submit" onClick={() => handleLeaveGroup(group._id)}>Leave</button>
   const dltBtn = <button className="btn btn-outline-danger" type="submit" onClick={() => handleDeleteGroup(group._id)}>Disband</button>
 
-  return ( 
+  return (
     <div className="card mb-3 rounded-3" >
       <div className="row g-0">
         <div className=" d-flex col-md-4 align-items-center">

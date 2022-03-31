@@ -7,7 +7,7 @@ import ToggleForm from "../../components/ToggleForm/ToggleForm";
 import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
 import * as groupService from '../../services/groupService'
-import ProfileAvatar from "../../components/ProfileAvatar/ProfileAvatar";
+import BigHeadAvatar from "../../components/ProfileAvatar/BigHeadAvatar";
 
 
 
@@ -27,15 +27,15 @@ const Profile = ({ user  }) => {
     <>
       <div className="container-fluid">
         {/* <div className="container"> */}
-        <div className="row">
+        <div className="row vh-100">
           {/* temporary color */}
           <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
-            <ProfileAvatar user={user} profile={profileDetails}/>
+            <BigHeadAvatar user={user} profile={profileDetails}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >
-            <div className="card scroll-gathering col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
+            <div className="card mb-4 scroll-gathering col-md-8 gm-card mx-auto mt-5 shadow-lg p-3 mb-1 bg-body rounded">
               <ProfileGatherings groups={profileDetails.groups}/>
             </div>
             <div className="col-md-12 scroll">

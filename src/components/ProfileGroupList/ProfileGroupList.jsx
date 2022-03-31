@@ -3,6 +3,7 @@ import * as groupService from '../../services/groupService'
 import { useState, useEffect } from 'react'
 import ToggleForm from '../ToggleForm/ToggleForm'
 import AddGroup from '../AddGroup/AddGroup'
+import { Link } from "react-router-dom"
 
 const ProfileGroupList = ({profile }) => {
   const [profileGroups, setProfileGroups] = useState([])
@@ -44,7 +45,9 @@ const ProfileGroupList = ({profile }) => {
     <div>
       <ToggleForm key={toggleKey} form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
       {profileGroups?.map((group, idx) =>
-        <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
+        <Link className='text-decoration-none text-reset' to={`/groups/${group._id}`} state={{group}}>
+          <GroupCard key={idx} handleLeaveGroup={handleLeaveGroup} handleDeleteGroup={handleDeleteGroup} group={group} profile={profile} />
+        </Link>
       )}
     </div>
   );

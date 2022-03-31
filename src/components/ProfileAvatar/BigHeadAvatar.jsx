@@ -1,21 +1,34 @@
 import AddPicture from "../../components/AddPicture/AddPicture";
 import { BigHead } from '@bigheads/core'
+import ProfileAvatar from "./ProfileAvatar";
 import { useState, useEffect } from 'react'
-const ProfileAvatar = ({profile, user}) => {
-  const [avatar, setAvatar] = useState({})
 
+const BigHeadAvatar = ({profile, user}) => {
+  const [avatar, setAvatar] = useState({})
+  const [isBigHead, setIsBigHead] = useState()
   useEffect(()=>{
     if(profile?.avatar) {
       console.log(profile)
-      setAvatar(JSON.parse(profile.avatar)) 
+      if(profile.avatar.charAt(0) === '{') {
+        console.log('IM A BIGHEAD')
+        setIsBigHead(true)
+        setAvatar(JSON.parse(profile?.avatar)) 
+      } else {
+        setIsBigHead(false)
+      }
     }
   },[profile])
 
   return (
     <>
-      <BigHead style={{width:'30%'}} {...avatar} />
+      {isBigHead
+        ?
+          <BigHead style={{width:'30%'}} {...avatar} />
+        :
+          <img className='rounded-circle' src={profile.avatar} style={{width:'30%'}} />
+      }
     </>
   );
 }
  
-export default ProfileAvatar;
+export default BigHeadAvatar;
