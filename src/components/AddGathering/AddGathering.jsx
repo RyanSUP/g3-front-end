@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react"
-import * as groupService from '../../services/groupService'
-import * as gatheringService from '../../services/gatheringService'
 
-const AddGathering= ({group, user}) => {
+
+const AddGathering= ({handleAddGathering}) => {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -10,7 +9,6 @@ const AddGathering= ({group, user}) => {
     location: '',
     date: '',
   })
-  const [gatherings, setGatherings] = useState([])
 
   useEffect(()=> {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -24,15 +22,7 @@ const AddGathering= ({group, user}) => {
     evt.preventDefault()
     handleAddGathering(formData)
   }
-  const handleAddGathering = newGatheringData => {
-    groupService.addGathering(group._id, newGatheringData)
-    .then(newGathering => setGatherings([...gatherings, newGathering]))
-    //    profileService.joinGroup(user.profile, group)
-    // groupService.addMember(group._id, user.profile)
-    // gatheringService.create(newGatheringData)
-    //     .then(newGathering => setGatherings([...gatherings, newGathering]))
-    // navigate('/Profiles')
-  }
+
 	return (
 		<>
 			<h3>Add Gathering</h3>

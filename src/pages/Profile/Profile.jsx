@@ -6,16 +6,19 @@ import AddPicture from "../../components/AddPicture/AddPicture";
 import ToggleForm from "../../components/ToggleForm/ToggleForm";
 import { useState, useEffect } from 'react'
 import { getProfile } from '../../services/profileService';
+import * as groupService from '../../services/groupService'
 
 
 
-const Profile = ({ user, handleAddGroup }) => {
+const Profile = ({ user  }) => {
   const [profileDetails, setProfileDetails] = useState({})
 
   useEffect(() => {
     console.log('mounting profile')
     getProfile(user.profile)
-    .then(profileDetails => setProfileDetails(profileDetails))
+    .then(profileDetails => {
+      setProfileDetails(profileDetails)
+    })
   }, [])
 
 
@@ -28,12 +31,10 @@ const Profile = ({ user, handleAddGroup }) => {
           {/* temporary color */}
           <div id="profileSideBar" className="col-md-4" style={{ background: 'pink' }} >
             <h1 className="text-center text-uppercase">{profileDetails.name}</h1>
+
               <img id="profilePic" src=
               {profileDetails.avatar? profileDetails.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" />
-
-            
-            <ToggleForm form={<AddPicture user={user} profile={profileDetails}/>} buttonText={'Change Picture'}/>
-            <ToggleForm form={<AddGroup handleAddGroup={handleAddGroup} />} buttonText={'Create group'} />
+            <ToggleForm form={<AddPicture user={user} />} buttonText={'Change Picture'}/>
             <ProfileGroupList profile={profileDetails} />
           </div>
           <div className="col-md-8" >

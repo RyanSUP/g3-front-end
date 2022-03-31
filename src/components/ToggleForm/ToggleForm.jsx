@@ -4,7 +4,7 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
   const [displayState, setDisplayState] = useState(-1) // -1 hide form, 1 show form
   const toggleDisplay = () => setDisplayState(displayState * -1)
   return ( 
-    <>
+    <div>
       {displayState === -1
       ?
         <>
@@ -17,7 +17,7 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
           <button className='btn btn-primary' onClick={()=> toggleDisplay()}>cancel</button>
         </>        
       }
-    </>
+    </div>
   );
 }
 
