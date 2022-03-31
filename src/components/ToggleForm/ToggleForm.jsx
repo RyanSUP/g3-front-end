@@ -9,7 +9,9 @@ const ToggleForm = ({form, buttonText, altComponent}) => {
       ?
         <>
           {altComponent ? altComponent : <></>}
+          <div className="text-center">
           <button className='btn btn-primary m-2' onClick={()=> toggleDisplay()}>{buttonText}</button>
+          </div>
         </>
       :
         <>

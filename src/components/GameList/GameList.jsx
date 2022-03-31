@@ -34,13 +34,13 @@ const GameList = ({games, user}) => {
           <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
         </div>
         <div className="offcanvas-body">
-          <img style={{width: '350px'}} src={offCanvasGame.thumb_url}/>
+          <img style={{width: '350px'}} src={offCanvasGame.thumb_url} alt="game details"/>
           <strong>Name:</strong> {offCanvasGame.name} <br></br>
           <strong>Description:</strong> {offCanvasGame.description_preview}<br></br>
         </div>
         {offCanvasButton} 
       </div>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
         {games?.map((result, idx) => <GameCard updateOffCanvas={updateOffCanvas} addGameToState={addGameToState} key={idx} profile={profile} game={result}/>)}
         <ScrollToTop smooth/>
       </div>
