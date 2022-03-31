@@ -43,7 +43,8 @@ const SignupForm = props => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-4">
-        <h2 className="text-uppercase login-heading mb-4">Create an account</h2>
+        <img className='' src={'logo.png'} style={{height:'300px'}}alt="logo"/>
+        <h2 className="text-uppercase register-heading mb-4">Create an account</h2>
         <p>{message}</p>
     <form
       autoComplete="off"
@@ -103,7 +104,7 @@ const SignupForm = props => {
         <label for='floatingPassword' htmlFor="confirm">Confirm Password</label>
       </div>
       <div className='d-grid'>
-        <button className='btn btn-lg btn-sucess btn-login text-uppercase fw-bold mb-2' onClick={handleSubmit} disabled={isFormInvalid()} >
+        <button className='btn btn-lg btn-primary btn-register text-uppercase fw-bold mb-2' onClick={handleSubmit} disabled={isFormInvalid()} >
           Sign Up
         </button>
       </div>

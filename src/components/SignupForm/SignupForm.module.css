@@ -1,21 +1,15 @@
-.container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+.bg-image {
+  background-image: url('https://imgur.com/af7YCMR');
+  background-size: cover;
+  background-position: center;
 }
 
-.label,
-.button {
-  margin-right: .5rem;
+.register-heading {
+  font-weight: 300;
 }
 
-.inputContainer {
-  margin-bottom: 1rem;
-}
-
-.sg-txt{
-  text-align: center;
-  justify-content: center;
+.btn-register {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
 }
