@@ -13,7 +13,7 @@ const ProfileAvatar = ({profile, user}) => {
 
   return (
     <>
-      <BigHead {...avatar} />
+      <BigHead style={{width:'30%'}} {...avatar} />
     </>
   );
 }
