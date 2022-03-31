@@ -34,8 +34,8 @@ const LoginForm = props => {
         <div className="col-md-4">
         <img className='' src={'logo.png'} style={{height:'300px'}}alt="logo"/>
         <h3 class="login-heading mb-4">Welcome to G3!</h3>
-              <p>{message}</p>
-        <form
+        <p>{message}</p>
+    <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
@@ -67,18 +67,15 @@ const LoginForm = props => {
         <label htmlFor="password" for="floatingPassword">Password</label>
       </div>
       <div className='form-check mb-3'> 
-      <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+        <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
         <label className="form-check-label">Remember password</label>
       </div>
       <div className="d-grid">
         <button className="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2">Log In</button>
       </div>
     </form>
-    
-    
-        </div>
-        <div className="col-md-8 bg-image" style={{background:'orange'}}>
-        </div>
+      </div>
+        <div className="col-md-8 bg-image" style={{background:'orange'}}></div>
       </div>
     </div> 
   )

@@ -40,86 +40,78 @@ const SignupForm = props => {
   }
 
   return (
-    <>
-    
-    <div className="mask d-flex align-items-center h-100">
-    <div className="container h-100">
-      <div className="row d-flex justify-content-center align-items-center h-100">
-        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div className="card">
-            <div className="card-body p-5">
-              <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-      {/* //! FIX THIS MESSAGE SO IT ALWAYS TAKES UP SPACE, EVEN IF NO MESSAGE IS DISPLAYED */}
-      <p>{message}</p>
-      <form
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        className={styles.container}
-      >
-        <div className='form-outline mb-4'>
-        <label htmlFor="name" className='from-label'>Name</label>
-          <input
-            className='form-control form-control-lg'
-            type="text"
-            autoComplete="off"
-            id="name"
-            value={name}
-            name="name"
-            onChange={handleChange}
-          />
-          
-        </div>
-        <div className='form-outline mb-4'>
-          <input
-            className='form-control form-control-lg'
-            type="email"
-            autoComplete="off"
-            id="email"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-          <label htmlFor="email" className='form-label'>Email</label>
-        </div>
-        <div className='form-outline mb-4'>
-          <input
-            className='form-control form-control-lg'
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-          <label className='form-label' htmlFor="password">Password</label>
-        </div>
-        <div className='form-outline mb-4'>
-          <input
-            className='form-control form-control-lg'
-            type="password"
-            autoComplete="off"
-            id="confirm"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-          <label className='form-label' htmlFor="confirm">
-            Confirm Password
-          </label>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <button className='btn btn-sucess btn-block btn-lg text-body' onClick={handleSubmit} disabled={isFormInvalid()} >
-            Sign Up
-          </button>
-        </div>
-      </form>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-4">
+        <h2 className="text-uppercase login-heading mb-4">Create an account</h2>
+        <p>{message}</p>
+    <form
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      className={styles.container}
+    >
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control form-control-lg'
+          placeholder='Your Name'
+          type="text"
+          autoComplete="off"
+          id="name"
+          value={name}
+          name="name"
+          onChange={handleChange}
+        />
+        <label for='floatingInput' htmlFor="name">Name</label>
       </div>
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control form-control-lg'
+          placeholder='name@example.com'
+          type="email"
+          autoComplete="off"
+          id="email"
+          value={email}
+          name="email"
+          onChange={handleChange}
+        />
+        <label htmlFor="email" for='floatingInput'>Email address</label>
       </div>
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control form-control-lg'
+          placeholder='Password'
+          type="password"
+          autoComplete="off"
+          id="password"
+          value={password}
+          name="password"
+          onChange={handleChange}
+        />
+        <label for='floatingPassword' htmlFor="password">Password</label>
       </div>
+      <div className='form-floating mb-3'>
+        <input
+          className='form-control form-control-lg'
+          placeholder='Confirm Password'
+          type="password"
+          autoComplete="off"
+          id="confirm"
+          value={passwordConf}
+          name="passwordConf"
+          onChange={handleChange}
+        />
+        <label for='floatingPassword' htmlFor="confirm">Confirm Password</label>
       </div>
+      <div className='d-grid'>
+        <button className='btn btn-lg btn-sucess btn-login text-uppercase fw-bold mb-2' onClick={handleSubmit} disabled={isFormInvalid()} >
+          Sign Up
+        </button>
       </div>
+    </form>
       </div>
-    </>
+        <div className="col-md-8 bg-image" style={{background:'orange'}}></div>
+      </div>
+    </div>
   )
 }
 
