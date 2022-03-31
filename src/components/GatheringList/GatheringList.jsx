@@ -40,7 +40,7 @@ const GatheringList = ({group, gatherings, profile}) => {
   }
 
   return (
-    <div key={toggleKey}>
+    <div className='gathering-list'key={toggleKey}>
       <ToggleForm form={<AddGathering handleAddGathering={handleAddGathering} />} buttonText={'New gathering'} />
         {leGatherings?.map((gathering, idx) => 
           <ToggleForm 
