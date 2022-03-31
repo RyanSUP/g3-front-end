@@ -28,9 +28,9 @@ const Profiles = () => {
                       alt='placeholder'
                       width="100%"
                     />
-                    <div className='card-body'>
-                    <p className='card-title fs-3 text-dark card-pname' style={{ width: '15rem' }}>{profile.name}</p>
-                    </div>
+ 
+                    <p className='fs-3 text-dark text-center' >{profile.name}</p>
+
                   </div>
                 </div>
               )}
