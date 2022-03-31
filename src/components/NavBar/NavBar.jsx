@@ -14,7 +14,7 @@ const NavBar = ({ user, handleLogout, allGames, handleGameSearch, searchResults,
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/profiles">Profiles</Link>
+                <Link className="nav-link active" aria-current="page" to="/profiles">Social</Link>
               </li>
               <li className="nav-item dropdown">
                 <div className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
