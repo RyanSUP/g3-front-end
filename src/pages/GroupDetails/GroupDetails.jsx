@@ -8,11 +8,14 @@ import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
 import ToggleForm from '../../components/ToggleForm/ToggleForm';
 import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar';
+import GroupBtn from '../../components/GroupBtn/GroupBtn';
 
 const GroupDetails = ({ user }) => {
   const [groupDetails, setGroupDetails] = useState({})
   const [profileDetails, setProfileDetails] = useState({})
+  const [toggleState, setToggleState] = useState(0)
   const location = useLocation()
+
   const group = location.state.group
 
   useEffect(() => {
@@ -27,17 +30,18 @@ const GroupDetails = ({ user }) => {
     getGroup(group._id)
       .then(groupDetails => setGroupDetails(groupDetails))
 
-  }, [group._id])
+  }, [group._id, toggleState])
 
   const handleJoin = () => {
     // add group to profile
+    setToggleState(toggleState+1)
     profileService.joinGroup(user.profile, group)
     groupService.addMember(group._id, user.profile)
   }
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid" key={toggleState}>
         <div className="row">
           <div className="col-md-4" style={{ background: "pink" }}>
             {/* Group Component */}
@@ -47,13 +51,8 @@ const GroupDetails = ({ user }) => {
                 <h1>{group.name}</h1>
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
-                {group.profiles.find(profile => user.profile === profile._id )
-                ?
-                  <></>
-              :
-              <button className="btn btn-outline-success h-25" type="submit" onClick={handleJoin}>Join</button>
-                }
-
+                <GroupBtn toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin}/>
+                
             </div>
             <div className="d-flex flex-wrap">
               {groupDetails.profiles?.map((profile, idx) =>
