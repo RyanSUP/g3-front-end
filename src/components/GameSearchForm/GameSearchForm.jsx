@@ -19,9 +19,9 @@ const GameSearchForm = ({ handleGameSearch }) => {
   return (
     <>
       <div>
-        <form>
+        <form >
           <input name="name" type="text" autoComplete="off" onChange={handleChange} />
-          <button className="btn btn-outline-success" type="submit" onClick={handleSubmit}>Search</button>
+          <button className="btn btn-outline-success" type="submit" onClick={handleSubmit} id="searchBtn">Search</button>
         </form>
       </div>
     </>
