@@ -5,7 +5,9 @@ const GameSearch = ({ updateProfile, user, handleGameSearch, searchResults }) =>
   return (
     <>
       <h1 className='text-center'>Search Games</h1>
-      <GameSearchForm handleGameSearch={handleGameSearch} />
+      <div className='text-center m-1'>
+        <GameSearchForm handleGameSearch={handleGameSearch} />
+      </div>
       {searchResults.length
         ?
         <GameList updateProfile={updateProfile} user={user} games={searchResults} />

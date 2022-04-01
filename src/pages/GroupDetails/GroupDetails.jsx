@@ -6,11 +6,14 @@ import * as groupService from '../../services/groupService'
 import GameList from '../../components/GameList/GameList';
 import GatheringList from '../../components/GatheringList/GatheringList';
 import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar';
+import GroupBtn from '../../components/GroupBtn/GroupBtn';
 
 const GroupDetails = ({ user }) => {
   const [groupDetails, setGroupDetails] = useState({})
   const [profileDetails, setProfileDetails] = useState({})
+  const [toggleState, setToggleState] = useState(0)
   const location = useLocation()
+
   const group = location.state.group
 
   useEffect(() => {
@@ -25,17 +28,18 @@ const GroupDetails = ({ user }) => {
     getGroup(group._id)
       .then(groupDetails => setGroupDetails(groupDetails))
 
-  }, [group._id])
+  }, [group._id, toggleState])
 
   const handleJoin = () => {
     // add group to profile
+    setToggleState(toggleState+1)
     profileService.joinGroup(user.profile, group)
     groupService.addMember(group._id, user.profile)
   }
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid" key={toggleState}>
         <div className="row">
           <div className="col-md-4 sidebar">
             {/* Group Component */}
