@@ -24,14 +24,13 @@ p, .card, .btn, label, #offcanvasRight{
 
 .nav-link{
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 #searchBtn{
   margin: 10px;
 }
 nav{
-  height: 80px;
   background-color: #0e4749;
 }
 
