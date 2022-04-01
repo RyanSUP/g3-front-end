@@ -108,12 +108,11 @@ const SignupForm = props => {
               <button className='btn btn-lg btn-primary btn-register text-uppercase fw-bold mb-2' onClick={handleSubmit} disabled={isFormInvalid()} >
                 Sign Up
               </button>
-
             </div>
           </form>
         </div>
         <div className="col-md-8 bg-image">
-          <img className='fluid' src="https://i.imgur.com/UERKWtX.jpg" width='1060' height='920px' alt="" />
+          <img className='fluid' src="https://i.imgur.com/jKaZa6C.png" width='1060' height='920px' alt="" />
         </div>
       </div>
     </div>
