@@ -124,12 +124,12 @@ const SignupForm = props => {
         </div>
 
         <div className="col-md-8 align-self-end bg-img">
-          <h1 className="text-center brand-statement">
+          <h1 className="text-center brand-statement mt-5">
             Plan game nights with friends and family
           </h1>
-          <img className='fluid' src="https://i.imgur.com/jKaZa6C.png" width='1060' height='920px' alt="" />
-
+          <img className='w-100' src="https://i.imgur.com/jKaZa6C.png" />
         </div>
+        
       </div>
     </div>
   )
