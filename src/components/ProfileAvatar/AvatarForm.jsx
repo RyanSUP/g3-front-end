@@ -1,5 +1,6 @@
 import AddPicture from "../AddPicture/AddPicture";
 import { useState } from 'react'
+
 const AvatarForm = ({profile, user}) => {
   const [displayState, setDisplayState] = useState(-1) // -1 hide form, 1 show form
   const toggleDisplay = () => setDisplayState(displayState * -1)
@@ -27,3 +28,4 @@ const AvatarForm = ({profile, user}) => {
 }
  
 export default AvatarForm;
+

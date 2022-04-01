@@ -1,4 +1,3 @@
-import AddPicture from "../../components/AddPicture/AddPicture";
 import { BigHead } from '@bigheads/core'
 import AvatarForm from "./AvatarForm";
 import { useState, useEffect } from 'react'
@@ -11,12 +10,12 @@ const BigHeadAvatar = ({profile, user, size}) => {
     if(profile?.avatar) {
       if(profile.avatar.charAt(0) === '{') {
         setIsBigHead(true)
-        setAvatar(JSON.parse(profile?.avatar)) 
+        setAvatar(JSON.parse(profile?.avatar))
       } else {
         setIsBigHead(false)
       }
     }
-  },[profile])
+  }, [profile])
 
   return (
     <>
@@ -30,5 +29,5 @@ const BigHeadAvatar = ({profile, user, size}) => {
     </>
   );
 }
- 
+
 export default BigHeadAvatar;

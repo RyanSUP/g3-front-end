@@ -4,9 +4,7 @@ import { useLocation } from "react-router-dom";
 import * as profileService from '../../services/profileService'
 import * as groupService from '../../services/groupService'
 import GameList from '../../components/GameList/GameList';
-import AddGathering from '../../components/AddGathering/AddGathering';
 import GatheringList from '../../components/GatheringList/GatheringList';
-import ToggleForm from '../../components/ToggleForm/ToggleForm';
 import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar';
 import GroupBtn from '../../components/GroupBtn/GroupBtn';
 
@@ -43,12 +41,13 @@ const GroupDetails = ({ user }) => {
     <>
       <div className="container-fluid" key={toggleState}>
         <div className="row">
-          <div className="col-md-4" style={{ background: "pink" }}>
+          <div className="col-md-4 sidebar">
             {/* Group Component */}
             <div>
               {/* Group Header */}
               <div className='d-flex justify-content-around m-3'>
                 <h1>{group.name}</h1>
+
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
                 <GroupBtn key={'sadasdsadas'} toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin}/>
@@ -63,6 +62,25 @@ const GroupDetails = ({ user }) => {
             {/* Group Profile grid */}
             <div>
 
+              </div>
+              <div className="d-flex flex-wrap">
+                {groupDetails.profiles?.map((profile, idx) =>
+                  <>
+                    <BigHeadAvatar profile={profile} />
+                  </>
+                )}
+              </div>
+              {/* Group Profile grid */}
+              <div>
+
+              </div>
+            </div>
+            {/* Gathering Component */}
+            <div>
+              <div className='m-3'>
+                <h3>Upcoming Gatherings</h3>
+                <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
+              </div>
             </div>
           </div>
           {/* Gathering Component */}
@@ -91,7 +109,6 @@ const GroupDetails = ({ user }) => {
           )}
         </div>
       </div>
-    </div>
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import GroupList from '../../components/GroupList/GroupList'
-import { Link } from 'react-router-dom'
 import ScrollToTop from 'react-scroll-to-top'
 import BigHeadAvatar from '../../components/ProfileAvatar/BigHeadAvatar'
 
@@ -10,7 +9,7 @@ const Profiles = () => {
 
   useEffect(() => {
     profileService.getAllProfiles()
-    .then(profiles => setProfiles(profiles))
+      .then(profiles => setProfiles(profiles))
   }, [])
 
   return (
@@ -35,9 +34,8 @@ const Profiles = () => {
         :
         <p>No profiles yet</p>
       }
-
       <div className="top-btn">
-      <ScrollToTop smooth/>
+        <ScrollToTop smooth />
       </div>
     </>
   )

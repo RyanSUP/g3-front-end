@@ -14,7 +14,7 @@ function create(group) {
     },
     body: JSON.stringify(group)
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 
@@ -22,7 +22,7 @@ async function getAllGroups() {
   return fetch(BASE_URL, {
     headers: { Authorization: `Bearer ${tokenService.getToken()}` },
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 async function getGroup(id) {
@@ -33,54 +33,54 @@ async function getGroup(id) {
   return await res.json()
 }
 
-const addMember = (id, profile)  => {
+const addMember = (id, profile) => {
   return fetch(`${BASE_URL}/${id}/profiles`, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${tokenService.getToken()}` 
+      Authorization: `Bearer ${tokenService.getToken()}`
     },
     body: JSON.stringify(profile._id),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 
 const addGathering = (id, gathering) => {
   return fetch(`${BASE_URL}/${id}/gatherings`, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${tokenService.getToken()}` 
+      Authorization: `Bearer ${tokenService.getToken()}`
     },
     body: JSON.stringify(gathering),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const deleteGroup = (id) => {
-  return fetch(`${BASE_URL}/${id}`,{
+  return fetch(`${BASE_URL}/${id}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const deleteGathering = (groupId, gatheringId) => {
   console.log(groupId, gatheringId)
-  return fetch(`${BASE_URL}/${groupId}/${gatheringId}`,{
+  return fetch(`${BASE_URL}/${groupId}/${gatheringId}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const updateGathering = (formData, groupId, gathId) => {
-  return fetch(`${BASE_URL}/${groupId}/gatherings/${gathId}`,{
+  return fetch(`${BASE_URL}/${groupId}/gatherings/${gathId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -88,17 +88,17 @@ const updateGathering = (formData, groupId, gathId) => {
     },
     body: JSON.stringify(formData)
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const updateGroup = (groupId, profileId) => {
-  return fetch(`${BASE_URL}/${groupId}/profiles/${profileId}`,{
+  return fetch(`${BASE_URL}/${groupId}/profiles/${profileId}`, {
     method: 'PUT',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 export {
