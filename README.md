@@ -8,7 +8,7 @@ ___
 
 
 ___
-## 💡 Inspirations
+## 💡 Inspirations 💡
 ___
 People like games.
 
@@ -33,9 +33,10 @@ ___
 🪴 <font color="red">**Abygaelle**</font> - Documentarian and Designer
 ___
 ## Views:
+
 ___
 
-## 💾 Technologies:
+## 💾 Technologies💾
 ___
 * ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
@@ -61,13 +62,13 @@ ___
 
 * ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ___
-## 🎬 Credits
+## 🎬 Credits 🎬
 ___
 * [Bighead API](https://bigheads.io/)
 
 * [BoardGameAtlas API](https://www.boardgameatlas.com/api/docs)
 ___
-## 🧊 Ice Box:
+## 🧊 Ice Box 🧊
 ___
 * Group chat
 
