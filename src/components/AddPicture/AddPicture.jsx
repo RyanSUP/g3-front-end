@@ -30,7 +30,7 @@ const AddPicture = ({ user, profile }) => {
             type="text"
             className="form-control"
             name="avatar"
-            value={formData.avatar}
+            value=''
             onChange={handleChange}
           />
         </div>
