@@ -99,7 +99,7 @@ const LoginForm = (props) => {
           <h1 className="text-center brand-statement">
             Plan game nights with friends and family
           </h1>
-          <img className="w-100" src="https://i.imgur.com/UERKWtX.jpg" alt="" />
+          <img className="w-100" src="https://i.imgur.com/jKaZa6C.png" alt="" />
         </div>
       </div>
     </div>

@@ -28,10 +28,14 @@ p, .card, .btn, label, #offcanvasRight{
   margin-left: 150px;
 }
 
+nav{
+  height: 80px;
+}
 
 .brandNav{
   margin-left: 0;
 }
+
 
 #gameImg{
   height: 200px;
