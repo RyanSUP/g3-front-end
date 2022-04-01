@@ -1,4 +1,6 @@
 import BigHeadAvatar from '../ProfileAvatar/BigHeadAvatar'
+import { Link } from 'react-router-dom'
+
 const GroupCard = ({ profile, group, handleDeleteGroup, handleLeaveGroup }) => {
   const leaveBtn = <button className="btn btn-outline-danger h-25" type="submit" onClick={() => handleLeaveGroup(group._id)}>Leave</button>
   const dltBtn = <button className="btn btn-outline-danger h-25" type="submit" onClick={() => handleDeleteGroup(group._id)}>Disband</button>
@@ -7,7 +9,9 @@ const GroupCard = ({ profile, group, handleDeleteGroup, handleLeaveGroup }) => {
     <div className="groupcard card mb-3 shadow" >
       <div className="row g-0">
         <div className=" d-flex col-md-4 align-items-center flex-wrap">
+        <Link className='text-decoration-none text-reset' to={`/groups/${group._id}`} state={{ group }}>
           <img id='our-img-thumbnail' src={group.image} alt="group pic" />
+          </Link>
         </div>
         <div className="col-md-8">
           <div className="card-body">
