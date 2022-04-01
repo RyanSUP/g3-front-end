@@ -14,7 +14,7 @@ function create(gathering) {
     },
     body: JSON.stringify(gathering)
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 

@@ -1,5 +1,5 @@
 import BigHeadAvatar from '../ProfileAvatar/BigHeadAvatar'
-const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
+const GroupCard = ({ profile, group, handleDeleteGroup, handleLeaveGroup }) => {
   const leaveBtn = <button className="btn btn-outline-danger h-25" type="submit" onClick={() => handleLeaveGroup(group._id)}>Leave</button>
   const dltBtn = <button className="btn btn-outline-danger h-25" type="submit" onClick={() => handleDeleteGroup(group._id)}>Disband</button>
 
@@ -14,9 +14,9 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
             <div className="d-flex justify-content-between">
               <h2 className="card-title">{group.name}</h2>
               {group.manager === profile._id
-              ?
+                ?
                 dltBtn
-              :
+                :
                 leaveBtn
               }
             </div>

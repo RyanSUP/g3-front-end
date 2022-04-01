@@ -1,27 +1,27 @@
 import { useState, useRef, useEffect } from "react"
 
 
-const AddGathering= ({handleAddGathering}) => {
-  const formElement = useRef()
-  const [validForm, setValidForm] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    location: '',
-    date: '',
-  })
+const AddGathering = ({ handleAddGathering }) => {
+	const formElement = useRef()
+	const [validForm, setValidForm] = useState(false)
+	const [formData, setFormData] = useState({
+		name: '',
+		location: '',
+		date: '',
+	})
 
-  useEffect(()=> {
-    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
-  }, [formData])
+	useEffect(() => {
+		formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+	}, [formData])
 
-  const handleChange = evt => {
-    setFormData({...formData, [evt.target.name]: evt.target.value})
-  }
+	const handleChange = evt => {
+		setFormData({ ...formData, [evt.target.name]: evt.target.value })
+	}
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
-    handleAddGathering(formData)
-  }
+	const handleSubmit = evt => {
+		evt.preventDefault()
+		handleAddGathering(formData)
+	}
 
 	return (
 		<>
@@ -31,12 +31,12 @@ const AddGathering= ({handleAddGathering}) => {
 					<label htmlFor="name-input" className="form-label">
 						Name (required)
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="name"
-            value={formData.name}
-            onChange={handleChange}
+						value={formData.name}
+						onChange={handleChange}
 						required
 					/>
 				</div>
@@ -44,31 +44,31 @@ const AddGathering= ({handleAddGathering}) => {
 					<label className="form-label">
 						Location
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="location"
-            value={formData.image}
-            onChange={handleChange}
+						value={formData.image}
+						onChange={handleChange}
 					/>
 				</div>
-        <div className="form-group mb-4">
+				<div className="form-group mb-4">
 					<label className="form-label">
 						Date
 					</label>
-					<input 
+					<input
 						type="date"
 						className="form-control"
 						name="date"
-            value={formData.image}
-            onChange={handleChange}
+						value={formData.image}
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="d-grid">
 					<button
 						type="submit"
-						className="btn btn-primary btn-fluid"
-            disabled={!validForm}
+						className="btn greenBtn"
+						disabled={!validForm}
 					>
 						Add Gathering
 					</button>

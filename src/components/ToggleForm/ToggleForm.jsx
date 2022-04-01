@@ -1,23 +1,23 @@
 import { useState } from "react";
 
-const ToggleForm = ({form, buttonText, altComponent}) => {
-  const [displayState, setDisplayState] = useState(-1) // -1 hide form, 1 show form
+const ToggleForm = ({ form, buttonText, altComponent }) => {
+  const [displayState, setDisplayState] = useState(-1)
   const toggleDisplay = () => setDisplayState(displayState * -1)
-  return ( 
+  return (
     <div>
       {displayState === -1
-      ?
+        ?
         <>
           {altComponent ? altComponent : <></>}
           <div className="text-center">
-          <button className='btn btn-primary m-2' onClick={()=> toggleDisplay()}>{buttonText}</button>
+            <button className='btn btn-primary m-2 greenBtn' onClick={() => toggleDisplay()}>{buttonText}</button>
           </div>
         </>
-      :
+        :
         <>
           {form}
-          <button className='btn btn-primary m-2' onClick={()=> toggleDisplay()}>cancel</button>
-        </>        
+          <button className='btn btn-primary m-2 greenBtn' onClick={() => toggleDisplay()}>cancel</button>
+        </>
       }
     </div>
   );

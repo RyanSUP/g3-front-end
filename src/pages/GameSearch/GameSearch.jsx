@@ -1,7 +1,3 @@
-/*-- Helpers --*/
-
-
-/*-- Components --*/
 import GameSearchForm from '../../components/GameSearchForm/GameSearchForm'
 import GameList from "../../components/GameList/GameList";
 
