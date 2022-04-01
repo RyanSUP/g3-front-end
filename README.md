@@ -2,7 +2,7 @@
 # 🕹Games 🎲  Groups 👨‍👩‍👧‍👦  Gatherings 📅 
 ### A MERN Stack Application
 ___
-# 💪 [Join the Movement](https://g3-frontend.herokuapp.com/login)
+# 🤜 [Join the Movement](https://g3-frontend.herokuapp.com/login) 🤛
 
 <center>G3 or games, groups, and gatherings is a hub for linking users to their friends and finding the right game to play on game night. Plan it all out before you walk in the door with G3 by ERA</center>
 
