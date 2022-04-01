@@ -21,7 +21,7 @@ const GroupCard = ({profile, group, handleDeleteGroup, handleLeaveGroup}) => {
               }
             </div>
             <div className="d-flex p-2 flex-wrap groupProfilePics">
-              {group.profiles.map(profile => <BigHeadAvatar profile={profile} />)}
+              {group.profiles.map(profile => <BigHeadAvatar size={{width:'30%'}} profile={profile} />)}
             </div>
           </div>
         </div>

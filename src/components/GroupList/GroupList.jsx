@@ -31,7 +31,7 @@ const GroupList = (props) => {
                     <div className="card-body">
                         <h2 className="card-title text-right">{group.name}</h2>
                       <div className="d-flex p-2 flex-wrap">
-                        {group.profiles.map((profile, idx) => <BigHeadAvatar key={idx} profile={profile} />)}
+                        {group.profiles.map((profile, idx) => <BigHeadAvatar size={{width:'30%'}} key={idx} profile={profile} />)}
                       </div>
                     </div>
                   </div>

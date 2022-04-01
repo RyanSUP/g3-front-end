@@ -56,7 +56,7 @@ const GroupDetails = ({ user }) => {
             <div className="d-flex flex-wrap">
               {groupDetails.profiles?.map((profile) =>
                 <>
-                  <BigHeadAvatar key={profile._id} profile={profile} />
+                  <BigHeadAvatar size={{width:'30%'}} key={profile._id} profile={profile} />
                 </>
               )}
             </div>
@@ -77,10 +77,10 @@ const GroupDetails = ({ user }) => {
           {/* Group member game list */}
           {/* //! This should be a component */}
           {groupDetails.profiles?.map((profile, idx) =>
-            <div >
+            <div key={idx + 500} >
               <h2> {profile.name}</h2>
               {profile.games.length ?
-                <div key={idx + 500}>
+                <div>
                   {/* //! These cards need to be smaller for this page. */}
                   <GameList key={idx + 100} user={user} games={profile.games} />
                 </div>

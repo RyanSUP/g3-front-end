@@ -1,6 +1,6 @@
-import AddPicture from "../../components/AddPicture/AddPicture";
+import AddPicture from "../AddPicture/AddPicture";
 import { useState } from 'react'
-const ProfileAvatar = ({profile, user}) => {
+const AvatarForm = ({profile, user}) => {
   const [displayState, setDisplayState] = useState(-1) // -1 hide form, 1 show form
   const toggleDisplay = () => setDisplayState(displayState * -1)
 
@@ -12,12 +12,7 @@ const ProfileAvatar = ({profile, user}) => {
       ?
         <>
           <button className='btn rounded-circle position-relative' onClick={()=> toggleDisplay()}>
-            <img id="profilePic" src=
-              {profile.avatar? profile.avatar : "https://i.imgur.com/GcUK8zl.png"} alt="avatar" 
-            />
-            <div className="position-absolute bottom-0 end-0">
-              <i className="fa-solid fa-camera"></i>
-            </div>
+              <i className="fa-solid fa-camera fs-3"></i>
           </button>
         </>
       :
@@ -31,4 +26,4 @@ const ProfileAvatar = ({profile, user}) => {
   );
 }
  
-export default ProfileAvatar;
+export default AvatarForm;

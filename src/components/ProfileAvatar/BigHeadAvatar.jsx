@@ -1,9 +1,10 @@
 import AddPicture from "../../components/AddPicture/AddPicture";
 import { BigHead } from '@bigheads/core'
-import ProfileAvatar from "./ProfileAvatar";
+import AvatarForm from "./AvatarForm";
 import { useState, useEffect } from 'react'
+import ToggleForm from "../ToggleForm/ToggleForm";
 
-const BigHeadAvatar = ({profile, user}) => {
+const BigHeadAvatar = ({profile, user, size}) => {
   const [avatar, setAvatar] = useState({})
   const [isBigHead, setIsBigHead] = useState()
   useEffect(()=>{
@@ -19,11 +20,12 @@ const BigHeadAvatar = ({profile, user}) => {
 
   return (
     <>
+
       {isBigHead
         ?
-          <BigHead style={{width:'30%'}} {...avatar} />
+          <BigHead style={size} {...avatar} />
         :
-          <img className='rounded-circle' src={profile.avatar} style={{width:'30%'}} />
+          <img src={profile.avatar} style={size} />
       }
     </>
   );
