@@ -8,9 +8,7 @@ const BigHeadAvatar = ({profile, user}) => {
   const [isBigHead, setIsBigHead] = useState()
   useEffect(()=>{
     if(profile?.avatar) {
-      console.log(profile)
       if(profile.avatar.charAt(0) === '{') {
-        console.log('IM A BIGHEAD')
         setIsBigHead(true)
         setAvatar(JSON.parse(profile?.avatar)) 
       } else {

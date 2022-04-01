@@ -51,13 +51,12 @@ const GroupDetails = ({ user }) => {
                 <h1>{group.name}</h1>
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
-                <GroupBtn toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin}/>
-                
+                <GroupBtn key={'sadasdsadas'} toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin}/>
             </div>
             <div className="d-flex flex-wrap">
-              {groupDetails.profiles?.map((profile, idx) =>
+              {groupDetails.profiles?.map((profile) =>
                 <>
-                  <BigHeadAvatar profile={profile} />
+                  <BigHeadAvatar key={profile._id} profile={profile} />
                 </>
               )}
             </div>
@@ -70,7 +69,7 @@ const GroupDetails = ({ user }) => {
           <div>
             <div className='m-3'>
               <h3>Upcoming Gatherings</h3>
-              <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
+              <GatheringList key={1232131234} profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
             </div>
           </div>
         </div>
@@ -81,9 +80,9 @@ const GroupDetails = ({ user }) => {
             <div >
               <h2> {profile.name}</h2>
               {profile.games.length ?
-                <div key={idx}>
+                <div key={idx + 500}>
                   {/* //! These cards need to be smaller for this page. */}
-                  <GameList user={user} games={profile.games} />
+                  <GameList key={idx + 100} user={user} games={profile.games} />
                 </div>
                 :
                 <p>This user has no games</p>
