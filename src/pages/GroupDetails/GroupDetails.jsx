@@ -32,7 +32,7 @@ const GroupDetails = ({ user }) => {
 
   const handleJoin = () => {
     // add group to profile
-    setToggleState(toggleState+1)
+    setToggleState(toggleState + 1)
     profileService.joinGroup(user.profile, group)
     groupService.addMember(group._id, user.profile)
   }
@@ -50,63 +50,41 @@ const GroupDetails = ({ user }) => {
 
                 {/* //! Change btn to leave / disband. */}
                 {/* //! This button should be inline with the name */}
-                <GroupBtn key={'sadasdsadas'} toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin}/>
-            </div>
-            <div className="d-flex flex-wrap">
-              {groupDetails.profiles?.map((profile) =>
-                <>
-                  <BigHeadAvatar size={{width:'30%'}} key={profile._id} profile={profile} />
-                </>
-              )}
-            </div>
-            {/* Group Profile grid */}
-            <div>
-
+                <GroupBtn key={'sadasdsadas'} toggleState={toggleState} profile={user} group={group} handleJoin={handleJoin} />
               </div>
               <div className="d-flex flex-wrap">
-                {groupDetails.profiles?.map((profile, idx) =>
+                {groupDetails.profiles?.map((profile) =>
                   <>
-                    <BigHeadAvatar profile={profile} />
+                    <BigHeadAvatar size={{ width: '30%' }} key={profile._id} profile={profile} />
                   </>
                 )}
               </div>
-              {/* Group Profile grid */}
+              {/* Gathering Component */}
               <div>
-
-              </div>
-            </div>
-            {/* Gathering Component */}
-            <div>
-              <div className='m-3'>
-                <h3>Upcoming Gatherings</h3>
-                <GatheringList profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
-              </div>
-            </div>
-          </div>
-          {/* Gathering Component */}
-          <div>
-            <div className='m-3'>
-              <h3>Upcoming Gatherings</h3>
-              <GatheringList key={1232131234} profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
-            </div>
-          </div>
-        </div>
-        <div className="col-md-8">
-          {/* Group member game list */}
-          {/* //! This should be a component */}
-          {groupDetails.profiles?.map((profile, idx) =>
-            <div key={idx + 500} >
-              <h2> {profile.name}</h2>
-              {profile.games.length ?
-                <div>
-                  {/* //! These cards need to be smaller for this page. */}
-                  <GameList key={idx + 100} user={user} games={profile.games} />
+                <div className='m-3'>
+                  <h3>Upcoming Gatherings</h3>
+                  <GatheringList key={1232131234} profile={profileDetails} group={group} gatherings={groupDetails.gatherings} />
                 </div>
-                :
-                <p>This user has no games</p>
-              }
+              </div>
             </div>
-          )}
+          </div>
+          <div className="col-md-8">
+            {/* Group member game list */}
+            {/* //! This should be a component */}
+            {groupDetails.profiles?.map((profile, idx) =>
+              <div key={idx + 500} >
+                <h2> {profile.name}</h2>
+                {profile.games.length ?
+                  <div>
+                    {/* //! These cards need to be smaller for this page. */}
+                    <GameList key={idx + 100} user={user} games={profile.games} />
+                  </div>
+                  :
+                  <p>This user has no games</p>
+                }
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

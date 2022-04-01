@@ -97,7 +97,7 @@ const LoginForm = (props) => {
         </div>
         <div className="col-md-8 align-self-end bg-img">
           <h1 className="text-center brand-statement mt-5">
-            Plan game nights with friends and family
+            Game night made easy
           </h1>
           <img className="w-100" src="https://i.imgur.com/jKaZa6C.png" alt="" />
         </div>
