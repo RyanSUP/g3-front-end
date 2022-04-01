@@ -1,14 +1,14 @@
 import { BigHead } from '@bigheads/core'
+import AvatarForm from "./AvatarForm";
 import { useState, useEffect } from 'react'
+import ToggleForm from "../ToggleForm/ToggleForm";
 
-const BigHeadAvatar = ({ profile, user }) => {
+const BigHeadAvatar = ({profile, user, size}) => {
   const [avatar, setAvatar] = useState({})
   const [isBigHead, setIsBigHead] = useState()
-  useEffect(() => {
-    if (profile?.avatar) {
-      console.log(profile)
-      if (profile.avatar.charAt(0) === '{') {
-        console.log('IM A BIGHEAD')
+  useEffect(()=>{
+    if(profile?.avatar) {
+      if(profile.avatar.charAt(0) === '{') {
         setIsBigHead(true)
         setAvatar(JSON.parse(profile?.avatar))
       } else {
@@ -19,11 +19,12 @@ const BigHeadAvatar = ({ profile, user }) => {
 
   return (
     <>
+
       {isBigHead
         ?
-        <BigHead style={{ width: '30%' }} {...avatar} />
+          <BigHead style={size} {...avatar} />
         :
-        <img className='rounded-circle' src={profile.avatar} style={{ width: '30%' }} alt='profile'/>
+          <img src={profile.avatar} style={size} />
       }
     </>
   );
