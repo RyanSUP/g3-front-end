@@ -2,9 +2,11 @@
 # 🕹Games 🎲  Groups 👨‍👩‍👧‍👦  Gatherings 📅 
 ### A MERN Stack Application
 ___
-# [Join the Movement](google.com)
+# [Join the Movement](https://g3-frontend.herokuapp.com/login)
 
-G3 or games, groups, and gatherings is a hub for linking users to their friends and finding the right game to play on game night. Plan it all out before you walk in the door with G3 by ERA
+<center>G3 or games, groups, and gatherings is a hub for linking users to their friends and finding the right game to play on game night. Plan it all out before you walk in the door with G3 by ERA</center>
+
+
 ___
 ## Inspirations
 ___
@@ -22,13 +24,15 @@ Well you don't have to worry about that anymore with our app G3 and out expreien
 ___
 ## Brought to you by:
 ___
-Erin our scrum and database manager
+<font color="red">**Erin**</font> - Scrum and Database Manager
 
 
-Ryan our git commander and api manger
+<font color="red">**Ryan**</font> - Git commander and Api Manager
 
 
-Abygaelle our documentarian and designer
+<font color="red">**Abygaelle**</font> - Documentarian and Designer
+___
+## Views:
 ___
 
 ## Technologies:
@@ -59,29 +63,28 @@ ___
 ___
 ## Credits
 ___
-Bighead api
+* [Bighead API](https://bigheads.io/)
 
-BoardGameAtlas api -add links
+* [BoardGameAtlas API](https://www.boardgameatlas.com/api/docs)
 ___
 ## Ice Box:
 ___
-Group chat
+* Group chat
 
 
-Private Groups
+* Private Groups
 
 
-Invite links
+* Invite links
 
 
-Favorite games
+* Favorite games
 
 
-filter games by player and playtime
+* filter games by player and playtime
 
 
-Random game picker
+* Random game picker
+
 ___
-# Notes
-add images and emojis
 
