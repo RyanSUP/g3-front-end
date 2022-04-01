@@ -24,16 +24,15 @@ p, .card, .btn, label, #offcanvasRight{
 
 .nav-link{
   color: white;
-  font-size: 1.2rem;
-  margin-left: 150px;
+  font-size: 1.4rem;
 }
 
+#searchBtn{
+  margin: 10px;
+}
 nav{
   height: 80px;
-}
-
-.brandNav{
-  margin-left: 0;
+  background-color: #0e4749;
 }
 
 
@@ -95,7 +94,7 @@ nav{
 }
 
 .groupcard:hover{
-  background-color: #ffd1d08e;
+  background-color: #f3f0f08e;
 }
 
 #leaveBtn:hover{
