@@ -2,13 +2,13 @@
 # 🕹Games 🎲  Groups 👨‍👩‍👧‍👦  Gatherings 📅 
 ### A MERN Stack Application
 ___
-# [Join the Movement](https://g3-frontend.herokuapp.com/login)
+# 💪 [Join the Movement](https://g3-frontend.herokuapp.com/login)
 
 <center>G3 or games, groups, and gatherings is a hub for linking users to their friends and finding the right game to play on game night. Plan it all out before you walk in the door with G3 by ERA</center>
 
 
 ___
-## Inspirations
+## 💡 Inspirations 💡
 ___
 People like games.
 
@@ -24,18 +24,21 @@ Well you don't have to worry about that anymore with our app G3 and out expreien
 ___
 ## Brought to you by:
 ___
-<font color="red">**Erin**</font> - Scrum and Database Manager
+🍀 <font color="red">**Erin**</font> - Scrum and Database Manager
 
 
-<font color="red">**Ryan**</font> - Git commander and Api Manager
+🎸 <font color="red">**Ryan**</font> - Git commander and Api Manager
 
 
-<font color="red">**Abygaelle**</font> - Documentarian and Designer
+🪴 <font color="red">**Abygaelle**</font> - Documentarian and Designer
 ___
-## Views:
+## View:
+![view](https://imgur.com/Jsa1bI8.jpg)
+
+![view1](https://imgur.com/u6uulOP.jpg)
 ___
 
-## Technologies:
+## 💾 Technologies💾
 ___
 * ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
@@ -61,13 +64,13 @@ ___
 
 * ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ___
-## Credits
+## 🎬 Credits 🎬
 ___
 * [Bighead API](https://bigheads.io/)
 
 * [BoardGameAtlas API](https://www.boardgameatlas.com/api/docs)
 ___
-## Ice Box:
+## 🧊 Ice Box 🧊
 ___
 * Group chat
 
