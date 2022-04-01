@@ -32,8 +32,10 @@ ___
 
 🪴 <font color="red">**Abygaelle**</font> - Documentarian and Designer
 ___
-## Views:
+## View:
+![view](https://imgur.com/Jsa1bI8.jpg)
 
+![view1](https://imgur.com/u6uulOP.jpg)
 ___
 
 ## 💾 Technologies💾
