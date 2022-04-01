@@ -18,7 +18,7 @@ nav, h1, h2, h3{
 }
 
 
-p, .card, .btn, label{
+p, .card, .btn, label, #offcanvasRight{
   font-family: 'Work Sans', sans-serif;
 }
 
@@ -33,7 +33,16 @@ p, .card, .btn, label{
   margin-left: 0;
 }
 
+#gameImg{
+  height: 200px;
+  width: fit-content;
+  border: none;
+  align-self: center;
+}
 
+#gameBtn{
+  height: 50px;
+}
 
 .greenBtn{
   background-color: #c9ffe2;
@@ -81,10 +90,12 @@ p, .card, .btn, label{
   border: 2px solid rgba(0, 0, 0, 0.26);
 }
 
-.groupcard :hover{
-  background-color: rgb(255, 255, 255);
-  border-radius: 50px 15px;
-  text-transform: capitalize;
+.groupcard:hover{
+  background-color: #ffd1d08e;
+}
+
+#leaveBtn:hover{
+  border-radius: none;
 }
 
 .profileCards{
@@ -92,6 +103,7 @@ p, .card, .btn, label{
   border-radius: 10px;
   text-transform: capitalize;
 }
+
 
 
 .gm-card{

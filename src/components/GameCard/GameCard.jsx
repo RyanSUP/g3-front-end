@@ -4,8 +4,8 @@ import * as profileService from '../../services/profileService'
 
 const GameCard = ({ game, profile, addGameToState, updateOffCanvas }) => {
   const [currentButton, setCurrentButton] = useState()
-  const addButton = <button onClick={handleAddGame} className="btn flex-grow-1 btn-success">Add</button>
-  const dltButton = <button onClick={handleDeleteGame} className="btn flex-grow-1 btn-danger">Delete</button>
+  const addButton = <button onClick={handleAddGame} className="btn  btn-success">Add</button>
+  const dltButton = <button onClick={handleDeleteGame} className="btn btn-danger">Delete</button>
 
   useEffect(() => {
     if (profile.games?.find(profileGame => profileGame._id === game._id)) {
@@ -39,7 +39,7 @@ const GameCard = ({ game, profile, addGameToState, updateOffCanvas }) => {
       <div className='card-body text-center'>
         <p className="fs-4 m-0">{game.name}</p>
       </div>
-      <img style={{ height: '200px' }} src={game.thumb_url} className="img-thumbnail" alt="..." />
+      <img id="gameImg" src={game.thumb_url} className="img-thumbnail" alt="..." />
       <div className="card-footer text-muted">
         <div className="d-flex flex-column">
           {currentButton}
