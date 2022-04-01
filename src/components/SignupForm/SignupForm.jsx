@@ -41,9 +41,15 @@ const SignupForm = props => {
 
   return (
     <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-4">
-          <img className='' src={'logo.png'} style={{ height: '300px' }} alt="logo" />
+      <div className="row vh-100">
+        <div className="col-md-4 align-self-center">
+          <div className='d-flex justify-content-center'>
+            <img
+              src={"logo.png"}
+              style={{ height: "300px" }}
+              alt="logo"
+            />
+          </div>
           <h2 className="text-uppercase register-heading mb-4">Create an account</h2>
           <p>{message}</p>
           <form
@@ -111,9 +117,17 @@ const SignupForm = props => {
 
             </div>
           </form>
+          <div className='text-center'>
+            <div >Already have an account? 
+              <button className='btn btn-white ml-2 l-btn'onClick={props.changeFormType} ><strong>Login</strong></button>  
+            </div>
+          </div>
         </div>
-        <div className="col-md-8 bg-image">
-          <img className='fluid' src="https://i.imgur.com/UERKWtX.jpg" width='1060' height='920px' alt="" />
+        <div className="col-md-8 align-self-end bg-img">
+          <h1 className="text-center brand-statement">
+            Plan game nights with friends and family
+          </h1>
+          <img className="w-100" src="https://i.imgur.com/UERKWtX.jpg" alt="" />
         </div>
       </div>
     </div>
