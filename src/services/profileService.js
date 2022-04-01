@@ -21,18 +21,18 @@ const addGame = (profile_id, game) => {
   // localhost:3000/profile/:id/addGame
   return fetch(`${BASE_URL}/${profile_id}/games`, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${tokenService.getToken()}` 
+      Authorization: `Bearer ${tokenService.getToken()}`
     },
     body: JSON.stringify(game),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const deleteGame = (profile_id, game) => {
   console.log(game)
-  return fetch(`${BASE_URL}/${profile_id}/games`,{
+  return fetch(`${BASE_URL}/${profile_id}/games`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -40,24 +40,24 @@ const deleteGame = (profile_id, game) => {
     },
     body: JSON.stringify(game),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const joinGroup = (id, group) => {
   return fetch(`${BASE_URL}/${id}/groups`, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${tokenService.getToken()}` 
+      Authorization: `Bearer ${tokenService.getToken()}`
     },
     body: JSON.stringify(group),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 const updatePicture = (profile, formData) => {
   console.log(formData)
-  return fetch(`${BASE_URL}/${profile}/`,{
+  return fetch(`${BASE_URL}/${profile}/`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -65,12 +65,12 @@ const updatePicture = (profile, formData) => {
     },
     body: JSON.stringify(formData),
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
 
 
-export { 
-  getAllProfiles,  
+export {
+  getAllProfiles,
   getProfile,
   addGame,
   deleteGame,

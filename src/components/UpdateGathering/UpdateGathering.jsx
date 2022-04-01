@@ -1,33 +1,33 @@
 import { useState, useRef, useEffect } from "react"
 import * as groupService from '../../services/groupService'
 
-const AddGathering= ({group, updateGatheringList, gathering}) => {
-  const formElement = useRef()
-  const [validForm, setValidForm] = useState(false)
-  const [formData, setFormData] = useState({
-    name: gathering.name,
-    location: gathering.location,
-    date: '',
-  })
+const AddGathering = ({ group, updateGatheringList, gathering }) => {
+	const formElement = useRef()
+	const [validForm, setValidForm] = useState(false)
+	const [formData, setFormData] = useState({
+		name: gathering.name,
+		location: gathering.location,
+		date: '',
+	})
 
-  useEffect(()=> {
-    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
-  }, [formData])
+	useEffect(() => {
+		formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+	}, [formData])
 
-  const handleDelete = (groupId, gatheringId) => {
+	const handleDelete = (groupId, gatheringId) => {
 		updateGatheringList(formData, gathering._id, true)
-    groupService.deleteGathering(groupId, gatheringId)
-  }
-  
-  const handleChange = evt => {
-    setFormData({...formData, [evt.target.name]: evt.target.value})
-  }
+		groupService.deleteGathering(groupId, gatheringId)
+	}
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
+	const handleChange = evt => {
+		setFormData({ ...formData, [evt.target.name]: evt.target.value })
+	}
+
+	const handleSubmit = evt => {
+		evt.preventDefault()
 		updateGatheringList(formData, gathering._id, false)
 		groupService.updateGathering(formData, group._id, gathering._id)
-  }
+	}
 
 	return (
 		<>
@@ -36,12 +36,12 @@ const AddGathering= ({group, updateGatheringList, gathering}) => {
 					<label htmlFor="name-input" className="form-label">
 						Name (required)
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="name"
-            value={formData.name}
-            onChange={handleChange}
+						value={formData.name}
+						onChange={handleChange}
 						required
 					/>
 				</div>
@@ -49,29 +49,29 @@ const AddGathering= ({group, updateGatheringList, gathering}) => {
 					<label className="form-label">
 						Location
 					</label>
-					<input 
+					<input
 						type="text"
 						className="form-control"
 						name="location"
-            value={formData.location}
-            onChange={handleChange}
+						value={formData.location}
+						onChange={handleChange}
 					/>
 				</div>
-        <div className="form-group mb-4">
+				<div className="form-group mb-4">
 					<label className="form-label">
 						Date
 					</label>
-					<input 
+					<input
 						type="date"
 						className="form-control"
 						name="date"
-            value={formData.date}
-            onChange={handleChange}
+						value={formData.date}
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="d-grid">
-					<button className="btn btn-primary btn-fluid" type="submit" onClick={handleSubmit}>save  changes</button>
-      		<button onClick={()=> handleDelete(group._id, gathering._id)} >Delete</button>
+					<button className="btn btn-primary btn-fluid greenBtn" type="submit" onClick={handleSubmit}>save  changes</button>
+					<button className="btn btn-primary btn-fluid greenBtn" onClick={() => handleDelete(group._id, gathering._id)} >Delete</button>
 				</div>
 			</form>
 		</>

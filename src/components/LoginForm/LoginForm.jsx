@@ -90,12 +90,16 @@ const LoginForm = (props) => {
               </button>
             </div>
           </form>
+          <div className='text-center'>
+              <div>Don't have an account? 
+                <button className="btn btn-white ml-2 text-center r-btn" onClick={props.changeFormType} ><strong>Register here</strong></button></div>
+            </div>
         </div>
         <div className="col-md-8 align-self-end bg-img">
-          <h1 className="text-center brand-statement">
-            Plan game nights with friends and family
+          <h1 className="text-center brand-statement mt-5">
+            Game night made easy
           </h1>
-          <img className="w-100" src="https://i.imgur.com/UERKWtX.jpg" alt="" />
+          <img className="w-100" src="https://i.imgur.com/jKaZa6C.png" alt="" />
         </div>
       </div>
     </div>

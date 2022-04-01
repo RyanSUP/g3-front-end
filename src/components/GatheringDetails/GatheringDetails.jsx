@@ -1,4 +1,4 @@
-const GatheringDetails = ({gathering}) => {
+const GatheringDetails = ({ gathering }) => {
 
   return (
     <>
@@ -8,5 +8,5 @@ const GatheringDetails = ({gathering}) => {
     </>
   );
 }
- 
+
 export default GatheringDetails;

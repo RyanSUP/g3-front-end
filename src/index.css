@@ -18,18 +18,49 @@ nav, h1, h2, h3{
 }
 
 
-p, .card, .btn{
+p, .card, .btn, label, #offcanvasRight{
   font-family: 'Work Sans', sans-serif;
 }
 
-
 .nav-link{
   color: white;
+  font-size: 1.4rem;
+}
+
+#searchBtn{
+  margin: 10px;
+}
+nav{
+  height: 80px;
+  background-color: #0e4749;
+}
+
+
+#gameImg{
+  height: 200px;
+  width: fit-content;
+  border: none;
+  align-self: center;
+}
+
+#gameBtn{
+  height: 50px;
+}
+
+.greenBtn{
+  background-color: #c9ffe2;
+  color: black;
+  border: 1px solid black;
 }
 
 /* .active{
   color:orange;
 } */
+
+.sidebar{
+  background-color: #ffd1d0;
+  height: 100vh;
+}
 
 .card-pname{
   text-align: center;
@@ -63,10 +94,12 @@ p, .card, .btn{
   border: 2px solid rgba(0, 0, 0, 0.26);
 }
 
-.groupcard :hover{
-  background-color: rgb(255, 255, 255);
-  border-radius: 50px 15px;
-  text-transform: capitalize;
+.groupcard:hover{
+  background-color: #f3f0f08e;
+}
+
+#leaveBtn:hover{
+  border-radius: none;
 }
 
 .profileCards{
@@ -74,6 +107,7 @@ p, .card, .btn{
   border-radius: 10px;
   text-transform: capitalize;
 }
+
 
 
 .gm-card{
@@ -133,6 +167,10 @@ p, .card, .btn{
 
 .info-btn{
   border: none;
+}
+
+.btn-primary{
+  margin: 2px;
 }
 
 .g-line{
